@@ -3,7 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="BSTU International — English version of Bryansk State Technical University international office website. Coming soon.">
     <title>BSTU International — English version coming soon</title>
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <script src="https://cdn.tailwindcss.com"></script>
@@ -19,32 +21,25 @@
         ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 4px; }
         a { color: inherit !important; text-decoration: none !important; }
         .hero-en { background: linear-gradient(rgba(0,30,60,0.9), rgba(0,30,60,0.95)), url('https://images.unsplash.com/photo-1423666639041-f56000c27a9f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') center/cover fixed; }
+        .mega-menu-content { display: none; position: absolute; left: 0; top: 100%; width: 100vw; background: #fff; box-shadow: 0 10px 30px rgba(0,0,0,0.1); border-top: 2px solid #003366; z-index: 100; padding: 2rem 0; opacity: 0; transition: opacity 0.2s ease, transform 0.2s ease; transform: translateY(10px); }
+        .nav-item:hover .mega-menu-content { display: block; opacity: 1; transform: translateY(0); }
+        .mega-menu-inner { max-width: 80rem; margin: 0 auto; padding: 0 1rem; display: grid; grid-template-columns: repeat(4, 1fr); gap: 2rem; }
+        .mega-menu-column h4 { color: #003366; font-weight: 700; font-size: 1.1rem; margin-bottom: 1rem; padding-bottom: 0.5rem; border-bottom: 1px solid #e5e7eb; }
+        .mega-menu-column ul { list-style: none; padding: 0; margin: 0; }
+        .mega-menu-column li { margin-bottom: 0.5rem; }
+        .mega-menu-column a { color: #4b5563 !important; text-decoration: none !important; font-size: 0.9rem; transition: color 0.2s; display: flex; align-items: center; }
+        .mega-menu-column a:hover { color: #EAB308 !important; }
+        .mega-menu-column a i { font-size: 0.7rem; margin-right: 0.5rem; color: #9ca3af; }
+        body { padding-top: 140px; }
+        @media (min-width: 768px) { body { padding-top: 170px; } }
     </style>
 </head>
 <body class="font-sans text-gray-800 bg-gray-50 min-h-screen flex flex-col">
 
-    <header class="fixed top-0 w-full z-50 bg-white shadow-md">
-        <div class="border-b border-gray-100 bg-white">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="flex justify-between items-center h-20 md:h-24">
-                    <a href="index.html" class="flex items-center gap-4">
-                        <div class="w-12 h-12 bg-brand-blue rounded flex items-center justify-center text-white font-serif font-bold text-2xl">Б</div>
-                        <div class="flex flex-col">
-                            <span class="font-serif font-bold text-xl md:text-2xl text-brand-blue">БГТУ | International</span>
-                            <span class="text-[11px] uppercase tracking-widest text-gray-500 mt-1">Center for International Cooperation</span>
-                        </div>
-                    </a>
-                    <div class="flex items-center gap-2">
-                        <a href="index.html" class="text-xs !text-gray-500">RU</a>
-                        <a href="en.html" class="text-xs font-bold !text-brand-blue underline">EN</a>
-                        <a href="fr.html" class="text-xs !text-gray-500">FR</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </header>
+    <div id="header-placeholder"></div>
+    <script src="header.js" data-page="en.html"></script>
 
-    <main class="flex-1 flex items-center pt-20 md:pt-24">
+    <main class="flex-1 flex items-center">
         <section class="hero-en w-full text-white py-20 md:py-32">
             <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
                 <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-brand-accent/20 border border-brand-accent/40 text-brand-accent text-xs font-bold uppercase tracking-wider mb-6">
@@ -77,10 +72,7 @@
         </section>
     </main>
 
-    <footer class="bg-gray-900 text-gray-400 py-8 border-t border-gray-800">
-        <div class="max-w-7xl mx-auto px-4 text-center text-sm">
-            <p>© 2026 Bryansk State Technical University. All rights reserved.</p>
-        </div>
-    </footer>
+    <div id="footer-placeholder"></div>
+    <script src="footer.js"></script>
 </body>
 </html>
