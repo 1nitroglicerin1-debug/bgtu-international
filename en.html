@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BSTU International — English version coming soon</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = { theme: { extend: {
+            fontFamily: { sans: ['Inter', 'sans-serif'], serif: ['Playfair Display', 'serif'] },
+            colors: { brand: { blue: '#003366', accent: '#EAB308' } }
+        }}}
+    </script>
+    <style>
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #f1f1f1; }
+        ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 4px; }
+        a { color: inherit !important; text-decoration: none !important; }
+        .hero-en { background: linear-gradient(rgba(0,30,60,0.9), rgba(0,30,60,0.95)), url('https://images.unsplash.com/photo-1423666639041-f56000c27a9f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') center/cover fixed; }
+    </style>
+</head>
+<body class="font-sans text-gray-800 bg-gray-50 min-h-screen flex flex-col">
+
+    <header class="fixed top-0 w-full z-50 bg-white shadow-md">
+        <div class="border-b border-gray-100 bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex justify-between items-center h-20 md:h-24">
+                    <a href="index.html" class="flex items-center gap-4">
+                        <div class="w-12 h-12 bg-brand-blue rounded flex items-center justify-center text-white font-serif font-bold text-2xl">Б</div>
+                        <div class="flex flex-col">
+                            <span class="font-serif font-bold text-xl md:text-2xl text-brand-blue">БГТУ | International</span>
+                            <span class="text-[11px] uppercase tracking-widest text-gray-500 mt-1">Center for International Cooperation</span>
+                        </div>
+                    </a>
+                    <div class="flex items-center gap-2">
+                        <a href="index.html" class="text-xs !text-gray-500">RU</a>
+                        <a href="en.html" class="text-xs font-bold !text-brand-blue underline">EN</a>
+                        <a href="fr.html" class="text-xs !text-gray-500">FR</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="flex-1 flex items-center pt-20 md:pt-24">
+        <section class="hero-en w-full text-white py-20 md:py-32">
+            <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-brand-accent/20 border border-brand-accent/40 text-brand-accent text-xs font-bold uppercase tracking-wider mb-6">
+                    <i class="fas fa-globe"></i> English Version
+                </div>
+                <h1 class="text-4xl md:text-6xl font-serif font-bold mb-6 leading-tight">
+                    Coming Soon
+                </h1>
+                <p class="text-lg md:text-xl text-gray-300 mb-8 max-w-2xl mx-auto leading-relaxed">
+                    The English version of our website is currently under development. In the meantime, please use the Russian version or contact us directly — we speak English!
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a href="index.html" class="bg-brand-accent !text-brand-blue px-8 py-4 rounded-full font-bold text-lg hover:bg-yellow-500 transition-all shadow-lg flex items-center justify-center gap-2">
+                        <i class="fas fa-globe"></i> Перейти на русскую версию
+                    </a>
+                    <a href="mailto:inter@tu-bryansk.ru" class="bg-white/10 !text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-white/20 transition-all border border-white/30 flex items-center justify-center gap-2">
+                        <i class="fas fa-envelope"></i> Email us
+                    </a>
+                </div>
+
+                <div class="mt-12 flex flex-wrap justify-center gap-6 text-sm text-gray-400">
+                    <a href="tel:+74832588274" class="hover:!text-brand-accent flex items-center gap-2">
+                        <i class="fas fa-phone-alt"></i> +7 (4832) 58-82-74
+                    </a>
+                    <span class="flex items-center gap-2">
+                        <i class="far fa-clock"></i> Mon–Fri 10:00–16:00 (MSK)
+                    </span>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-gray-900 text-gray-400 py-8 border-t border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 text-center text-sm">
+            <p>© 2026 Bryansk State Technical University. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
