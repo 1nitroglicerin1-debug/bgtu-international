@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html lang="ru" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Гид по Брянску | БГТУ</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    },
+                    colors: {
+                        brand: {
+                            blue: '#003366', 
+                            light: '#F8FAFC',
+                            accent: '#EAB308', 
+                            green: '#10B981', 
+                        }
+                    },
+                    boxShadow: {
+                        'premium': '0 10px 40px -10px rgba(0, 51, 102, 0.1)',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #f1f1f1; }
+        ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
+        
+        .hero-bg {
+            background: linear-gradient(to right, rgba(0, 51, 102, 0.9) 0%, rgba(0, 51, 102, 0.7) 100%), url('https://images.unsplash.com/photo-1547448415-e9f5b28e570d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
+        }
+
+        /* --- Mega Menu Styles --- */
+        .mega-menu-content {
+            display: none;
+            position: absolute;
+            left: 0;
+            top: 100%;
+            width: 100vw;
+            background: #fff;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            border-top: 2px solid #003366;
+            z-index: 100;
+            padding: 2rem 0;
+            opacity: 0;
+            transition: opacity 0.2s ease, transform 0.2s ease;
+            transform: translateY(10px);
+        }
+
+        .nav-item:hover .mega-menu-content {
+            display: block;
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .mega-menu-inner {
+            max-width: 80rem; 
+            margin: 0 auto;
+            padding: 0 1rem;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+        }
+
+        .mega-menu-column h4 {
+            color: #003366;
+            font-weight: 700;
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid #e5e7eb;
+        }
+
+        .mega-menu-column ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .mega-menu-column li {
+            margin-bottom: 0.5rem;
+        }
+
+        .mega-menu-column a {
+            color: #4b5563 !important; 
+            text-decoration: none !important;
+            font-size: 0.9rem;
+            transition: color 0.2s;
+            display: flex;
+            align-items: center;
+        }
+
+        .mega-menu-column a:hover {
+            color: #EAB308 !important; 
+        }
+        
+        .mega-menu-column a i {
+            font-size: 0.7rem;
+            margin-right: 0.5rem;
+            color: #9ca3af;
+        }
+
+        a {
+            color: inherit !important;
+            text-decoration: none !important;
+        }
+        
+        a.underline {
+            text-decoration: underline !important;
+        }
+
+        body { padding-top: 140px; }
+        @media (min-width: 768px) { body { padding-top: 170px; } }
+        
+        .mobile-submenu {
+            display: none;
+            padding-left: 1rem;
+            margin-top: 0.5rem;
+            border-left: 2px solid #e5e7eb;
+        }
+        
+        .mobile-submenu.active {
+            display: block;
+        }
+    </style>
+</head>
+<body class="font-sans text-gray-800 bg-gray-50 overflow-x-hidden">
+
+    <!-- HEADER START (ОБНОВЛЕННЫЙ) -->
+    <header class="fixed top-0 w-full z-50 transition-all duration-300 bg-white shadow-md">
+        <!-- Level 1: Top Bar (Теперь с контактами) -->
+        <div class="bg-gray-100 border-b border-gray-200 py-1 hidden lg:block text-xs text-gray-600">
+            <div class="max-w-7xl mx-auto px-4 flex justify-between items-center">
+                <!-- Контакты вместо вкладок -->
+                <div class="flex space-x-6 font-medium">
+                    <a href="mailto:inter@tu-bryansk.ru" class="hover:text-brand-blue transition-colors flex items-center gap-1">
+                        <i class="fas fa-envelope text-gray-400"></i> inter@tu-bryansk.ru
+                    </a>
+                    <a href="tel:+74832588274" class="hover:text-brand-blue transition-colors flex items-center gap-1">
+                        <i class="fas fa-phone-alt text-gray-400"></i> +7 (4832) 58-82-74
+                    </a>
+                    <span class="flex items-center gap-1 text-gray-500">
+                        <i class="far fa-clock text-gray-400"></i> Пн-Пт 10:00 - 16:00 (МСК)
+                    </span>
+                </div>
+                <!-- Слабовидящие и языки (остались) -->
+                <div class="flex items-center space-x-4">
+                    <a href="#" class="!text-gray-600 hover:!text-brand-blue flex items-center gap-1 transition-colors"><i class="fas fa-eye"></i> Версия для слабовидящих</a>
+                    <div class="flex items-center gap-2 border-l border-gray-300 pl-4">
+                        <a href="/" class="font-bold !text-brand-blue underline decoration-2 underline-offset-4">RU</a>
+                        <a href="/en" class="!text-gray-500 hover:!text-brand-blue transition-colors">EN</a>
+                        <a href="/fr" class="!text-gray-500 hover:!text-brand-blue transition-colors">FR</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Level 2: Branding -->
+        <div class="border-b border-gray-100 bg-white relative z-20">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex justify-between items-center h-20 md:h-24">
+                    <a href="/" class="flex-shrink-0 flex items-center gap-4 cursor-pointer">
+                        <div class="w-12 h-12 bg-brand-blue rounded flex items-center justify-center text-white font-serif font-bold text-2xl shadow-inner">Б</div>
+                        <div class="flex flex-col">
+                            <span class="font-serif font-bold text-xl md:text-2xl leading-none text-brand-blue tracking-tight">БГТУ | International</span>
+                            <span class="text-[11px] uppercase tracking-widest text-gray-500 font-medium mt-1">Центр международного<br>сотрудничества</span>
+                        </div>
+                    </a>
+
+                    <div class="hidden md:flex items-center space-x-6">
+                        <div class="relative">
+                            <input type="text" placeholder="Поиск по сайту..." class="bg-gray-100 border border-gray-200 text-sm rounded-full pl-4 pr-10 py-2 w-64 focus:outline-none focus:border-brand-blue transition-colors">
+                            <button class="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400 hover:text-brand-blue">
+                                <i class="fas fa-search"></i>
+                            </button>
+                        </div>
+                        <a href="/contacts" class="bg-brand-accent text-brand-blue px-6 py-2.5 rounded-full font-bold text-sm hover:bg-yellow-500 transition-all shadow-md uppercase tracking-wider">
+                            Поступить
+                        </a>
+                    </div>
+
+                    <div class="lg:hidden flex items-center gap-4">
+                        <div class="flex gap-2">
+                            <a href="/" class="text-xs font-bold !text-brand-blue">RU</a>
+                            <a href="/en" class="text-xs !text-gray-500">EN</a>
+                            <a href="/fr" class="text-xs !text-gray-500">FR</a>
+                        </div>
+                        <button type="button" id="mobile-menu-btn" class="text-brand-blue hover:text-brand-accent focus:outline-none p-2 bg-gray-100 rounded">
+                            <i class="fas fa-bars text-2xl"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Level 3: Mega Navigation (Синяя полоса) -->
+        <div class="bg-brand-blue text-white hidden lg:block relative">
+            <div class="max-w-7xl mx-auto px-4">
+                <nav class="flex justify-between items-center h-14 text-sm font-medium uppercase tracking-wider">
+                    
+                    <div class="nav-item h-full flex items-center cursor-pointer hover:bg-blue-900 px-3 transition-colors border-b-4 border-transparent hover:border-brand-accent">
+                        <span>Поступление <i class="fas fa-chevron-down ml-1 text-[10px]"></i></span>
+                        <div class="mega-menu-content cursor-default">
+                            <div class="mega-menu-inner">
+                                <div class="mega-menu-column">
+                                    <h4>Шаги для поступления</h4>
+                                    <ul>
+                                        <li><a href="/admission-steps"><i class="fas fa-angle-right"></i> Как поступить (Алгоритм)</a></li>
+                                        <li><a href="/admission-rules"><i class="fas fa-angle-right"></i> Правила приема</a></li>
+                                        <li><a href="/documents"><i class="fas fa-angle-right"></i> Требования к документам</a></li>
+                                    </ul>
+                                </div>
+                                <div class="mega-menu-column">
+                                    <h4>Программы и цены</h4>
+                                    <ul>
+                                        <li><a href="/programs"><i class="fas fa-angle-right"></i> Доступные направления</a></li>
+                                        <li><a href="/tuition"><i class="fas fa-angle-right"></i> Стоимость обучения</a></li>
+                                    </ul>
+                                </div>
+                                <div class="mega-menu-column col-span-2 bg-gray-50 p-6 rounded-lg ml-4">
+                                    <h4 class="flex items-center gap-2 !mb-2 !border-none !pb-0"><i class="fas fa-clipboard-check text-brand-blue"></i> Начать процесс</h4>
+                                    <p class="text-sm text-gray-600 mb-4 normal-case">Оставьте заявку, и наши специалисты свяжутся с вами для консультации по документам.</p>
+                                    <a href="/contacts" class="inline-block bg-brand-accent !text-brand-blue px-4 py-2 rounded font-bold text-sm hover:bg-yellow-500 transition-colors">Подать заявку онлайн</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="nav-item h-full flex items-center hover:bg-blue-900 px-3 transition-colors border-b-4 border-transparent hover:border-brand-accent">
+                        <a href="/prep" class="text-white hover:!text-white flex items-center w-full h-full">Подготовительный факультет</a>
+                    </div>
+
+                    <div class="nav-item h-full flex items-center cursor-pointer hover:bg-blue-900 px-3 transition-colors border-b-4 border-transparent hover:border-brand-accent">
+                        <span>Виза и Миграция <i class="fas fa-chevron-down ml-1 text-[10px]"></i></span>
+                        <div class="mega-menu-content cursor-default">
+                            <div class="mega-menu-inner">
+                                <div class="mega-menu-column">
+                                    <h4>До въезда в РФ</h4>
+                                    <ul>
+                                        <li><a href="/invitation"><i class="fas fa-envelope-open-text text-brand-blue"></i> Оформление приглашения</a></li>
+                                        <li><a href="/visa-process"><i class="fas fa-passport text-brand-blue"></i> Получение учебной визы</a></li>
+                                    </ul>
+                                </div>
+                                <div class="mega-menu-column">
+                                    <h4>По прибытии</h4>
+                                    <ul>
+                                        <li><a href="/migration-rules"><i class="fas fa-file-signature text-brand-blue"></i> Миграционный учет</a></li>
+                                        <li><a href="/med-insurance"><i class="fas fa-notes-medical text-brand-blue"></i> Медицинская страховка (ДМС)</a></li>
+                                        <li><a href="/med-exam"><i class="fas fa-stethoscope text-brand-blue"></i> Медосмотр и дактилоскопия</a></li>
+                                    </ul>
+                                </div>
+                                <div class="mega-menu-column col-span-2">
+                                     <div class="border-l-4 border-red-500 pl-4 bg-red-50 p-4 rounded">
+                                        <h4 class="!text-red-700 !border-none !mb-1 !pb-0"><i class="fas fa-exclamation-triangle"></i> Важно</h4>
+                                        <p class="text-sm text-red-900 normal-case mb-2">Нарушение миграционных правил ведет к штрафам и депортации. Встаньте на учет в течение 3 дней после въезда.</p>
+                                        <a href="/contacts" class="text-xs font-bold !text-red-700 underline">Контакты визового отдела</a>
+                                     </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="nav-item h-full flex items-center cursor-pointer hover:bg-blue-900 px-3 transition-colors border-b-4 border-transparent hover:border-brand-accent">
+                        <span>Жизнь студента <i class="fas fa-chevron-down ml-1 text-[10px]"></i></span>
+                        <div class="mega-menu-content cursor-default">
+                            <div class="mega-menu-inner">
+                                <div class="mega-menu-column border-r border-gray-100 pr-4">
+                                    <h4 class="!text-brand-accent">Проживание</h4>
+                                    <ul>
+                                        <li><a href="/campus"><i class="fas fa-bed text-brand-blue"></i> Общежития БГТУ</a></li>
+                                        <li><a href="/rules-campus"><i class="fas fa-clipboard-list text-brand-blue"></i> Правила проживания</a></li>
+                                        <li><a href="/living-costs"><i class="fas fa-wallet text-brand-blue"></i> Цены и расходы в Брянске</a></li>
+                                    </ul>
+                                </div>
+                                <div class="mega-menu-column pl-4">
+                                    <h4>Адаптация</h4>
+                                    <ul>
+                                        <li><a href="/city-guide"><i class="fas fa-city text-brand-blue"></i> Гид по Брянску</a></li>
+                                        <li><a href="/student-club"><i class="fas fa-users text-brand-blue"></i> Клуб иностранных студентов</a></li>
+                                        <li><a href="/security"><i class="fas fa-shield-alt text-brand-blue"></i> Безопасность</a></li>
+                                    </ul>
+                                </div>
+                                 <div class="mega-menu-column col-span-2">
+                                    <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=600&h=300&q=80" alt="Student Life" class="rounded-lg shadow-sm w-full h-40 object-cover mb-4">
+                                    <p class="text-sm text-gray-600 normal-case">Мы помогаем иностранным студентам быстрее адаптироваться в России и найти новых друзей.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="nav-item h-full flex items-center cursor-pointer hover:bg-blue-900 px-3 transition-colors border-b-4 border-transparent hover:border-brand-accent">
+                        <a href="/contacts" class="text-white hover:!text-white">Контакты отдела</a>
+                    </div>
+                </nav>
+            </div>
+        </div>
+
+        <!-- Mobile Menu (Удалены вкладки сверху) -->
+        <div id="mobile-menu" class="hidden lg:hidden bg-white border-t border-gray-100 shadow-xl absolute w-full z-50 max-h-[80vh] overflow-y-auto">
+            
+            <div class="bg-gray-50 flex items-center justify-between px-4 py-3 border-b border-gray-200">
+                <span class="text-xs font-bold uppercase tracking-wider !text-brand-blue">Меню абитуриента</span>
+                <a href="tel:+74832588274" class="text-brand-accent"><i class="fas fa-phone-alt"></i></a>
+            </div>
+
+            <div class="px-4 pb-6 space-y-1 mt-2">
+                <a href="/" class="block px-3 py-3 text-base font-bold !text-brand-blue border-b border-gray-100">Главная</a>
+                
+                <div>
+                    <button type="button" class="mobile-dropdown-btn w-full flex justify-between items-center px-3 py-3 text-base !text-gray-800 border-b border-gray-100 focus:outline-none">
+                        <span>Поступление</span>
+                        <i class="fas fa-chevron-down text-xs transition-transform duration-200"></i>
+                    </button>
+                    <div class="mobile-dropdown-content hidden bg-gray-50 px-4 py-2 space-y-2">
+                        <a href="/admission-steps" class="block py-2 text-sm text-gray-600">Как поступить (Алгоритм)</a>
+                        <a href="/admission-rules" class="block py-2 text-sm text-gray-600">Правила приема</a>
+                        <a href="/documents" class="block py-2 text-sm text-gray-600">Требования к документам</a>
+                        <a href="/programs" class="block py-2 text-sm text-gray-600">Доступные направления</a>
+                        <a href="/tuition" class="block py-2 text-sm text-gray-600">Стоимость обучения</a>
+                    </div>
+                </div>
+
+                <a href="/prep" class="block px-3 py-3 text-base font-bold !text-brand-blue border-b border-gray-100">Подготовительный факультет</a>
+
+                <div>
+                    <button type="button" class="mobile-dropdown-btn w-full flex justify-between items-center px-3 py-3 text-base !text-gray-800 border-b border-gray-100 focus:outline-none">
+                        <span>Виза и Миграция</span>
+                        <i class="fas fa-chevron-down text-xs transition-transform duration-200"></i>
+                    </button>
+                    <div class="mobile-dropdown-content hidden bg-gray-50 px-4 py-2 space-y-2">
+                        <a href="/invitation" class="block py-2 text-sm text-gray-600">Оформление приглашения</a>
+                        <a href="/visa-process" class="block py-2 text-sm text-gray-600">Получение учебной визы</a>
+                        <a href="/migration-rules" class="block py-2 text-sm text-gray-600">Миграционный учет</a>
+                        <a href="/med-insurance" class="block py-2 text-sm text-gray-600">Медицинская страховка</a>
+                        <a href="/med-exam" class="block py-2 text-sm text-gray-600">Медосмотр и дактилоскопия</a>
+                    </div>
+                </div>
+
+                <div>
+                    <button type="button" class="mobile-dropdown-btn w-full flex justify-between items-center px-3 py-3 text-base !text-gray-800 border-b border-gray-100 focus:outline-none">
+                        <span>Проживание и жизнь</span>
+                        <i class="fas fa-chevron-down text-xs transition-transform duration-200"></i>
+                    </button>
+                    <div class="mobile-dropdown-content hidden bg-gray-50 px-4 py-2 space-y-2">
+                        <a href="/campus" class="block py-2 text-sm text-gray-600">Общежития БГТУ</a>
+                        <a href="/rules-campus" class="block py-2 text-sm text-gray-600">Правила проживания</a>
+                        <a href="/living-costs" class="block py-2 text-sm text-gray-600">Цены и расходы в Брянске</a>
+                        <a href="/city-guide" class="block py-2 text-sm text-gray-600">Гид по Брянску</a>
+                        <a href="/student-club" class="block py-2 text-sm text-gray-600">Клуб иностранных студентов</a>
+                        <a href="/security" class="block py-2 text-sm text-gray-600">Безопасность</a>
+                    </div>
+                </div>
+
+                <a href="/contacts" class="block px-3 py-3 text-base !text-gray-800 border-b border-gray-100">Контакты отдела</a>
+            </div>
+        </div>
+    </header>
+    <!-- HEADER END -->
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero-bg text-white pt-24 pb-20 relative min-h-[50vh] flex flex-col justify-center border-b-4 border-brand-accent">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full gs-reveal">
+                <div class="flex items-center gap-2 text-brand-accent mb-4 text-sm font-bold uppercase tracking-wider">
+                    <a href="/" class="hover:text-white transition-colors">Главная</a>
+                    <i class="fas fa-chevron-right text-[10px]"></i>
+                    <span>Жизнь студента</span>
+                </div>
+                <h1 class="text-4xl md:text-5xl lg:text-6xl font-serif font-bold mb-6 leading-tight">
+                    Брянск: <br><span class="text-brand-accent">Ваш новый дом</span>
+                </h1>
+                <p class="text-lg md:text-xl text-blue-50 max-w-2xl font-light leading-relaxed">
+                    Древний город с тысячелетней историей, современными парками и добрыми людьми. Узнайте, как быстро адаптироваться и полюбить это место.
+                </p>
+            </div>
+        </section>
+
+        <!-- Stats Section -->
+        <section class="bg-white border-b border-gray-200">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 -mt-10 relative z-20">
+                <div class="bg-white rounded-xl shadow-lg border border-gray-100 p-6 md:p-8 grid grid-cols-2 md:grid-cols-4 gap-6 text-center gs-reveal">
+                    <div>
+                        <div class="text-3xl font-bold text-brand-blue mb-1">985</div>
+                        <div class="text-xs text-gray-500 uppercase tracking-wider font-bold">Год основания</div>
+                    </div>
+                    <div class="border-l border-gray-100">
+                        <div class="text-3xl font-bold text-brand-blue mb-1">~400k</div>
+                        <div class="text-xs text-gray-500 uppercase tracking-wider font-bold">Население</div>
+                    </div>
+                    <div class="border-l-0 md:border-l border-gray-100 mt-4 md:mt-0 pt-4 md:pt-0 border-t md:border-t-0">
+                        <div class="text-3xl font-bold text-brand-accent mb-1">380 км</div>
+                        <div class="text-xs text-gray-500 uppercase tracking-wider font-bold">До Москвы</div>
+                    </div>
+                    <div class="border-l border-gray-100 mt-4 md:mt-0 pt-4 md:pt-0 border-t md:border-t-0">
+                        <div class="text-3xl font-bold text-brand-accent mb-1">4 часа</div>
+                        <div class="text-xs text-gray-500 uppercase tracking-wider font-bold">На поезде до столицы</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Main Content -->
+        <section class="py-16 md:py-24 bg-gray-50 relative z-20">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                
+                <div class="grid lg:grid-cols-3 gap-12">
+                    
+                    <!-- Left Column: Content -->
+                    <div class="lg:col-span-2 space-y-16">
+                        
+                        <!-- Transportation -->
+                        <div class="gs-reveal">
+                            <div class="flex items-center gap-4 mb-6 border-b border-gray-200 pb-4">
+                                <div class="w-12 h-12 bg-brand-blue text-white rounded-lg flex items-center justify-center text-xl shadow-md shrink-0">
+                                    <i class="fas fa-bus"></i>
+                                </div>
+                                <h2 class="text-3xl font-serif font-bold text-brand-blue">Транспорт в городе</h2>
+                            </div>
+                            
+                            <p class="text-gray-600 leading-relaxed mb-6">
+                                Брянск разделен на 4 больших района. Главный кампус БГТУ находится в <strong>Бежицком районе</strong> (самом крупном и индустриальном). Добраться до центра или других районов очень легко.
+                            </p>
+
+                            <div class="grid sm:grid-cols-2 gap-6">
+                                <div class="bg-white p-6 rounded-xl border border-gray-100 shadow-sm hover:shadow-md transition-shadow">
+                                    <h4 class="font-bold text-gray-800 mb-2 flex items-center gap-2">
+                                        <i class="fas fa-taxi text-yellow-500"></i> Такси (Яндекс Go)
+                                    </h4>
+                                    <p class="text-sm text-gray-600 mb-4">Самый популярный способ передвижения в России. Обязательно скачайте приложение <strong>Яндекс Go (Yandex Go)</strong>.</p>
+                                    <ul class="text-xs text-gray-500 space-y-1 list-disc list-inside">
+                                        <li>Подача машины за 3-5 минут</li>
+                                        <li>Оплата картой или наличными</li>
+                                        <li>Цена: ~150-250 ₽ по району</li>
+                                    </ul>
+                                </div>
+                                
+                                <div class="bg-white p-6 rounded-xl border border-gray-100 shadow-sm hover:shadow-md transition-shadow">
+                                    <h4 class="font-bold text-gray-800 mb-2 flex items-center gap-2">
+                                        <i class="fas fa-route text-blue-500"></i> Маршрутки и автобусы
+                                    </h4>
+                                    <p class="text-sm text-gray-600 mb-4">Сеть автобусов и троллейбусов покрывает весь город. Ходят с 6:00 до 23:00.</p>
+                                    <ul class="text-xs text-gray-500 space-y-1 list-disc list-inside">
+                                        <li>Стоимость проезда: ~30 ₽</li>
+                                        <li>Оплата банковской картой внутри</li>
+                                        <li>Скидки по студенческому билету</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Places to go -->
+                        <div class="gs-reveal">
+                            <div class="flex items-center gap-4 mb-6 border-b border-gray-200 pb-4">
+                                <div class="w-12 h-12 bg-brand-accent text-brand-blue rounded-lg flex items-center justify-center text-xl shadow-md shrink-0">
+                                    <i class="fas fa-map-marked-alt"></i>
+                                </div>
+                                <h2 class="text-3xl font-serif font-bold text-brand-blue">Где гулять и отдыхать</h2>
+                            </div>
+                            
+                            <div class="space-y-6">
+                                <div class="flex flex-col md:flex-row gap-6 bg-white p-4 rounded-xl border border-gray-100 shadow-sm">
+                                    <img src="https://images.unsplash.com/photo-1519331379826-f10be5486c6f?auto=format&fit=crop&w=400&q=80" alt="Park" class="w-full md:w-48 h-32 object-cover rounded-lg shrink-0">
+                                    <div>
+                                        <h4 class="font-bold text-brand-blue text-lg mb-2">Курган Бессмертия (Парк 1000-летия)</h4>
+                                        <p class="text-sm text-gray-600">Главный символ города и любимое место отдыха студентов. Огромный зеленый парк, прокат велосипедов, спортивные площадки и аллеи для прогулок.</p>
+                                    </div>
+                                </div>
+
+                                <div class="flex flex-col md:flex-row gap-6 bg-white p-4 rounded-xl border border-gray-100 shadow-sm">
+                                    <img src="https://images.unsplash.com/photo-1534452203293-494d7ddbf7e0?auto=format&fit=crop&w=400&q=80" alt="Mall" class="w-full md:w-48 h-32 object-cover rounded-lg shrink-0">
+                                    <div>
+                                        <h4 class="font-bold text-brand-blue text-lg mb-2">ТРЦ «АЭРО ПАРК»</h4>
+                                        <p class="text-sm text-gray-600">Крупнейший торгово-развлекательный центр региона. Здесь вы найдете гипермаркет Лента (продукты), кинотеатр IMAX, фудкорты, магазины одежды и техники.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!-- Right Column: Sidebar (Climate) -->
+                    <div class="lg:col-span-1">
+                        <div class="sticky top-32 space-y-6">
+                            
+                            <!-- Climate Widget -->
+                            <div class="bg-gradient-to-b from-blue-500 to-blue-700 p-6 rounded-2xl shadow-lg text-white gs-reveal">
+                                <h4 class="font-bold mb-6 text-lg flex items-center gap-2 border-b border-blue-400/30 pb-3">
+                                    <i class="fas fa-temperature-half"></i> Климат и погода
+                                </h4>
+                                
+                                <p class="text-sm text-blue-100 mb-6 leading-relaxed">
+                                    В Брянске ярко выражены 4 времени года. Вам обязательно понадобится разная одежда для лета и зимы.
+                                </p>
+
+                                <div class="space-y-4">
+                                    <div class="bg-white/10 p-3 rounded-lg flex items-center justify-between backdrop-blur-sm">
+                                        <div class="flex items-center gap-3">
+                                            <i class="fas fa-snowflake text-2xl text-blue-200 w-6"></i>
+                                            <div>
+                                                <div class="font-bold text-sm">Зима (Дек-Фев)</div>
+                                                <div class="text-xs text-blue-200">Много снега</div>
+                                            </div>
+                                        </div>
+                                        <div class="font-bold text-lg">-5...-15°C</div>
+                                    </div>
+                                    
+                                    <div class="bg-white/10 p-3 rounded-lg flex items-center justify-between backdrop-blur-sm">
+                                        <div class="flex items-center gap-3">
+                                            <i class="fas fa-leaf text-2xl text-green-300 w-6"></i>
+                                            <div>
+                                                <div class="font-bold text-sm">Весна/Осень</div>
+                                                <div class="text-xs text-blue-200">Дожди и ветер</div>
+                                            </div>
+                                        </div>
+                                        <div class="font-bold text-lg">+5...+15°C</div>
+                                    </div>
+
+                                    <div class="bg-white/10 p-3 rounded-lg flex items-center justify-between backdrop-blur-sm">
+                                        <div class="flex items-center gap-3">
+                                            <i class="fas fa-sun text-2xl text-yellow-400 w-6"></i>
+                                            <div>
+                                                <div class="font-bold text-sm">Лето (Июн-Авг)</div>
+                                                <div class="text-xs text-blue-200">Тепло и солнечно</div>
+                                            </div>
+                                        </div>
+                                        <div class="font-bold text-lg">+20...+28°C</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- What to pack Warning -->
+                            <div class="bg-yellow-50 border border-yellow-200 p-6 rounded-xl shadow-sm gs-reveal">
+                                <h4 class="font-bold text-gray-800 mb-3 flex items-center gap-2">
+                                    <i class="fas fa-suitcase text-brand-accent"></i> Что брать с собой?
+                                </h4>
+                                <p class="text-sm text-gray-600 mb-4">Если вы прилетаете зимой или поздней осенью, вам <strong>необходима теплая куртка, шапка, перчатки и зимняя обувь</strong>.</p>
+                                <p class="text-sm text-gray-600">Если у вас нет теплой одежды, не покупайте дорогие вещи дома — в Брянске много магазинов, где можно купить пуховик дешевле и адаптированный под наши морозы.</p>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="py-12 bg-white relative border-t border-gray-200">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 gs-reveal text-center md:text-left flex flex-col md:flex-row items-center justify-between">
+                <div>
+                    <h2 class="text-xl md:text-2xl font-serif font-bold text-brand-blue mb-2">Хочешь найти друзей?</h2>
+                    <p class="text-gray-600 text-sm">Присоединяйся к сообществу земляков и активных студентов.</p>
+                </div>
+                <div class="mt-6 md:mt-0 flex shrink-0">
+                    <a href="/student-club" class="bg-brand-blue !text-white px-6 py-3 rounded font-bold hover:bg-blue-800 transition-all shadow flex items-center gap-2">
+                        Клуб иностранных студентов <i class="fas fa-arrow-right text-brand-accent"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER START -->
+    <footer class="bg-gray-900 text-gray-400 py-12 border-t border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-6 mb-8 border-b border-gray-800 pb-8">
+                <div class="flex flex-col md:flex-row gap-6 items-center">
+                    <div class="flex items-center gap-2">
+                        <div class="w-8 h-8 bg-gray-800 rounded flex items-center justify-center text-white font-serif font-bold">Б</div>
+                        <span class="font-serif font-bold text-white tracking-tight">БГТУ</span>
+                    </div>
+                    <div class="text-sm text-center md:text-left leading-relaxed">Брянский государственный технический университет<br>Центр международного сотрудничества</div>
+                </div>
+                <div class="flex gap-4 text-xl">
+                    <a href="#" class="hover:!text-white transition-colors"><i class="fab fa-vk"></i></a>
+                    <a href="#" class="hover:!text-white transition-colors"><i class="fab fa-telegram"></i></a>
+                </div>
+            </div>
+            <div class="text-sm text-center md:text-left flex flex-col md:flex-row justify-between">
+                <span>© 2026 БГТУ. Все права защищены.</span>
+                <div class="flex gap-4 mt-4 md:mt-0">
+                    <a href="/history" class="hover:!text-white transition-colors">История университета</a>
+                    <a href="#" class="hover:!text-white transition-colors">Политика конфиденциальности</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- FOOTER END -->
+
+    <div class="md:hidden fixed bottom-4 left-4 right-4 z-40">
+        <a href="/contacts" class="block w-full bg-brand-accent !text-brand-blue text-center py-4 rounded font-bold shadow-[0_10px_25px_rgba(234,179,8,0.5)] border border-yellow-500">
+            <span>Связаться с отделом</span>
+        </a>
+    </div>
+
+    <script>
+        const btn = document.getElementById('mobile-menu-btn');
+        const menu = document.getElementById('mobile-menu');
+        if(btn && menu) {
+            btn.addEventListener('click', (e) => {
+                e.preventDefault();
+                menu.classList.toggle('hidden');
+            });
+        }
+
+        const dropdownBtns = document.querySelectorAll('.mobile-dropdown-btn');
+        dropdownBtns.forEach(btn => {
+            btn.addEventListener('click', function(e) {
+                e.preventDefault(); 
+                e.stopPropagation();
+                
+                const content = this.nextElementSibling;
+                if(content) content.classList.toggle('hidden');
+                
+                const icon = this.querySelector('.fa-chevron-down');
+                if(icon) icon.classList.toggle('rotate-180');
+            });
+        });
+
+        document.addEventListener("DOMContentLoaded", () => {
+            gsap.registerPlugin(ScrollTrigger);
+            document.querySelectorAll('.gs-reveal').forEach((elem) => {
+                gsap.fromTo(elem, { y: 30, opacity: 0 }, {
+                    y: 0, opacity: 1, duration: 0.6, ease: "power2.out",
+                    scrollTrigger: { trigger: elem, start: "top 85%", toggleActions: "play none none reverse" }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

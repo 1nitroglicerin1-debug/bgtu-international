@@ -1,0 +1,19 @@
+# OS
+Thumbs.db
+.DS_Store
+Desktop.ini
+
+# Editor
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Screenshots (not needed in repo)
+*.png
+*.jpg
+*.jpeg
+
+# Original txt files
+*.txt
