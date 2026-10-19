@@ -139,7 +139,25 @@
         .mobile-submenu.active {
             display: block;
         }
-    </style>
+            /* === GLOBAL RESPONSIVE FIX === */
+        html, body {
+            overflow-x: hidden !important;
+            max-width: 100% !important;
+            width: 100% !important;
+            margin: 0;
+            padding-left: 0;
+            padding-right: 0;
+        }
+        *, *::before, *::after {
+            box-sizing: border-box;
+        }
+        img, svg, video, canvas { max-width: 100%; height: auto; }
+        .mega-menu-content { width: 100% !important; left: 0 !important; right: 0 !important; }
+        @media (max-width: 767px) {
+            section.hero-gradient { margin-top: 0 !important; }
+            .marquee-container { max-width: 100% !important; }
+        }
+        /* === END GLOBAL RESPONSIVE FIX === */    </style>
 </head>
 <body class="font-sans text-gray-800 bg-gray-50 overflow-x-hidden">
 

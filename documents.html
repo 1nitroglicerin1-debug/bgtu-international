@@ -66,7 +66,25 @@
         .doc-card:hover { transform: translateY(-5px); box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1); }
         .check-list li { position: relative; padding-left: 1.5rem; margin-bottom: 0.5rem; }
         .check-list li::before { content: '\f00c'; font-family: 'Font Awesome 6 Free'; font-weight: 900; position: absolute; left: 0; top: 3px; color: #10B981; font-size: 0.875rem; }
-    </style>
+            /* === GLOBAL RESPONSIVE FIX === */
+        html, body {
+            overflow-x: hidden !important;
+            max-width: 100% !important;
+            width: 100% !important;
+            margin: 0;
+            padding-left: 0;
+            padding-right: 0;
+        }
+        *, *::before, *::after {
+            box-sizing: border-box;
+        }
+        img, svg, video, canvas { max-width: 100%; height: auto; }
+        .mega-menu-content { width: 100% !important; left: 0 !important; right: 0 !important; }
+        @media (max-width: 767px) {
+            section.hero-gradient { margin-top: 0 !important; }
+            .marquee-container { max-width: 100% !important; }
+        }
+        /* === END GLOBAL RESPONSIVE FIX === */    </style>
 </head>
 <body class="font-sans text-gray-800 bg-gray-50 overflow-x-hidden">
 
