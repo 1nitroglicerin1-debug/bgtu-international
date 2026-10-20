@@ -110,7 +110,7 @@
         <!-- каталог -->
         <section id="catalog-view">
             <section class="hero-programs relative flex items-center min-h-[50vh] md:-mt-20">
-                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full pt-20">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full pt-20 pb-24 sm:pb-20">
                     <div class="max-w-3xl gs-reveal">
                         <a href="index.html" class="inline-flex items-center gap-2 !text-brand-accent hover:!text-white transition-colors mb-4 text-sm font-bold bg-black/20 px-4 py-2 rounded-full backdrop-blur-sm border border-brand-accent/30 w-max">
                             <i class="fas fa-arrow-left"></i> Назад на главную
@@ -213,7 +213,7 @@
             'use strict';
             var DATA = window.BGTU_DATA;
             var LEVELS = { bachelor: { label: 'Бакалавриат', cls: 'badge-bachelor', badge: 'Бакалавриат (4 года)' },
-                           specialist: { label: 'Специалитет', cls: 'badge-specialist', badge: 'Специалитет (5 / 5.5 лет)' },
+                           specialist: { label: 'Специалитет', cls: 'badge-specialist', badge: 'Специалитет (5–5.5 лет)' },
                            master: { label: 'Магистратура', cls: 'badge-master', badge: 'Магистратура (2 года)' } };
 
             var bySlug = {};
@@ -257,7 +257,7 @@
                 var lvl = LEVELS[s.level] || {};
                 var badge = '';
                 if (s.level === 'master') badge = '<span class="' + lvl.cls + ' text-white text-[11px] font-bold px-3 py-1 rounded-full whitespace-nowrap">Магистратура (2 года)</span>';
-                else if (s.level === 'specialist') badge = '<span class="' + lvl.cls + ' text-white text-[11px] font-bold px-3 py-1 rounded-full whitespace-nowrap">Специалитет (5 / 5.5 лет)</span>';
+                else if (s.level === 'specialist') badge = '<span class="' + lvl.cls + ' text-white text-[11px] font-bold px-3 py-1 rounded-full whitespace-nowrap">Специалитет (5–5.5 лет)</span>';
                 else badge = '<span class="' + lvl.cls + ' text-white text-[11px] font-bold px-3 py-1 rounded-full whitespace-nowrap">Бакалавриат (4 года)</span>';
 
                 return ''
@@ -333,7 +333,7 @@
 
                 var html = ''
                     + '<section class="hero-programs relative flex items-center min-h-[52vh] md:-mt-20">'
-                    + '  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full pt-20">'
+                    + '  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full pt-20 pb-24 sm:pb-20">'
                     + '    <div class="max-w-3xl gs-reveal">'
                     + '      <button type="button" onclick="window.BGTU_BACK()" class="inline-flex items-center gap-2 !text-brand-accent hover:!text-white transition-colors mb-4 text-sm font-bold bg-black/20 px-4 py-2 rounded-full backdrop-blur-sm border border-brand-accent/30 w-max"><i class="fas fa-arrow-left"></i> К списку специальностей</button>'
                     + '      <div class="inline-flex items-center gap-2 mb-4"><span class="' + lvl.cls + ' text-white text-xs font-bold px-3 py-1 rounded-full">' + lvl.badge + '</span><span class="text-gray-300 text-sm font-medium">' + s.directionTitle + '</span></div>'
