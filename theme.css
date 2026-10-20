@@ -64,6 +64,18 @@
 .pill-amber  { background: rgba(234,179,8,.15);   color: #CA8A04; }
 .pill-green  { background: rgba(16,185,129,.12);  color: #10B981; }
 
+/* === Фикс паразитного зазора под фиксированной шапкой ===
+   Шапка (header.js) — position:fixed. Инлайн-стили страниц ставят body{padding-top:140px/170px},
+   что подогнано под десктоп, где видны топ-бар и синяя навигация. На мобильных/планшете
+   они скрыты (hidden lg:block), поэтому отступ больше высоты шапки и даёт белую полосу.
+   Здесь задаём точную высоту шапки под каждый брейкпоинт. */
+@media (max-width: 767px) {
+  body { padding-top: 81px !important; } /* лого-ряд h-20 (80px) + border 1px */
+}
+@media (min-width: 768px) and (max-width: 1023px) {
+  body { padding-top: 97px !important; } /* лого-ряд h-24 (96px) + border 1px */
+}
+
 @media (prefers-reduced-motion: reduce) {
   .animate-floaty, .animate-floaty-slow { animation: none !important; }
   .btn-shimmer::after { animation: none !important; opacity: 0; }

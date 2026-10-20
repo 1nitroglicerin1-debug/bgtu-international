@@ -8,8 +8,8 @@
 (function () {
   'use strict';
 
-  var VK_URL = 'https://vk.com/tubryansk';
-  var TG_URL = 'https://t.me/tubryansk';
+  var VK_URL = 'https://vk.com/soyuz_bstu';
+  var TG_URL = 'https://t.me/+79038681211';
 
   var html = ''
     + '<footer class="bg-gray-900 text-gray-400 py-12 border-t-4 border-brand-accent">'

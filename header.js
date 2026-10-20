@@ -9,7 +9,7 @@
   'use strict';
 
   var PAGES = [
-    { url: 'index.html',           title: 'Главная',                       desc: 'Главная страница международного отдела БГТУ' },
+    { url: 'index.html',           title: 'Главная',                       desc: 'Главная страница Центра международного сотрудничества БГТУ' },
     { url: 'history.html',         title: 'История университета',           desc: 'История Брянского государственного технического университета с 1929 года' },
     { url: 'admission-steps.html', title: 'Как поступить (алгоритм)',       desc: 'Пошаговая инструкция по поступлению в БГТУ для иностранцев' },
     { url: 'admission-rules.html', title: 'Правила приёма',                 desc: 'Правила и сроки приёма иностранных граждан в БГТУ' },
@@ -22,21 +22,22 @@
     { url: 'migration-rules.html', title: 'Миграционный учёт',              desc: 'Постановка на миграционный учёт после прибытия в РФ' },
     { url: 'med-insurance.html',   title: 'Медицинская страховка (ДМС)',   desc: 'Оформление добровольного медицинского страхования для студентов' },
     { url: 'med-exam.html',        title: 'Медосмотр и дактилоскопия',     desc: 'Медицинский осмотр и дактилоскопия для иностранных граждан' },
-    { url: 'campus.html',          title: 'Общежития БГТУ',                desc: 'Студенческий городок и общежития Брянского технического университета' },
+    { url: 'campus.html',          title: 'Общежитие БГТУ',                desc: 'Общежитие Брянского государственного технического университета' },
     { url: 'rules-campus.html',    title: 'Правила проживания',             desc: 'Правила проживания в общежитиях БГТУ' },
     { url: 'living-costs.html',    title: 'Цены и расходы в Брянске',       desc: 'Бюджет студента: цены на еду, транспорт и проживание в Брянске' },
     { url: 'city-guide.html',      title: 'Гид по Брянску',                 desc: 'Информация о городе Брянске для иностранных студентов' },
-    { url: 'student-club.html',    title: 'Клуб иностранных студентов',     desc: 'Клуб иностранных студентов БГТУ: мероприятия и адаптация' },
+    { url: 'student-club.html',    title: 'Клуб интернациональной дружбы',  desc: 'Союз БГТУ: клуб интернациональной дружбы, мероприятия и адаптация' },
     { url: 'security.html',        title: 'Безопасность',                   desc: 'Правила безопасности и законы РФ для иностранных студентов' },
     { url: 'testimonials.html',    title: 'Отзывы студентов',               desc: 'Отзывы иностранных студентов об учёбе в БГТУ' },
-    { url: 'contacts.html',        title: 'Контакты отдела',                desc: 'Контактные данные международного отдела БГТУ' },
+    { url: 'contacts.html',        title: 'Контакты',                       desc: 'Контактные данные Центра международного сотрудничества БГТУ' },
     { url: 'privacy.html',         title: 'Политика конфиденциальности',    desc: 'Политика обработки персональных данных сайта БГТУ' }
   ];
 
-  var VK_URL   = 'https://vk.com/tubryansk';
-  var TG_URL   = 'https://t.me/tubryansk';
-  var MAIL_URL = 'mailto:inter@tu-bryansk.ru';
-  var TEL_URL  = 'tel:+74832588274';
+  var VK_URL   = 'https://vk.com/soyuz_bstu';
+  var TG_URL   = 'https://t.me/+79038681211';
+  var WA_URL   = 'https://wa.me/79038681211';
+  var MAIL_URL = 'mailto:mobstu@bk.ru';
+  var TEL_URL  = 'tel:+79038681211';
 
   function buildHeaderHTML() {
     var h = '';
@@ -44,8 +45,8 @@
     h += '  <div class="bg-gray-100 border-b border-gray-200 py-1 hidden lg:block text-xs text-gray-600">';
     h += '    <div class="max-w-7xl mx-auto px-4 flex justify-between items-center">';
     h += '      <div class="flex space-x-6 font-medium">';
-    h += '        <a href="' + MAIL_URL + '" class="hover:text-brand-blue transition-colors flex items-center gap-1"><i class="fas fa-envelope text-gray-400"></i> inter@tu-bryansk.ru</a>';
-    h += '        <a href="' + TEL_URL + '" class="hover:text-brand-blue transition-colors flex items-center gap-1"><i class="fas fa-phone-alt text-gray-400"></i> +7 (4832) 58-82-74</a>';
+    h += '        <a href="' + MAIL_URL + '" class="hover:text-brand-blue transition-colors flex items-center gap-1"><i class="fas fa-envelope text-gray-400"></i> mobstu@bk.ru</a>';
+    h += '        <a href="' + TEL_URL + '" class="hover:text-brand-blue transition-colors flex items-center gap-1"><i class="fas fa-phone-alt text-gray-400"></i> +7 (903) 868-12-11</a>';
     h += '        <span class="flex items-center gap-1 text-gray-500"><i class="far fa-clock text-gray-400"></i> Пн-Пт 10:00 - 16:00 (МСК)</span>';
     h += '      </div>';
     h += '      <div class="flex items-center space-x-4">';
@@ -151,7 +152,7 @@
     h += '          </div></div>';
     h += '        </div>';
     h += '        <div class="nav-item h-full flex items-center cursor-pointer hover:bg-blue-900 px-3 transition-colors border-b-4 border-transparent hover:border-brand-accent">';
-    h += '          <a href="contacts.html" class="text-white hover:!text-white">Контакты отдела</a>';
+    h += '          <a href="contacts.html" class="text-white hover:!text-white">Контакты</a>';
     h += '        </div>';
     h += '      </nav>';
     h += '    </div>';
@@ -192,7 +193,7 @@
     h += '          <a href="security.html" class="block py-2 text-sm text-gray-600">Безопасность</a>';
     h += '        </div>';
     h += '      </div>';
-    h += '      <a href="contacts.html" class="block px-3 py-3 text-base !text-gray-800 border-b border-gray-100">Контакты отдела</a>';
+    h += '      <a href="contacts.html" class="block px-3 py-3 text-base !text-gray-800 border-b border-gray-100">Контакты</a>';
     h += '    </div>';
     h += '  </div>';
     h += '</header>';
