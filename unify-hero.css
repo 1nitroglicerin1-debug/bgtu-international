@@ -1,0 +1,51 @@
+/* ============================================================
+   Унификация верхних блоков внутренних страниц BGTU.
+   Подключается после основного CSS/Tailwind.
+   v2 — покрытие всех вариантов hero-* + стыковка с контентом.
+   Приводит hero-баннеры (hero-bg, hero-*, pt-24, py-20, -mt-20
+   и т.п.) к единому компактному стандарту. index.html не трогаем.
+   ============================================================ */
+
+/* --- 1. Убираем отрицательные внешние отступы (тянут контент
+          под шапку) и перебиваем разнобой высоты ----------------- */
+section[class*="hero"] {
+  margin-top: 0 !important;
+  margin-right: 0 !important;
+  margin-bottom: 0 !important;
+  margin-left: 0 !important;
+  min-height: auto !important;
+  padding-top: 3rem !important;    /* py-12 */
+  padding-bottom: 3rem !important; /* py-12 */
+}
+
+@media (min-width: 768px) {
+  section[class*="hero"] {
+    padding-top: 4rem !important;    /* md:py-16 */
+    padding-bottom: 4rem !important; /* md:py-16 */
+  }
+}
+
+/* --- 2. Единый заголовок h1 внутри hero --- */
+section[class*="hero"] h1 {
+  font-size: 1.875rem !important;   /* text-3xl */
+  line-height: 2.25rem !important;
+  font-weight: 700 !important;
+  margin-bottom: 0.75rem !important; /* mb-3 */
+}
+
+@media (min-width: 768px) {
+  section[class*="hero"] h1 {
+    font-size: 2.25rem !important;   /* text-4xl */
+    line-height: 2.5rem !important;
+  }
+}
+
+/* --- 3. Стыковка с контентом: убираем отрицательный margin
+          у белых/карточных блоков, наезжающих на hero ----------- */
+[class*="rounded-t-3xl"][class*="-mt-10"],
+[class*="rounded-t-3xl"][class*="-mt-8"],
+main [class*="-mt-10"][class*="rounded"],
+main [class*="-mt-8"][class*="rounded"] {
+  margin-top: 0 !important;
+  padding-top: 3rem !important; /* pt-12 */
+}
