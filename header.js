@@ -74,7 +74,7 @@
     h += '            <button class="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400 hover:text-brand-blue"><i class="fas fa-search"></i></button>';
     h += '            <div id="search-results" class="hidden absolute top-full mt-2 w-80 bg-white rounded-lg shadow-xl border border-gray-200 max-h-80 overflow-y-auto z-[200]"></div>';
     h += '          </div>';
-    h += '          <a href="contacts.html" class="bg-brand-accent text-brand-blue px-6 py-2.5 rounded-full font-bold text-sm hover:bg-yellow-500 transition-all shadow-md uppercase tracking-wider">Поступить</a>';
+    h += '          <a href="contacts.html" class="bg-brand-accent text-brand-blue px-6 py-2.5 rounded-full font-bold text-sm hover:bg-yellow-400 transition-all shadow-md uppercase tracking-wider flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-brand-blue/40 animate-pulse"></span>Поступить</a>';
     h += '        </div>';
     h += '        <div class="lg:hidden flex items-center gap-4">';
     h += '          <div class="flex gap-2">';

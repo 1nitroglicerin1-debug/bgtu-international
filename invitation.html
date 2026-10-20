@@ -23,7 +23,7 @@
                     },
                     colors: {
                         brand: {
-                            blue: '#003366', 
+                            blue: '#003366', cyan: '#0EA5E9', teal: '#14B8A6', violet: '#7C3AED', coral: '#FF6B5B', 
                             light: '#F8FAFC',
                             accent: '#EAB308', 
                             green: '#10B981', 
@@ -86,6 +86,7 @@
             .marquee-container { max-width: 100% !important; }
         }
         /* === END GLOBAL RESPONSIVE FIX === */    </style>
+    <link rel="stylesheet" href="theme.css">
 </head>
 <body class="font-sans text-gray-800 bg-gray-50 overflow-x-hidden">
 
@@ -180,10 +181,33 @@
 
             </div>
         </section>
+        <!-- CTA Section -->
+        <section class="py-12 bg-brand-accent relative overflow-hidden">
+            <div class="absolute right-0 bottom-0 opacity-10 pointer-events-none transform translate-x-1/4 translate-y-1/4">
+                <i class="fas fa-passport text-9xl"></i>
+            </div>
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 gs-reveal text-center md:text-left flex flex-col md:flex-row items-center justify-between">
+                <div>
+                    <h2 class="text-2xl md:text-3xl font-serif font-bold text-brand-blue mb-2">Получили приглашение?</h2>
+                    <p class="text-blue-900 font-medium">Переходите к оформлению учебной визы в посольстве вашей страны.</p>
+                </div>
+                <div class="mt-6 md:mt-0 flex shrink-0">
+                    <a href="visa-process.html" class="bg-white !text-brand-blue px-8 py-4 rounded font-bold hover:bg-gray-50 transition-all shadow-lg flex items-center gap-2">
+                        Получение визы <i class="fas fa-arrow-right text-brand-accent"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
     </main>
 
-    <div id="footer-placeholder"></div>
+        <div id="footer-placeholder"></div>
     <script src="footer.js?v=3" charset="UTF-8"></script>
+
+    <div class="md:hidden fixed bottom-4 left-4 right-4 z-40">
+        <a href="visa-process.html" class="block w-full bg-brand-accent !text-brand-blue text-center py-4 rounded font-bold shadow-[0_10px_25px_rgba(234,179,8,0.5)] border border-yellow-500">
+            <span>Процесс получения визы</span>
+        </a>
+    </div>
 
     <script>
         
@@ -198,5 +222,6 @@
             });
         });
     </script>
+    <script src="theme.js" defer></script>
 </body>
 </html>

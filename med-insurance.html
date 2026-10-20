@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Медицинская страховка (ДМС) для иностранных студентов БГТУ: оформление и стоимость">
-    <title>Контакты | БГТУ Центр международного сотрудничества</title>
+    <meta name="description" content="Медицинская страховка для иностранных студентов в России: ДМС и ОМС, стоимость, оформление, страховые случаи">
+    <title>Медицинская страховка | БГТУ Центр международного сотрудничества</title>
     <link rel="icon" href="favicon.svg" type="image/svg+xml">
-    
+
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <script src="https://cdn.tailwindcss.com"></script>
@@ -23,10 +23,10 @@
                     },
                     colors: {
                         brand: {
-                            blue: '#003366', 
+                            blue: '#003366', cyan: '#0EA5E9', teal: '#14B8A6', violet: '#7C3AED', coral: '#FF6B5B',
                             light: '#F8FAFC',
-                            accent: '#EAB308', 
-                            green: '#10B981', 
+                            accent: '#EAB308',
+                            green: '#10B981',
                             red: '#EF4444'
                         }
                     },
@@ -38,15 +38,14 @@
             }
         }
     </script>
-    
     <style>
         ::-webkit-scrollbar { width: 8px; }
         ::-webkit-scrollbar-track { background: #f1f1f1; }
         ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 4px; }
         ::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
-        
-        .hero-contacts {
-            background: linear-gradient(rgba(0, 30, 60, 0.85), rgba(0, 30, 60, 0.95)), url('https://images.unsplash.com/photo-1516321497487-e288fb19713f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') center/cover fixed;
+
+        .hero-insurance {
+            background: linear-gradient(rgba(0, 30, 60, 0.88), rgba(0, 30, 60, 0.96)), url('https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') center/cover fixed;
         }
 
         .mega-menu-content { display: none; position: absolute; left: 0; top: 100%; width: 100vw; background: #fff; box-shadow: 0 10px 30px rgba(0,0,0,0.1); border-top: 2px solid #003366; z-index: 100; padding: 2rem 0; opacity: 0; transition: opacity 0.2s ease, transform 0.2s ease; transform: translateY(10px); }
@@ -59,218 +58,282 @@
         .mega-menu-column a:hover { color: #EAB308 !important; }
         .mega-menu-column a i { font-size: 0.7rem; margin-right: 0.5rem; color: #9ca3af; }
         a { color: inherit !important; text-decoration: none !important; }
-        
+        a.underline { text-decoration: underline !important; }
+
         body { padding-top: 140px; }
         @media (min-width: 768px) { body { padding-top: 170px; } }
 
-        .contact-card {
-            transition: all 0.3s ease;
-        }
-        .contact-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-            border-color: #003366;
-        }
-        
-        .form-input {
-            width: 100%; padding: 0.75rem 1rem; border-radius: 0.5rem; border: 1px solid #e5e7eb; background-color: #f9fafb;
-            transition: all 0.2s; outline: none; font-size: 0.875rem;
-        }
-        .form-input:focus { border-color: #003366; background-color: #fff; box-shadow: 0 0 0 3px rgba(0, 51, 102, 0.1); }
-            /* === GLOBAL RESPONSIVE FIX === */
-        html, body {
-            overflow-x: hidden !important;
-            max-width: 100% !important;
-            width: 100% !important;
-            margin: 0;
-            padding-left: 0;
-            padding-right: 0;
-        }
-        *, *::before, *::after {
-            box-sizing: border-box;
-        }
+        .mobile-submenu { display: none; padding-left: 1rem; margin-top: 0.5rem; border-left: 2px solid #e5e7eb; }
+        .mobile-submenu.active { display: block; }
+
+        .plan-card { transition: all 0.3s ease; height: 100%; }
+        .plan-card:hover { transform: translateY(-5px); box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1); }
+
+        /* === GLOBAL RESPONSIVE FIX === */
+        html, body { overflow-x: hidden !important; max-width: 100% !important; width: 100% !important; margin: 0; padding-left: 0; padding-right: 0; }
+        *, *::before, *::after { box-sizing: border-box; }
         img, svg, video, canvas { max-width: 100%; height: auto; }
         .mega-menu-content { width: 100% !important; left: 0 !important; right: 0 !important; }
-        @media (max-width: 767px) {
-            section.hero-gradient { margin-top: 0 !important; }
-            .marquee-container { max-width: 100% !important; }
-        }
-        /* === END GLOBAL RESPONSIVE FIX === */    </style>
+        @media (max-width: 767px) { section.hero-insurance { margin-top: 0 !important; } }
+        /* === END GLOBAL RESPONSIVE FIX === */
+    </style>
+    <link rel="stylesheet" href="theme.css">
 </head>
 <body class="font-sans text-gray-800 bg-gray-50 overflow-x-hidden">
 
     <div id="header-placeholder"></div>
-    <script src="header.js?v=3" charset="UTF-8" data-page="med-insurance.html"></script><main>
-        <section class="hero-contacts relative flex items-center min-h-[50vh] md:-mt-20">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full pt-20 pb-24 sm:pb-20">
-                <div class="max-w-3xl gs-reveal">
-                    <a href="index.html" class="inline-flex items-center gap-2 !text-brand-accent hover:!text-white transition-colors mb-4 text-sm font-bold bg-black/20 px-4 py-2 rounded-full backdrop-blur-sm border border-brand-accent/30 w-max">
-                        <i class="fas fa-arrow-left"></i> Назад на главную
+    <script src="header.js?v=3" charset="UTF-8" data-page="med-insurance.html"></script>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero-insurance text-white pt-24 pb-16 relative border-b-4 border-brand-accent min-h-[45vh] flex flex-col justify-center">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full gs-reveal">
+                <div class="flex items-center gap-2 text-brand-accent mb-4 text-sm font-bold uppercase tracking-wider">
+                    <a href="index.html" class="hover:text-white transition-colors">Главная</a>
+                    <i class="fas fa-chevron-right text-[10px]"></i>
+                    <span>Виза и миграция</span>
+                </div>
+                <h1 class="text-4xl md:text-5xl lg:text-6xl font-serif font-bold mb-6 leading-tight">
+                    Медицинская <br><span class="text-brand-accent">страховка</span>
+                </h1>
+                <p class="text-lg md:text-xl text-blue-100 max-w-3xl font-light leading-relaxed mb-8">
+                    Полис медицинского страхования — обязательное условие для получения учебной визы и легального пребывания иностранного студента в России.
+                </p>
+                <div class="inline-flex items-center gap-3 bg-brand-accent text-brand-blue px-6 py-4 rounded-lg shadow-lg">
+                    <i class="fas fa-shield-heart text-2xl"></i>
+                    <div>
+                        <strong class="block text-sm md:text-base font-bold">Оформляется до въезда в РФ</strong>
+                        <span class="text-xs md:text-sm font-medium">Без полиса визу не выдадут.</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Main Content -->
+        <section class="py-16 md:py-24 bg-white relative z-20">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+                <div class="grid lg:grid-cols-3 gap-12">
+
+                    <!-- Left Column: Content -->
+                    <div class="lg:col-span-2">
+
+                        <!-- Intro -->
+                        <div class="mb-12 gs-reveal">
+                            <p class="text-gray-600 leading-relaxed text-lg mb-6">
+                                В России действуют две системы медицинского страхования для иностранцев: <strong class="text-brand-blue">добровольное медицинское страхование (ДМС)</strong> и <strong class="text-brand-blue">обязательное медицинское страхование (ОМС)</strong>. Понимание различий между ними поможет вам избежать проблем при обращении к врачу.
+                            </p>
+                            <div class="bg-blue-50 border-l-4 border-brand-blue p-6 rounded text-sm text-gray-700">
+                                <strong>Важно:</strong> Для получения учебной визы достаточно полиса ДМС. Полис ОМС доступен <strong>не всем</strong> иностранным студентам — право на него зависит от гражданства и оснований пребывания.
+                            </div>
+                        </div>
+
+                        <!-- ДМС vs ОМС -->
+                        <div class="mb-12 gs-reveal">
+                            <h2 class="text-3xl font-serif font-bold text-brand-blue mb-6 border-b border-gray-100 pb-4">ДМС и ОМС: в чём разница</h2>
+
+                            <div class="grid md:grid-cols-2 gap-6">
+                                <!-- ДМС -->
+                                <div class="plan-card bg-gray-50 p-6 rounded-lg border border-gray-200">
+                                    <div class="w-12 h-12 bg-brand-teal/15 rounded-full flex items-center justify-center text-brand-teal text-xl mb-4">
+                                        <i class="fas fa-heart-pulse"></i>
+                                    </div>
+                                    <h3 class="text-lg font-bold text-brand-blue mb-2">ДМС (добровольное)</h3>
+                                    <p class="text-sm text-gray-600 mb-4 leading-relaxed">
+                                        Оформляется <strong>обязательно</strong> для получения учебной визы. Полис покупается студентом самостоятельно у страховой компании.
+                                    </p>
+                                    <ul class="space-y-2 text-sm text-gray-700">
+                                        <li class="flex items-start gap-2">
+                                            <i class="fas fa-check text-brand-green mt-1"></i>
+                                            <span>Принимается посольством при подаче на визу.</span>
+                                        </li>
+                                        <li class="flex items-start gap-2">
+                                            <i class="fas fa-check text-brand-green mt-1"></i>
+                                            <span>Покрывает лечение, вызов врача, госпитализацию.</span>
+                                        </li>
+                                        <li class="flex items-start gap-2">
+                                            <i class="fas fa-check text-brand-green mt-1"></i>
+                                            <span>Стоимость: от 4 000 до 8 000 ₽ в год.</span>
+                                        </li>
+                                    </ul>
+                                </div>
+
+                                <!-- ОМС -->
+                                <div class="plan-card bg-gray-50 p-6 rounded-lg border border-gray-200">
+                                    <div class="w-12 h-12 bg-brand-blue/10 rounded-full flex items-center justify-center text-brand-blue text-xl mb-4">
+                                        <i class="fas fa-hospital"></i>
+                                    </div>
+                                    <h3 class="text-lg font-bold text-brand-blue mb-2">ОМС (обязательное)</h3>
+                                    <p class="text-sm text-gray-600 mb-4 leading-relaxed">
+                                        Государственная система бесплатной медицины. Доступна иностранным студентам <strong>на определённых условиях</strong> пребывания в РФ.
+                                    </p>
+                                    <ul class="space-y-2 text-sm text-gray-700">
+                                        <li class="flex items-start gap-2">
+                                            <i class="fas fa-check text-brand-green mt-1"></i>
+                                            <span>Бесплатное обслуживание в гос. поликлиниках.</span>
+                                        </li>
+                                        <li class="flex items-start gap-2">
+                                            <i class="fas fa-check text-brand-green mt-1"></i>
+                                            <span>Оформляется после постановки на миграционный учёт.</span>
+                                        </li>
+                                        <li class="flex items-start gap-2">
+                                            <i class="fas fa-check text-brand-green mt-1"></i>
+                                            <span>Требует СНИЛС и разрешение на временное проживание / вид на жительство.</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Что покрывает -->
+                        <div class="mb-12 gs-reveal">
+                            <h2 class="text-3xl font-serif font-bold text-brand-blue mb-6 border-b border-gray-100 pb-4">Что покрывает полис ДМС</h2>
+                            <div class="bg-gray-50 p-6 rounded-lg border border-gray-200">
+                                <ul class="space-y-4">
+                                    <li class="flex items-start gap-3">
+                                        <div class="w-8 h-8 rounded-full bg-brand-cyan/15 text-brand-cyan flex items-center justify-center shrink-0 mt-1">
+                                            <i class="fas fa-stethoscope"></i>
+                                        </div>
+                                        <div>
+                                            <strong class="block text-gray-800 text-sm">Амбулаторная помощь</strong>
+                                            <span class="text-sm text-gray-600">Приём терапевта и узких специалистов в поликлинике.</span>
+                                        </div>
+                                    </li>
+                                    <li class="flex items-start gap-3">
+                                        <div class="w-8 h-8 rounded-full bg-brand-cyan/15 text-brand-cyan flex items-center justify-center shrink-0 mt-1">
+                                            <i class="fas fa-truck-medical"></i>
+                                        </div>
+                                        <div>
+                                            <strong class="block text-gray-800 text-sm">Скорая и экстренная помощь</strong>
+                                            <span class="text-sm text-gray-600">Вызов бригады и экстренная госпитализация при угрозе жизни.</span>
+                                        </div>
+                                    </li>
+                                    <li class="flex items-start gap-3">
+                                        <div class="w-8 h-8 rounded-full bg-brand-cyan/15 text-brand-cyan flex items-center justify-center shrink-0 mt-1">
+                                            <i class="fas fa-bed-pulse"></i>
+                                        </div>
+                                        <div>
+                                            <strong class="block text-gray-800 text-sm">Стационарное лечение</strong>
+                                            <span class="text-sm text-gray-600">Госпитализация в больницу при необходимости по назначению врача.</span>
+                                        </div>
+                                    </li>
+                                    <li class="flex items-start gap-3">
+                                        <div class="w-8 h-8 rounded-full bg-brand-cyan/15 text-brand-cyan flex items-center justify-center shrink-0 mt-1">
+                                            <i class="fas fa-phone-volume"></i>
+                                        </div>
+                                        <div>
+                                            <strong class="block text-gray-800 text-sm">Телемедицина (24/7)</strong>
+                                            <span class="text-sm text-gray-600">Онлайн-консультация врача в любое время без записи.</span>
+                                        </div>
+                                    </li>
+                                </ul>
+                                <p class="text-sm text-gray-500 mt-4 italic">
+                                    * Стоматология, прививки и плановая диспансеризация в базовый полис не входят.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Как оформить -->
+                        <div class="gs-reveal">
+                            <h2 class="text-3xl font-serif font-bold text-brand-blue mb-6 border-b border-gray-100 pb-4">Как оформить полис</h2>
+                            <p class="text-gray-600 mb-6 leading-relaxed">
+                                Полис ДМС оформляется <strong class="text-brand-blue">до подачи документов на визу</strong>. При оформлении вам потребуются:
+                            </p>
+                            <div class="grid md:grid-cols-3 gap-4 mb-8">
+                                <div class="bg-white border border-gray-200 rounded-lg p-5 text-center shadow-card">
+                                    <i class="fas fa-passport text-3xl text-brand-blue mb-3"></i>
+                                    <h4 class="font-bold text-gray-800 text-sm mb-1">Загранпаспорт</h4>
+                                    <span class="text-xs text-gray-500">Копия страницы с фото</span>
+                                </div>
+                                <div class="bg-white border border-gray-200 rounded-lg p-5 text-center shadow-card">
+                                    <i class="fas fa-camera text-3xl text-brand-blue mb-3"></i>
+                                    <h4 class="font-bold text-gray-800 text-sm mb-1">Фотография</h4>
+                                    <span class="text-xs text-gray-500">Цветная, 3×4 см</span>
+                                </div>
+                                <div class="bg-white border border-gray-200 rounded-lg p-5 text-center shadow-card">
+                                    <i class="fas fa-envelope text-3xl text-brand-blue mb-3"></i>
+                                    <h4 class="font-bold text-gray-800 text-sm mb-1">Приглашение</h4>
+                                    <span class="text-xs text-gray-500">От БГТУ (если уже есть)</span>
+                                </div>
+                            </div>
+                            <p class="text-gray-600 leading-relaxed">
+                                Полис можно оформить онлайн в крупных страховых компаниях России. Сотрудники Международного отдела подскажут проверенные варианты и помогут не ошибиться с условиями покрытия.
+                            </p>
+                        </div>
+
+                    </div>
+
+                    <!-- Right Column: Sidebar -->
+                    <div class="lg:col-span-1">
+                        <div class="sticky top-32 space-y-6">
+
+                            <!-- Warning Box -->
+                            <div class="bg-red-50 border border-red-200 p-6 rounded-lg shadow-sm gs-reveal">
+                                <h4 class="font-bold text-red-700 mb-3 text-lg flex items-center gap-2">
+                                    <i class="fas fa-triangle-exclamation"></i> Без страховки
+                                </h4>
+                                <p class="text-sm text-red-900 leading-relaxed mb-4">
+                                    Отсутствие полиса ДМС — основание для отказа в выдаче визы. Проверьте срок действия полиса заранее.
+                                </p>
+                                <ul class="space-y-3 mb-4 text-sm text-red-800">
+                                    <li class="flex items-start gap-2">
+                                        <i class="fas fa-times text-red-600 mt-1"></i>
+                                        <span>Срок полиса должен покрывать весь период учёбы.</span>
+                                    </li>
+                                    <li class="flex items-start gap-2">
+                                        <i class="fas fa-times text-red-600 mt-1"></i>
+                                        <span>Полис действует только на территории РФ.</span>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <!-- Support Box -->
+                            <div class="bg-white border border-gray-200 p-6 rounded-lg shadow-sm gs-reveal">
+                                <h4 class="font-bold text-brand-blue mb-4 flex items-center gap-2">
+                                    <i class="fas fa-hands-helping text-brand-accent"></i> Нужна помощь?
+                                </h4>
+                                <p class="text-sm text-gray-600 mb-6">
+                                    Не уверены, какой полис подойдёт именно вам? Сотрудники Международного отдела подскажут актуальные требования и проверенные страховые компании.
+                                </p>
+                                <a href="contacts.html" class="block w-full text-center bg-brand-accent !text-brand-blue px-4 py-3 rounded font-bold text-sm hover:bg-yellow-500 shadow-md transition-colors">
+                                    Задать вопрос
+                                </a>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="py-12 bg-gray-100 relative border-t border-gray-200">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 gs-reveal text-center md:text-left flex flex-col md:flex-row items-center justify-between">
+                <div>
+                    <h2 class="text-xl md:text-2xl font-serif font-bold text-brand-blue mb-2">Готовы к поступлению?</h2>
+                    <p class="text-gray-600 text-sm">Посмотрите полный список документов для оформления.</p>
+                </div>
+                <div class="mt-6 md:mt-0 flex shrink-0">
+                    <a href="documents.html" class="bg-brand-blue !text-white px-6 py-3 rounded font-bold hover:bg-blue-800 transition-all shadow flex items-center gap-2">
+                        Список документов <i class="fas fa-arrow-right text-brand-accent"></i>
                     </a>
-                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-white leading-tight mb-4">
-                        Свяжитесь с нами
-                    </h1>
-                    <p class="text-lg md:text-xl text-gray-200 max-w-2xl font-light">
-                        Специалисты Центра международного сотрудничества готовы ответить на любые вопросы о поступлении, документах и переезде.
-                    </p>
                 </div>
             </div>
         </section>
 
-        <section class="py-16 md:py-24 bg-gray-50 relative z-20 -mt-10 rounded-t-3xl shadow-card">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                    <!-- Address -->
-                    <div class="contact-card bg-white border border-gray-200 rounded-2xl p-8 gs-reveal">
-                        <div class="w-14 h-14 bg-blue-50 rounded-xl flex items-center justify-center text-brand-blue text-2xl mb-6">
-                            <i class="fas fa-map-marker-alt"></i>
-                        </div>
-                        <h3 class="text-xl font-bold text-gray-800 mb-3">Где мы находимся</h3>
-                        <p class="text-sm text-gray-600 mb-4 leading-relaxed">
-                            <strong>Брянский государственный технический университет</strong><br>
-                            Россия, г. Брянск, бульвар 50-летия Октября, 7<br>
-                            Кабинет: 215 (Главный корпус)
-                        </p>
-                    </div>
-
-                    <!-- Phone & Email -->
-                    <div class="contact-card bg-white border border-gray-200 rounded-2xl p-8 gs-reveal" style="transition-delay: 100ms;">
-                        <div class="w-14 h-14 bg-yellow-50 rounded-xl flex items-center justify-center text-brand-accent text-2xl mb-6">
-                            <i class="fas fa-headset"></i>
-                        </div>
-                        <h3 class="text-xl font-bold text-gray-800 mb-3">Как связаться</h3>
-                        <ul class="text-sm text-gray-600 space-y-3 mb-4">
-                            <li class="flex items-center gap-3">
-                                <i class="fas fa-phone-alt text-brand-blue"></i>
-                                <a href="tel:+74832588275" class="hover:text-brand-accent font-medium">+7 (4832) 58-82-75</a>
-                            </li>
-                            <li class="flex items-center gap-3">
-                                <i class="fab fa-whatsapp text-brand-green"></i>
-                                <a href="https://wa.me/79991234567" class="hover:text-brand-accent font-medium">+7 (999) 123-45-67 (WhatsApp)</a>
-                            </li>
-                            <li class="flex items-center gap-3 border-t border-gray-100 pt-3 mt-1">
-                                <i class="fas fa-envelope text-brand-blue"></i>
-                                <a href="mailto:inter@tu-bryansk.ru" class="hover:text-brand-accent font-medium text-brand-blue">inter@tu-bryansk.ru</a>
-                            </li>
-                        </ul>
-                    </div>
-
-                    <!-- Working Hours -->
-                    <div class="contact-card bg-white border border-gray-200 rounded-2xl p-8 gs-reveal" style="transition-delay: 200ms;">
-                        <div class="w-14 h-14 bg-green-50 rounded-xl flex items-center justify-center text-brand-green text-2xl mb-6">
-                            <i class="far fa-clock"></i>
-                        </div>
-                        <h3 class="text-xl font-bold text-gray-800 mb-3">Режим работы</h3>
-                        <ul class="text-sm text-gray-600 space-y-2 mb-4">
-                            <li class="flex justify-between border-b border-gray-100 pb-2">
-                                <span>Понедельник - Пятница:</span>
-                                <span class="font-bold text-gray-800">09:00 – 17:30</span>
-                            </li>
-                            <li class="flex justify-between border-b border-gray-100 pb-2">
-                                <span>Перерыв:</span>
-                                <span class="font-bold text-gray-800">13:00 – 14:00</span>
-                            </li>
-                            <li class="flex justify-between pt-1">
-                                <span>Суббота, Воскресенье:</span>
-                                <span class="font-bold text-brand-red">Выходной</span>
-                            </li>
-                        </ul>
-                        <div class="text-xs text-gray-400 mt-4">* Время указано по Москве (GMT+3)</div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="py-16 md:py-24 bg-white border-t border-gray-200">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="flex flex-col lg:flex-row gap-12 lg:gap-20">
-                    
-                    <div class="lg:w-1/2 gs-reveal">
-                        <h2 class="text-3xl font-serif font-bold text-brand-blue mb-2">Оставить заявку</h2>
-                        <p class="text-gray-600 text-sm mb-8">Заполните форму, и мы свяжемся с вами в течение 1-2 рабочих дней для консультации.</p>
-                        
-                        <form class="space-y-5" onsubmit="event.preventDefault(); document.getElementById('success-msg').classList.remove('hidden'); this.reset();">
-                            <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
-                                <div>
-                                    <label class="block text-xs font-bold text-gray-600 uppercase tracking-wider mb-2">Ваше имя *</label>
-                                    <input type="text" required placeholder="Например, Ахмед" class="form-input">
-                                </div>
-                                <div>
-                                    <label class="block text-xs font-bold text-gray-600 uppercase tracking-wider mb-2">Страна гражданства *</label>
-                                    <input type="text" required placeholder="Например, Египет" class="form-input">
-                                </div>
-                            </div>
-                            
-                            <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
-                                <div>
-                                    <label class="block text-xs font-bold text-gray-600 uppercase tracking-wider mb-2">Email *</label>
-                                    <input type="email" required placeholder="your@email.com" class="form-input">
-                                </div>
-                                <div>
-                                    <label class="block text-xs font-bold text-gray-600 uppercase tracking-wider mb-2">Телефон / WhatsApp</label>
-                                    <input type="tel" placeholder="+ (Код) Номер" class="form-input">
-                                </div>
-                            </div>
-
-                            <div>
-                                <label class="block text-xs font-bold text-gray-600 uppercase tracking-wider mb-2">Интересующее направление</label>
-                                <select class="form-input text-gray-700">
-                                    <option value="" disabled selected>Выберите из списка...</option>
-                                    <option value="russian">Курсы «Русский язык»</option>
-                                    <option value="bachelor">Бакалавриат / Специалитет</option>
-                                    <option value="master">Магистратура</option>
-                                    <option value="other">Другое / Пока не знаю</option>
-                                </select>
-                            </div>
-
-                            <div>
-                                <label class="block text-xs font-bold text-gray-600 uppercase tracking-wider mb-2">Ваш вопрос</label>
-                                <textarea rows="4" placeholder="Напишите, что вас интересует..." class="form-input resize-none"></textarea>
-                            </div>
-
-                            <div class="flex items-start gap-3">
-                                <input type="checkbox" id="privacy" required class="mt-1 w-4 h-4 text-brand-blue rounded border-gray-300 focus:ring-brand-blue">
-                                <label for="privacy" class="text-xs text-gray-500">Я согласен на обработку персональных данных в соответствии с <a href="#" class="underline text-brand-blue">политикой конфиденциальности</a>.</label>
-                            </div>
-
-                            <button type="submit" class="w-full bg-brand-accent text-brand-blue py-3.5 rounded-lg font-bold text-sm hover:bg-yellow-500 transition-colors shadow-md flex items-center justify-center gap-2">
-                                <i class="fas fa-paper-plane"></i> Отправить заявку
-                            </button>
-
-                            <div id="success-msg" class="hidden mt-4 bg-green-50 border border-green-200 text-green-800 p-4 rounded-lg text-sm flex items-center gap-3">
-                                <i class="fas fa-check-circle text-green-500 text-xl"></i>
-                                Спасибо! Ваша заявка успешно отправлена. Мы скоро ответим.
-                            </div>
-                        </form>
-                    </div>
-
-                    <div class="lg:w-1/2 gs-reveal relative" style="transition-delay: 100ms;">
-                        <div class="h-full min-h-[400px] w-full bg-gray-200 rounded-2xl overflow-hidden relative shadow-inner border border-gray-200">
-                            <img src="https://images.unsplash.com/photo-1524661135-423995f22d0b?auto=format&fit=crop&w=1000&q=80" alt="Map View" class="w-full h-full object-cover opacity-80 filter contrast-125 saturate-50">
-                            
-                            <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 flex flex-col items-center pointer-events-none">
-                                <div class="bg-brand-blue text-white px-4 py-2 rounded-lg shadow-lg font-bold text-sm mb-2 whitespace-nowrap">
-                                    БГТУ (Главный корпус)
-                                </div>
-                                <div class="w-12 h-12 bg-brand-accent rounded-full flex items-center justify-center shadow-xl animate-bounce">
-                                    <i class="fas fa-map-marker-alt text-brand-blue text-xl"></i>
-                                </div>
-                                <div class="w-4 h-1 bg-black/20 rounded-[100%] mt-1 shadow-sm filter blur-[1px]"></div>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-        </section>
     </main>
 
     <div id="footer-placeholder"></div>
     <script src="footer.js?v=3" charset="UTF-8"></script>
 
-    <script>
-        
+    <div class="md:hidden fixed bottom-4 left-4 right-4 z-40">
+        <a href="contacts.html" class="block w-full bg-brand-accent !text-brand-blue text-center py-4 rounded font-bold shadow-[0_10px_25px_rgba(234,179,8,0.5)] border border-yellow-500">
+            <span>Связаться с отделом</span>
+        </a>
+    </div>
 
+    <script>
         document.addEventListener("DOMContentLoaded", () => {
             gsap.registerPlugin(ScrollTrigger);
             document.querySelectorAll('.gs-reveal').forEach((elem) => {
@@ -281,5 +344,6 @@
             });
         });
     </script>
+    <script src="theme.js" defer></script>
 </body>
 </html>

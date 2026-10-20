@@ -1,0 +1,70 @@
+/**
+ * theme.css — единая premium-палитра и микроанимации для ВСЕХ страниц БГТУ.
+ * Подключается в <head> каждой страницы, дополняет Tailwind CDN.
+ */
+:root {
+  --blue:   #003366;
+  --deep:   #002347;
+  --amber:  #EAB308;
+  --amber-dark: #CA8A04;
+  --green:  #10B981;
+  --cyan:   #0EA5E9;
+  --teal:   #14B8A6;
+  --violet: #7C3AED;
+  --coral:  #FF6B5B;
+}
+
+/* === Плавающие цветные пятна (hero) === */
+.blob { position: absolute; border-radius: 9999px; filter: blur(60px); pointer-events: none; z-index: 0; }
+.animate-floaty { animation: floaty 9s ease-in-out infinite; }
+.animate-floaty-slow { animation: floaty 14s ease-in-out infinite; }
+@keyframes floaty {
+  0%, 100% { transform: translate(0,0) scale(1); }
+  50% { transform: translate(26px, -30px) scale(1.08); }
+}
+.blob-violet { background: rgba(124,58,237,0.35); }
+.blob-cyan   { background: rgba(14,165,233,0.30); }
+.blob-teal   { background: rgba(20,184,166,0.28); }
+.blob-coral  { background: rgba(255,107,91,0.30); }
+.blob-yellow { background: rgba(234,179,8,0.22); }
+.blob-green  { background: rgba(16,185,129,0.26); }
+
+/* === Бегущий блик по CTA-кнопкам === */
+.btn-shimmer { position: relative; overflow: hidden; }
+.btn-shimmer::after {
+  content: '';
+  position: absolute;
+  top: -20%; left: -150%;
+  width: 55%; height: 140%;
+  background: linear-gradient(120deg, transparent, rgba(255,255,255,.55), transparent);
+  transform: skewX(-20deg);
+  animation: shimmer 3.6s ease-in-out infinite;
+}
+@keyframes shimmer {
+  0% { left: -150%; }
+  60% { left: 150%; }
+  100% { left: 150%; }
+}
+
+/* === Цветные кружки-иконки (для доводки страниц) === */
+.tint { display: inline-flex; align-items: center; justify-content: center; border-radius: 9999px; }
+.tint-cyan   { background: rgba(14,165,233,.12);  color: #0EA5E9; }
+.tint-teal   { background: rgba(20,184,166,.12);  color: #14B8A6; }
+.tint-violet { background: rgba(124,58,237,.12);  color: #7C3AED; }
+.tint-coral  { background: rgba(255,107,91,.12);  color: #FF6B5B; }
+.tint-green  { background: rgba(16,185,129,.12);  color: #10B981; }
+.tint-amber  { background: rgba(234,179,8,.15);   color: #CA8A04; }
+
+/* === Капсулы-«кричалки» (eyebrow) === */
+.pill { display: inline-flex; align-items: center; gap: .5rem; padding: .4rem .9rem; border-radius: 9999px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; font-size: .72rem; line-height: 1; }
+.pill-cyan   { background: rgba(14,165,233,.12);  color: #0EA5E9; }
+.pill-teal   { background: rgba(20,184,166,.12);  color: #14B8A6; }
+.pill-coral  { background: rgba(255,107,91,.12);  color: #FF6B5B; }
+.pill-violet { background: rgba(124,58,237,.12);  color: #7C3AED; }
+.pill-amber  { background: rgba(234,179,8,.15);   color: #CA8A04; }
+.pill-green  { background: rgba(16,185,129,.12);  color: #10B981; }
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-floaty, .animate-floaty-slow { animation: none !important; }
+  .btn-shimmer::after { animation: none !important; opacity: 0; }
+}

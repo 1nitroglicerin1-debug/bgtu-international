@@ -1,10 +1,10 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="ru" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Правила проживания в общежитиях БГТУ: права и обязанности студентов">
-    <title>Медосмотр и дактилоскопия | БГТУ</title>
+    <title>Правила проживания | БГТУ Центр международного сотрудничества</title>
     <link rel="icon" href="favicon.svg" type="image/svg+xml">
     
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
@@ -23,122 +23,48 @@
                     },
                     colors: {
                         brand: {
-                            blue: '#003366', 
+                            blue: '#003366', cyan: '#0EA5E9', teal: '#14B8A6', violet: '#7C3AED', coral: '#FF6B5B', 
                             light: '#F8FAFC',
                             accent: '#EAB308', 
                             green: '#10B981', 
+                            red: '#EF4444'
                         }
                     },
                     boxShadow: {
                         'premium': '0 10px 40px -10px rgba(0, 51, 102, 0.1)',
+                        'card': '0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03)'
                     }
                 }
             }
         }
     </script>
+    
     <style>
         ::-webkit-scrollbar { width: 8px; }
         ::-webkit-scrollbar-track { background: #f1f1f1; }
         ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 4px; }
         ::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
         
-        .hero-pattern {
-            background-color: #003366;
-            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        .hero-rules {
+            background: linear-gradient(rgba(0, 30, 60, 0.85), rgba(0, 30, 60, 0.95)), url('https://images.unsplash.com/photo-1577412647305-991150c7d163?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') center/cover fixed;
         }
 
-        /* --- Mega Menu Styles --- */
-        .mega-menu-content {
-            display: none;
-            position: absolute;
-            left: 0;
-            top: 100%;
-            width: 100vw;
-            background: #fff;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            border-top: 2px solid #003366;
-            z-index: 100;
-            padding: 2rem 0;
-            opacity: 0;
-            transition: opacity 0.2s ease, transform 0.2s ease;
-            transform: translateY(10px);
-        }
-
-        .nav-item:hover .mega-menu-content {
-            display: block;
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        .mega-menu-inner {
-            max-width: 80rem; 
-            margin: 0 auto;
-            padding: 0 1rem;
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 2rem;
-        }
-
-        .mega-menu-column h4 {
-            color: #003366;
-            font-weight: 700;
-            font-size: 1.1rem;
-            margin-bottom: 1rem;
-            padding-bottom: 0.5rem;
-            border-bottom: 1px solid #e5e7eb;
-        }
-
-        .mega-menu-column ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
-
-        .mega-menu-column li {
-            margin-bottom: 0.5rem;
-        }
-
-        .mega-menu-column a {
-            color: #4b5563 !important; 
-            text-decoration: none !important;
-            font-size: 0.9rem;
-            transition: color 0.2s;
-            display: flex;
-            align-items: center;
-        }
-
-        .mega-menu-column a:hover {
-            color: #EAB308 !important; 
-        }
+        .mega-menu-content { display: none; position: absolute; left: 0; top: 100%; width: 100vw; background: #fff; box-shadow: 0 10px 30px rgba(0,0,0,0.1); border-top: 2px solid #003366; z-index: 100; padding: 2rem 0; opacity: 0; transition: opacity 0.2s ease, transform 0.2s ease; transform: translateY(10px); }
+        .nav-item:hover .mega-menu-content { display: block; opacity: 1; transform: translateY(0); }
+        .mega-menu-inner { max-width: 80rem; margin: 0 auto; padding: 0 1rem; display: grid; grid-template-columns: repeat(4, 1fr); gap: 2rem; }
+        .mega-menu-column h4 { color: #003366; font-weight: 700; font-size: 1.1rem; margin-bottom: 1rem; padding-bottom: 0.5rem; border-bottom: 1px solid #e5e7eb; }
+        .mega-menu-column ul { list-style: none; padding: 0; margin: 0; }
+        .mega-menu-column li { margin-bottom: 0.5rem; }
+        .mega-menu-column a { color: #4b5563 !important; text-decoration: none !important; font-size: 0.9rem; transition: color 0.2s; display: flex; align-items: center; }
+        .mega-menu-column a:hover { color: #EAB308 !important; }
+        .mega-menu-column a i { font-size: 0.7rem; margin-right: 0.5rem; color: #9ca3af; }
+        a { color: inherit !important; text-decoration: none !important; }
         
-        .mega-menu-column a i {
-            font-size: 0.7rem;
-            margin-right: 0.5rem;
-            color: #9ca3af;
-        }
-
-        a {
-            color: inherit !important;
-            text-decoration: none !important;
-        }
-        
-        a.underline {
-            text-decoration: underline !important;
-        }
-
         body { padding-top: 140px; }
         @media (min-width: 768px) { body { padding-top: 170px; } }
-        
-        .mobile-submenu {
-            display: none;
-            padding-left: 1rem;
-            margin-top: 0.5rem;
-            border-left: 2px solid #e5e7eb;
-        }
-        
-        .mobile-submenu.active {
-            display: block;
-        }
+
+        .rule-card { transition: all 0.3s ease; }
+        .rule-card:hover { transform: translateY(-5px); box-shadow: 0 15px 30px -10px rgba(0, 51, 102, 0.15); }
             /* === GLOBAL RESPONSIVE FIX === */
         html, body {
             overflow-x: hidden !important;
@@ -158,165 +84,83 @@
             .marquee-container { max-width: 100% !important; }
         }
         /* === END GLOBAL RESPONSIVE FIX === */    </style>
+    <link rel="stylesheet" href="theme.css">
 </head>
 <body class="font-sans text-gray-800 bg-gray-50 overflow-x-hidden">
 
     <div id="header-placeholder"></div>
     <script src="header.js?v=3" charset="UTF-8" data-page="rules-campus.html"></script><main>
-        <!-- Hero Section -->
-        <section class="hero-pattern text-white pt-24 pb-16 relative border-b-4 border-brand-accent min-h-[45vh] flex flex-col justify-center">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full gs-reveal">
-                <div class="flex items-center gap-2 text-brand-accent mb-4 text-sm font-bold uppercase tracking-wider">
-                    <a href="index.html" class="hover:text-white transition-colors">Главная</a>
-                    <i class="fas fa-chevron-right text-[10px]"></i>
-                    <span>Виза и миграция</span>
-                </div>
-                <h1 class="text-4xl md:text-5xl lg:text-6xl font-serif font-bold mb-6 leading-tight">
-                    Медосмотр и <br><span class="text-brand-accent">дактилоскопия</span>
-                </h1>
-                <p class="text-lg md:text-xl text-blue-100 max-w-3xl font-light leading-relaxed mb-8">
-                    Согласно Федеральному закону, все иностранные студенты, прибывшие в Россию на срок более 90 дней, обязаны пройти медицинское освидетельствование и сдать отпечатки пальцев.
-                </p>
-                <div class="inline-flex items-center gap-3 bg-red-600 border border-red-400 text-white px-6 py-4 rounded-lg shadow-lg">
-                    <i class="fas fa-clock text-white text-2xl animate-pulse"></i>
-                    <div>
-                        <strong class="block text-sm md:text-base font-bold">Строгий срок: 90 дней</strong>
-                        <span class="text-xs md:text-sm text-red-100">с момента въезда в Российскую Федерацию.</span>
-                    </div>
+        <section class="hero-rules relative flex items-center min-h-[50vh] md:-mt-20">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full pt-28 pb-24 sm:pb-20">
+                <div class="max-w-3xl gs-reveal">
+                    <a href="index.html" class="inline-flex items-center gap-2 !text-brand-accent hover:!text-white transition-colors mb-4 text-sm font-bold bg-black/20 px-4 py-2 rounded-full backdrop-blur-sm border border-brand-accent/30 w-max">
+                        <i class="fas fa-arrow-left"></i> Назад на главную
+                    </a>
+                    <h1 class="text-4xl md:text-5xl font-serif font-bold text-white mb-4">Правила проживания</h1>
+                    <p class="text-gray-200">Порядок в общежитии — залог комфорта и безопасности для каждого студента. Пожалуйста, внимательно ознакомьтесь с правилами до заселения.</p>
                 </div>
             </div>
         </section>
 
-        <!-- Main Content -->
-        <section class="py-16 md:py-24 bg-white relative z-20">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                
-                <div class="grid lg:grid-cols-3 gap-12">
+        <section class="py-16 md:py-24 bg-white relative z-20 -mt-8 rounded-t-3xl shadow-card">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 gs-reveal">
                     
-                    <!-- Left Column: Content -->
-                    <div class="lg:col-span-2">
-                        
-                        <!-- Intro -->
-                        <div class="mb-12 gs-reveal">
-                            <p class="text-gray-600 leading-relaxed text-lg mb-6">
-                                Эта процедура проходится <strong class="text-brand-blue">только один раз</strong> при первичном въезде в Россию. Результаты медосмотра необходимо обновлять раз в год, а дактилоскопическая карта (зеленая пластиковая карточка) выдается на 10 лет.
-                            </p>
-                            <div class="bg-blue-50 border-l-4 border-brand-blue p-6 rounded text-sm text-gray-700">
-                                <strong>Внимание:</strong> Эта процедура платная. Оплата производится студентом самостоятельно в медицинских центрах и структурах МВД. Общая стоимость составляет примерно <strong>6 000 – 7 000 ₽</strong>.
-                            </div>
-                        </div>
-
-                        <!-- Step 1: Medical Exam -->
-                        <div class="mb-12 gs-reveal">
-                            <h2 class="text-3xl font-serif font-bold text-brand-blue mb-6 border-b border-gray-100 pb-4">Этап 1: Медицинское освидетельствование</h2>
-                            <p class="text-gray-600 mb-6 leading-relaxed">
-                                В первую очередь необходимо сдать анализы и пройти врачей в специализированных государственных медицинских учреждениях Брянска.
-                            </p>
-                            
-                            <div class="bg-gray-50 p-6 rounded-lg border border-gray-200">
-                                <h4 class="font-bold text-gray-800 mb-4">Что проверяют врачи:</h4>
-                                <ul class="space-y-4">
-                                    <li class="flex items-start gap-3">
-                                        <div class="w-8 h-8 rounded-full bg-brand-blue/10 text-brand-blue flex items-center justify-center shrink-0 mt-1">
-                                            <i class="fas fa-virus"></i>
-                                        </div>
-                                        <div>
-                                            <strong class="block text-gray-800 text-sm">Опасные инфекции</strong>
-                                            <span class="text-sm text-gray-600">Анализ крови на ВИЧ, сифилис, гепатиты и другие инфекционные заболевания.</span>
-                                        </div>
-                                    </li>
-                                    <li class="flex items-start gap-3">
-                                        <div class="w-8 h-8 rounded-full bg-brand-blue/10 text-brand-blue flex items-center justify-center shrink-0 mt-1">
-                                            <i class="fas fa-lungs"></i>
-                                        </div>
-                                        <div>
-                                            <strong class="block text-gray-800 text-sm">Флюорография</strong>
-                                            <span class="text-sm text-gray-600">Рентген легких для исключения туберкулеза.</span>
-                                        </div>
-                                    </li>
-                                    <li class="flex items-start gap-3">
-                                        <div class="w-8 h-8 rounded-full bg-brand-blue/10 text-brand-blue flex items-center justify-center shrink-0 mt-1">
-                                            <i class="fas fa-pills"></i>
-                                        </div>
-                                        <div>
-                                            <strong class="block text-gray-800 text-sm">Нарколог и психиатр</strong>
-                                            <span class="text-sm text-gray-600">Проверка на отсутствие наркотической зависимости (анализ мочи).</span>
-                                        </div>
-                                    </li>
-                                </ul>
-                            </div>
-                            <p class="text-sm text-gray-500 mt-4 italic">
-                                * Результаты медосмотра (справки) готовятся в течение 5-7 рабочих дней.
-                            </p>
-                        </div>
-
-                        <!-- Step 2: Fingerprinting -->
-                        <div class="gs-reveal">
-                            <h2 class="text-3xl font-serif font-bold text-brand-blue mb-6 border-b border-gray-100 pb-4">Этап 2: Дактилоскопия и фото</h2>
-                            <div class="flex flex-col md:flex-row gap-6 items-start">
-                                <div class="md:w-1/3 shrink-0">
-                                    <img src="https://images.unsplash.com/photo-1555626906-fcf10d6851b4?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Fingerprint" class="rounded-lg shadow-sm w-full object-cover h-48">
-                                </div>
-                                <div class="md:w-2/3">
-                                    <p class="text-gray-600 mb-4 leading-relaxed">
-                                        Получив на руки справки от врачей, вы должны обратиться в <strong>отдел по вопросам миграции УМВД</strong>. Там у вас снимут отпечатки пальцев (дактилоскопия) и сделают цифровую фотографию.
-                                    </p>
-                                    <p class="text-gray-600 leading-relaxed mb-4">
-                                        После успешного прохождения вы получите зеленую пластиковую карту — подтверждение прохождения дактилоскопии.
-                                    </p>
-                                    <div class="bg-brand-accent/20 border border-brand-accent/50 p-4 rounded text-sm text-gray-800 font-medium">
-                                        <i class="fas fa-info-circle text-brand-blue mr-2"></i> Копию этой карты и справок от врачей нужно обязательно принести в Международный отдел БГТУ!
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
+                    <div class="rule-card bg-white p-8 rounded-2xl border border-gray-200">
+                        <div class="w-14 h-14 bg-blue-50 text-brand-blue rounded-xl flex items-center justify-center mb-6 text-2xl"><i class="fas fa-clock"></i></div>
+                        <h4 class="font-bold text-xl text-brand-blue mb-3">Режим входа</h4>
+                        <p class="text-sm text-gray-600 leading-relaxed">В целях безопасности двери общежитий закрываются в <strong class="text-brand-blue">23:00</strong> и открываются в <strong class="text-brand-blue">06:00</strong>. Возвращайтесь на территорию кампуса заблаговременно.</p>
                     </div>
 
-                    <!-- Right Column: Sidebar -->
-                    <div class="lg:col-span-1">
-                        <div class="sticky top-32 space-y-6">
-                            
-                            <!-- Danger Warning Box -->
-                            <div class="bg-red-50 border border-red-200 p-6 rounded-lg shadow-sm gs-reveal">
-                                <h4 class="font-bold text-red-700 mb-3 text-lg flex items-center gap-2">
-                                    <i class="fas fa-ban"></i> Что будет, если не пройти?
-                                </h4>
-                                <p class="text-sm text-red-900 leading-relaxed mb-4">
-                                    Если иностранец не прошел дактилоскопию и медосмотр в течение 90 дней, применяются жесткие санкции:
-                                </p>
-                                <ul class="space-y-3 mb-4 text-sm text-red-800">
-                                    <li class="flex items-start gap-2">
-                                        <i class="fas fa-times text-red-600 mt-1"></i>
-                                        <span>Срок пребывания в РФ сокращается до текущего дня.</span>
-                                    </li>
-                                    <li class="flex items-start gap-2">
-                                        <i class="fas fa-times text-red-600 mt-1"></i>
-                                        <span>Вы обязаны покинуть Россию в течение 3 дней.</span>
-                                    </li>
-                                    <li class="flex items-start gap-2">
-                                        <i class="fas fa-times text-red-600 mt-1"></i>
-                                        <span>Университет обязан вас отчислить.</span>
-                                    </li>
-                                </ul>
-                            </div>
-
-                            <!-- Support Box -->
-                            <div class="bg-white border border-gray-200 p-6 rounded-lg shadow-sm gs-reveal">
-                                <h4 class="font-bold text-brand-blue mb-4 flex items-center gap-2">
-                                    <i class="fas fa-hands-helping text-brand-accent"></i> Нужна помощь?
-                                </h4>
-                                <p class="text-sm text-gray-600 mb-6">
-                                    Мы понимаем, что пройти эти процедуры в чужой стране сложно. Сотрудники Международного отдела дадут вам точные адреса больниц и направят в нужные кабинеты МВД.
-                                </p>
-                                <a href="contacts.html" class="block w-full text-center bg-brand-accent !text-brand-blue px-4 py-3 rounded font-bold text-sm hover:bg-yellow-500 shadow-md transition-colors">
-                                    Связаться с куратором
-                                </a>
-                            </div>
-
-                        </div>
+                    <div class="rule-card bg-white p-8 rounded-2xl border border-gray-200">
+                        <div class="w-14 h-14 bg-red-50 text-red-600 rounded-xl flex items-center justify-center mb-6 text-2xl"><i class="fas fa-ban"></i></div>
+                        <h4 class="font-bold text-xl text-brand-blue mb-3">Строгие запреты</h4>
+                        <p class="text-sm text-gray-600 leading-relaxed">На территории кампуса строго запрещено: распитие алкоголя, хранение запрещенных веществ, курение (включая электронные сигареты) в помещениях.</p>
                     </div>
 
+                </div>
+
+                <div class="mt-12 bg-gray-50 rounded-2xl p-8 md:p-10 border border-gray-200 shadow-sm gs-reveal">
+                    <h3 class="text-2xl font-serif font-bold text-brand-blue mb-6">Ваши обязанности</h3>
+                    <ul class="space-y-4 text-gray-600">
+                        <li class="flex gap-4">
+                            <i class="fas fa-check-circle text-brand-green mt-1 text-lg"></i> 
+                            <div>
+                                <strong class="text-gray-800">Чистота.</strong> Поддерживать порядок в своей комнате и убирать за собой на общих кухнях и в санузлах.
+                            </div>
+                        </li>
+                        <li class="flex gap-4">
+                            <i class="fas fa-check-circle text-brand-green mt-1 text-lg"></i> 
+                            <div>
+                                <strong class="text-gray-800">Имущество.</strong> Бережно относиться к мебели и технике университета. При порче имущества студент обязан возместить ущерб.
+                            </div>
+                        </li>
+                        <li class="flex gap-4">
+                            <i class="fas fa-check-circle text-brand-green mt-1 text-lg"></i> 
+                            <div>
+                                <strong class="text-gray-800">Оплата.</strong> Своевременно оплачивать проживание в кассе или через банковское приложение (не позднее 10-го числа каждого месяца).
+                            </div>
+                        </li>
+                        <li class="flex gap-4">
+                            <i class="fas fa-check-circle text-brand-green mt-1 text-lg"></i> 
+                            <div>
+                                <strong class="text-gray-800">Тишина.</strong> Соблюдать тишину после 22:00, чтобы не мешать отдыхать соседям.
+                            </div>
+                        </li>
+                        <li class="flex gap-4">
+                            <i class="fas fa-check-circle text-brand-green mt-1 text-lg"></i> 
+                            <div>
+                                <strong class="text-gray-800">Гости.</strong> Гости могут находиться в общежитии строго с 16:00 до 21:00 с обязательной записью на вахте (при предъявлении паспорта).
+                            </div>
+                        </li>
+                    </ul>
+
+                    <div class="mt-8 bg-red-50 border-l-4 border-red-500 p-4 rounded-r-lg">
+                        <h4 class="font-bold text-red-700 mb-1 flex items-center gap-2">
+                            <i class="fas fa-exclamation-triangle"></i> Важно
+                        </h4>
+                        <p class="text-sm text-red-900">Систематическое нарушение правил проживания является основанием для выселения из общежития и, в крайних случаях, отчисления из университета.</p>
+                    </div>
                 </div>
             </div>
         </section>
@@ -325,27 +169,30 @@
         <section class="py-12 bg-gray-100 relative border-t border-gray-200">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 gs-reveal text-center md:text-left flex flex-col md:flex-row items-center justify-between">
                 <div>
-                    <h2 class="text-xl md:text-2xl font-serif font-bold text-brand-blue mb-2">Все документы готовы?</h2>
-                    <p class="text-gray-600 text-sm">Самое время узнать больше о студенческой жизни в БГТУ.</p>
+                    <h2 class="text-xl md:text-2xl font-serif font-bold text-brand-blue mb-2">Хотите узнать больше о кампусе?</h2>
+                    <p class="text-gray-600 text-sm">Посмотрите условия проживания и инфраструктуру общежитий БГТУ.</p>
                 </div>
                 <div class="mt-6 md:mt-0 flex shrink-0">
                     <a href="campus.html" class="bg-brand-blue !text-white px-6 py-3 rounded font-bold hover:bg-blue-800 transition-all shadow flex items-center gap-2">
-                        Общежития и жизнь <i class="fas fa-arrow-right text-brand-accent"></i>
+                        Общежития и кампус <i class="fas fa-arrow-right text-brand-accent"></i>
                     </a>
                 </div>
             </div>
         </section>
-
     </main>
 
     <div id="footer-placeholder"></div>
-    <script src="footer.js?v=3" charset="UTF-8"></script><div class="md:hidden fixed bottom-4 left-4 right-4 z-40">
-        <a href="contacts.html" class="block w-full bg-brand-accent !text-brand-blue text-center py-4 rounded font-bold shadow-[0_10px_25px_rgba(234,179,8,0.5)] border border-yellow-500">
-            <span>Связаться с отделом</span>
+    <script src="footer.js?v=3" charset="UTF-8"></script>
+
+    <div class="md:hidden fixed bottom-4 left-4 right-4 z-40">
+        <a href="campus.html" class="block w-full bg-brand-accent !text-brand-blue text-center py-4 rounded font-bold shadow-[0_10px_25px_rgba(234,179,8,0.5)] border border-yellow-500">
+            <span>Смотреть кампус</span>
         </a>
     </div>
 
     <script>
+        
+
         document.addEventListener("DOMContentLoaded", () => {
             gsap.registerPlugin(ScrollTrigger);
             document.querySelectorAll('.gs-reveal').forEach((elem) => {
@@ -356,5 +203,6 @@
             });
         });
     </script>
+    <script src="theme.js" defer></script>
 </body>
 </html>

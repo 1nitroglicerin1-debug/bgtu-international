@@ -1,10 +1,10 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="ru" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Миграционный учёт иностранных студентов в РФ: правила, сроки и документы">
-    <title>Правила проживания | БГТУ Центр международного сотрудничества</title>
+    <title>Миграционный учет | БГТУ</title>
     <link rel="icon" href="favicon.svg" type="image/svg+xml">
     
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
@@ -23,48 +23,121 @@
                     },
                     colors: {
                         brand: {
-                            blue: '#003366', 
+                            blue: '#003366', cyan: '#0EA5E9', teal: '#14B8A6', violet: '#7C3AED', coral: '#FF6B5B', 
                             light: '#F8FAFC',
                             accent: '#EAB308', 
                             green: '#10B981', 
-                            red: '#EF4444'
                         }
                     },
                     boxShadow: {
                         'premium': '0 10px 40px -10px rgba(0, 51, 102, 0.1)',
-                        'card': '0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03)'
                     }
                 }
             }
         }
     </script>
-    
     <style>
         ::-webkit-scrollbar { width: 8px; }
         ::-webkit-scrollbar-track { background: #f1f1f1; }
         ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 4px; }
         ::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
         
-        .hero-rules {
-            background: linear-gradient(rgba(0, 30, 60, 0.85), rgba(0, 30, 60, 0.95)), url('https://images.unsplash.com/photo-1577412647305-991150c7d163?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') center/cover fixed;
+        .hero-pattern {
+            background: linear-gradient(rgba(0, 30, 60, 0.85), rgba(0, 30, 60, 0.95)), url('https://images.unsplash.com/photo-1517048676732-d65bc937f952?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') center/cover fixed;
         }
 
-        .mega-menu-content { display: none; position: absolute; left: 0; top: 100%; width: 100vw; background: #fff; box-shadow: 0 10px 30px rgba(0,0,0,0.1); border-top: 2px solid #003366; z-index: 100; padding: 2rem 0; opacity: 0; transition: opacity 0.2s ease, transform 0.2s ease; transform: translateY(10px); }
-        .nav-item:hover .mega-menu-content { display: block; opacity: 1; transform: translateY(0); }
-        .mega-menu-inner { max-width: 80rem; margin: 0 auto; padding: 0 1rem; display: grid; grid-template-columns: repeat(4, 1fr); gap: 2rem; }
-        .mega-menu-column h4 { color: #003366; font-weight: 700; font-size: 1.1rem; margin-bottom: 1rem; padding-bottom: 0.5rem; border-bottom: 1px solid #e5e7eb; }
-        .mega-menu-column ul { list-style: none; padding: 0; margin: 0; }
-        .mega-menu-column li { margin-bottom: 0.5rem; }
-        .mega-menu-column a { color: #4b5563 !important; text-decoration: none !important; font-size: 0.9rem; transition: color 0.2s; display: flex; align-items: center; }
-        .mega-menu-column a:hover { color: #EAB308 !important; }
-        .mega-menu-column a i { font-size: 0.7rem; margin-right: 0.5rem; color: #9ca3af; }
-        a { color: inherit !important; text-decoration: none !important; }
+        /* --- Mega Menu Styles --- */
+        .mega-menu-content {
+            display: none;
+            position: absolute;
+            left: 0;
+            top: 100%;
+            width: 100vw;
+            background: #fff;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            border-top: 2px solid #003366;
+            z-index: 100;
+            padding: 2rem 0;
+            opacity: 0;
+            transition: opacity 0.2s ease, transform 0.2s ease;
+            transform: translateY(10px);
+        }
+
+        .nav-item:hover .mega-menu-content {
+            display: block;
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .mega-menu-inner {
+            max-width: 80rem; 
+            margin: 0 auto;
+            padding: 0 1rem;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+        }
+
+        .mega-menu-column h4 {
+            color: #003366;
+            font-weight: 700;
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid #e5e7eb;
+        }
+
+        .mega-menu-column ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .mega-menu-column li {
+            margin-bottom: 0.5rem;
+        }
+
+        .mega-menu-column a {
+            color: #4b5563 !important; 
+            text-decoration: none !important;
+            font-size: 0.9rem;
+            transition: color 0.2s;
+            display: flex;
+            align-items: center;
+        }
+
+        .mega-menu-column a:hover {
+            color: #EAB308 !important; 
+        }
         
+        .mega-menu-column a i {
+            font-size: 0.7rem;
+            margin-right: 0.5rem;
+            color: #9ca3af;
+        }
+
+        a {
+            color: inherit !important;
+            text-decoration: none !important;
+        }
+        
+        a.underline {
+            text-decoration: underline !important;
+        }
+
         body { padding-top: 140px; }
         @media (min-width: 768px) { body { padding-top: 170px; } }
-
-        .rule-card { transition: all 0.3s ease; }
-        .rule-card:hover { transform: translateY(-5px); box-shadow: 0 15px 30px -10px rgba(0, 51, 102, 0.15); }
+        
+        .mobile-submenu {
+            display: none;
+            padding-left: 1rem;
+            margin-top: 0.5rem;
+            border-left: 2px solid #e5e7eb;
+        }
+        
+        .mobile-submenu.active {
+            display: block;
+        }
             /* === GLOBAL RESPONSIVE FIX === */
         html, body {
             overflow-x: hidden !important;
@@ -84,93 +157,212 @@
             .marquee-container { max-width: 100% !important; }
         }
         /* === END GLOBAL RESPONSIVE FIX === */    </style>
+    <link rel="stylesheet" href="theme.css">
 </head>
 <body class="font-sans text-gray-800 bg-gray-50 overflow-x-hidden">
 
     <div id="header-placeholder"></div>
     <script src="header.js?v=3" charset="UTF-8" data-page="migration-rules.html"></script><main>
-        <section class="hero-rules relative flex items-center min-h-[50vh] md:-mt-20">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full pt-28 pb-24 sm:pb-20">
-                <div class="max-w-3xl gs-reveal">
-                    <a href="index.html" class="inline-flex items-center gap-2 !text-brand-accent hover:!text-white transition-colors mb-4 text-sm font-bold bg-black/20 px-4 py-2 rounded-full backdrop-blur-sm border border-brand-accent/30 w-max">
-                        <i class="fas fa-arrow-left"></i> Назад на главную
-                    </a>
-                    <h1 class="text-4xl md:text-5xl font-serif font-bold text-white mb-4">Правила проживания</h1>
-                    <p class="text-gray-200">Порядок в общежитии — залог комфорта и безопасности для каждого студента. Пожалуйста, внимательно ознакомьтесь с правилами до заселения.</p>
+        <!-- Hero Section -->
+        <section class="hero-pattern text-white pt-24 pb-16 relative border-b-4 border-brand-accent min-h-[45vh] flex flex-col justify-center">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full gs-reveal">
+                <div class="flex items-center gap-2 text-brand-accent mb-4 text-sm font-bold uppercase tracking-wider">
+                    <a href="index.html" class="hover:text-white transition-colors">Главная</a>
+                    <i class="fas fa-chevron-right text-[10px]"></i>
+                    <span>Виза и миграция</span>
+                </div>
+                <h1 class="text-4xl md:text-5xl lg:text-6xl font-serif font-bold mb-6 leading-tight">
+                    Постановка на <br><span class="text-brand-accent">миграционный учет</span>
+                </h1>
+                <p class="text-lg md:text-xl text-blue-100 max-w-3xl font-light leading-relaxed mb-8">
+                    Это важнейшая юридическая процедура для легального пребывания в России. Вы обязаны встать на учет сразу по прибытии в город Брянск.
+                </p>
+                <div class="inline-flex items-center gap-3 bg-red-600 border border-red-400 text-white px-6 py-4 rounded-lg shadow-lg">
+                    <i class="fas fa-clock text-white text-2xl animate-pulse"></i>
+                    <div>
+                        <strong class="block text-sm md:text-base font-bold">Срок: 3 рабочих дня</strong>
+                        <span class="text-xs md:text-sm text-red-100">с момента пересечения границы РФ.</span>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <section class="py-16 md:py-24 bg-white relative z-20 -mt-8 rounded-t-3xl shadow-card">
-            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 gs-reveal">
+        <!-- Main Content -->
+        <section class="py-16 md:py-24 bg-white relative z-20">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                
+                <div class="grid lg:grid-cols-3 gap-12">
                     
-                    <div class="rule-card bg-white p-8 rounded-2xl border border-gray-200">
-                        <div class="w-14 h-14 bg-blue-50 text-brand-blue rounded-xl flex items-center justify-center mb-6 text-2xl"><i class="fas fa-clock"></i></div>
-                        <h4 class="font-bold text-xl text-brand-blue mb-3">Режим входа</h4>
-                        <p class="text-sm text-gray-600 leading-relaxed">В целях безопасности двери общежитий закрываются в <strong class="text-brand-blue">23:00</strong> и открываются в <strong class="text-brand-blue">06:00</strong>. Возвращайтесь на территорию кампуса заблаговременно.</p>
+                    <!-- Left Column: Content -->
+                    <div class="lg:col-span-2">
+                        
+                        <!-- Block 1: Миграционная карта -->
+                        <div class="mb-12 gs-reveal">
+                            <h2 class="text-3xl font-serif font-bold text-brand-blue mb-6 border-b border-gray-100 pb-4">Шаг 1: На границе</h2>
+                            <div class="bg-gray-50 p-6 rounded-lg border border-gray-200 flex flex-col sm:flex-row gap-6 items-start">
+                                <div class="shrink-0 bg-white p-3 rounded border border-gray-200 shadow-sm">
+                                    <i class="fas fa-id-card text-4xl text-brand-blue"></i>
+                                </div>
+                                <div>
+                                    <h4 class="text-xl font-bold text-gray-800 mb-2">Миграционная карта</h4>
+                                    <p class="text-sm text-gray-600 leading-relaxed mb-4">
+                                        При прохождении паспортного контроля в аэропорту или на сухопутной границе РФ вам выдадут <strong>миграционную карту</strong>. В графе «Цель визита» (Purpose of visit) обязательно должно быть подчеркнуто слово <strong>«УЧЕБА» (EDUCATION)</strong>.
+                                    </p>
+                                    <div class="bg-yellow-50 text-yellow-800 text-sm p-3 rounded border border-yellow-200">
+                                        <i class="fas fa-exclamation-triangle mr-1"></i> Сохраните эту карту! Без неё постановка на учет и учеба невозможны. Она должна лежать в паспорте до самого выезда из страны.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Block 2: Документы для отдела -->
+                        <div class="mb-12 gs-reveal">
+                            <h2 class="text-3xl font-serif font-bold text-brand-blue mb-6 border-b border-gray-100 pb-4">Шаг 2: Визит в отдел виз БГТУ</h2>
+                            <p class="text-gray-600 mb-6 leading-relaxed">
+                                Как только вы приехали в Брянск и заселились в общежитие, в первый же рабочий день (понедельник-пятница) вы должны прийти в Международный отдел БГТУ.
+                            </p>
+                            
+                            <h4 class="font-bold text-lg mb-4 text-gray-800">Принесите с собой оригиналы:</h4>
+                            <div class="grid sm:grid-cols-2 gap-4">
+                                <div class="border border-gray-200 p-4 rounded-lg flex gap-3 bg-white shadow-sm">
+                                    <i class="fas fa-passport text-brand-accent mt-1"></i>
+                                    <div>
+                                        <strong class="block text-sm text-brand-blue">Загранпаспорт</strong>
+                                        <span class="text-xs text-gray-500">Со всеми штампами о въезде.</span>
+                                    </div>
+                                </div>
+                                <div class="border border-gray-200 p-4 rounded-lg flex gap-3 bg-white shadow-sm">
+                                    <i class="fas fa-id-card text-brand-accent mt-1"></i>
+                                    <div>
+                                        <strong class="block text-sm text-brand-blue">Миграционная карта</strong>
+                                        <span class="text-xs text-gray-500">Выданная на границе (цель: учеба).</span>
+                                    </div>
+                                </div>
+                                <div class="border border-gray-200 p-4 rounded-lg flex gap-3 bg-white shadow-sm">
+                                    <i class="fas fa-stamp text-brand-accent mt-1"></i>
+                                    <div>
+                                        <strong class="block text-sm text-brand-blue">Учебная виза</strong>
+                                        <span class="text-xs text-gray-500">Вклеенная в ваш паспорт.</span>
+                                    </div>
+                                </div>
+                                <div class="border border-gray-200 p-4 rounded-lg flex gap-3 bg-white shadow-sm">
+                                    <i class="fas fa-images text-brand-accent mt-1"></i>
+                                    <div>
+                                        <strong class="block text-sm text-brand-blue">2 фотографии</strong>
+                                        <span class="text-xs text-gray-500">Размер 3х4 см, матовые.</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Block 3: Продление -->
+                        <div class="gs-reveal">
+                            <h2 class="text-3xl font-serif font-bold text-brand-blue mb-6 border-b border-gray-100 pb-4">Важные правила пребывания</h2>
+                            
+                            <div class="space-y-6">
+                                <div>
+                                    <h4 class="text-lg font-bold text-gray-800 mb-2 flex items-center gap-2">
+                                        <i class="fas fa-calendar-plus text-brand-blue"></i> Продление визы и регистрации
+                                    </h4>
+                                    <p class="text-sm text-gray-600 leading-relaxed">
+                                        Изначально вас поставят на учет на срок действия вашей первой визы (90 дней). За <strong>45 дней</strong> до окончания этого срока вы обязаны принести документы в отдел для продления визы на весь учебный год.
+                                    </p>
+                                </div>
+                                
+                                <div class="bg-blue-50 p-4 rounded-lg">
+                                    <h4 class="text-lg font-bold text-brand-blue mb-2 flex items-center gap-2">
+                                        <i class="fas fa-plane-departure text-brand-accent"></i> Выезды из города или страны
+                                    </h4>
+                                    <p class="text-sm text-gray-700 leading-relaxed">
+                                        Каждый раз, когда вы:
+                                        <br>— выезжаете за границу РФ (даже на каникулы)
+                                        <br>— заселяетесь в гостиницу в другом городе РФ
+                                        <br>— ложитесь в больницу
+                                        <br>Ваш текущий миграционный учет <strong>автоматически аннулируется</strong>. По возвращении в Брянск у вас снова есть только 3 дня, чтобы прийти в наш отдел и сделать новую регистрацию!
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
                     </div>
 
-                    <div class="rule-card bg-white p-8 rounded-2xl border border-gray-200">
-                        <div class="w-14 h-14 bg-red-50 text-red-600 rounded-xl flex items-center justify-center mb-6 text-2xl"><i class="fas fa-ban"></i></div>
-                        <h4 class="font-bold text-xl text-brand-blue mb-3">Строгие запреты</h4>
-                        <p class="text-sm text-gray-600 leading-relaxed">На территории кампуса строго запрещено: распитие алкоголя, хранение запрещенных веществ, курение (включая электронные сигареты) в помещениях.</p>
+                    <!-- Right Column: Sidebar -->
+                    <div class="lg:col-span-1">
+                        <div class="sticky top-32 space-y-6">
+                            
+                            <!-- Danger Warning Box -->
+                            <div class="bg-red-50 border-l-4 border-red-500 p-6 rounded-r-lg shadow-sm gs-reveal">
+                                <h4 class="font-bold text-red-700 mb-3 text-lg flex items-center gap-2">
+                                    <i class="fas fa-skull-crossbones"></i> Строго наказывается
+                                </h4>
+                                <ul class="space-y-3 mb-4">
+                                    <li class="flex items-start gap-2 text-sm text-red-900">
+                                        <i class="fas fa-times-circle mt-1 opacity-70"></i>
+                                        <span>Опоздание с постановкой на учет (более 3 дней).</span>
+                                    </li>
+                                    <li class="flex items-start gap-2 text-sm text-red-900">
+                                        <i class="fas fa-times-circle mt-1 opacity-70"></i>
+                                        <span>Проживание не по адресу регистрации (общежития).</span>
+                                    </li>
+                                    <li class="flex items-start gap-2 text-sm text-red-900">
+                                        <i class="fas fa-times-circle mt-1 opacity-70"></i>
+                                        <span>Работа без специального разрешения.</span>
+                                    </li>
+                                </ul>
+                                <div class="pt-4 border-t border-red-200">
+                                    <p class="text-xs font-bold text-red-800 uppercase tracking-wider">Последствия:</p>
+                                    <p class="text-sm text-red-700 mt-1">Штраф до 7000₽, отчисление из университета и <strong>депортация из России с запретом на въезд до 5 лет.</strong></p>
+                                </div>
+                            </div>
+
+                            <!-- Support Box -->
+                            <div class="bg-white border border-gray-200 p-6 rounded-lg shadow-sm gs-reveal">
+                                <h4 class="font-bold text-brand-blue mb-4 flex items-center gap-2">
+                                    <i class="fas fa-map-marker-alt text-brand-accent"></i> Куда нести документы?
+                                </h4>
+                                <div class="text-sm text-gray-600 space-y-2 mb-6">
+                                    <p><strong>Визовый отдел БГТУ</strong></p>
+                                    <p>Главный корпус, 2 этаж, кабинет 215.</p>
+                                    <p><strong>Часы приема:</strong></p>
+                                    <p>Пн-Пт: с 10:00 до 16:00<br>Перерыв: с 13:00 до 14:00</p>
+                                </div>
+                                <a href="contacts.html" class="block w-full text-center bg-brand-accent !text-brand-blue px-4 py-3 rounded font-bold text-sm hover:bg-yellow-500 shadow-md transition-colors">
+                                    Показать на карте
+                                </a>
+                            </div>
+
+                        </div>
                     </div>
 
-                </div>
-
-                <div class="mt-12 bg-gray-50 rounded-2xl p-8 md:p-10 border border-gray-200 shadow-sm gs-reveal">
-                    <h3 class="text-2xl font-serif font-bold text-brand-blue mb-6">Ваши обязанности</h3>
-                    <ul class="space-y-4 text-gray-600">
-                        <li class="flex gap-4">
-                            <i class="fas fa-check-circle text-brand-green mt-1 text-lg"></i> 
-                            <div>
-                                <strong class="text-gray-800">Чистота.</strong> Поддерживать порядок в своей комнате и убирать за собой на общих кухнях и в санузлах.
-                            </div>
-                        </li>
-                        <li class="flex gap-4">
-                            <i class="fas fa-check-circle text-brand-green mt-1 text-lg"></i> 
-                            <div>
-                                <strong class="text-gray-800">Имущество.</strong> Бережно относиться к мебели и технике университета. При порче имущества студент обязан возместить ущерб.
-                            </div>
-                        </li>
-                        <li class="flex gap-4">
-                            <i class="fas fa-check-circle text-brand-green mt-1 text-lg"></i> 
-                            <div>
-                                <strong class="text-gray-800">Оплата.</strong> Своевременно оплачивать проживание в кассе или через банковское приложение (не позднее 10-го числа каждого месяца).
-                            </div>
-                        </li>
-                        <li class="flex gap-4">
-                            <i class="fas fa-check-circle text-brand-green mt-1 text-lg"></i> 
-                            <div>
-                                <strong class="text-gray-800">Тишина.</strong> Соблюдать тишину после 22:00, чтобы не мешать отдыхать соседям.
-                            </div>
-                        </li>
-                        <li class="flex gap-4">
-                            <i class="fas fa-check-circle text-brand-green mt-1 text-lg"></i> 
-                            <div>
-                                <strong class="text-gray-800">Гости.</strong> Гости могут находиться в общежитии строго с 16:00 до 21:00 с обязательной записью на вахте (при предъявлении паспорта).
-                            </div>
-                        </li>
-                    </ul>
-
-                    <div class="mt-8 bg-red-50 border-l-4 border-red-500 p-4 rounded-r-lg">
-                        <h4 class="font-bold text-red-700 mb-1 flex items-center gap-2">
-                            <i class="fas fa-exclamation-triangle"></i> Важно
-                        </h4>
-                        <p class="text-sm text-red-900">Систематическое нарушение правил проживания является основанием для выселения из общежития и, в крайних случаях, отчисления из университета.</p>
-                    </div>
                 </div>
             </div>
         </section>
+
+        <!-- CTA Section -->
+        <section class="py-12 bg-gray-100 relative border-t border-gray-200">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 gs-reveal text-center md:text-left flex flex-col md:flex-row items-center justify-between">
+                <div>
+                    <h2 class="text-xl md:text-2xl font-serif font-bold text-brand-blue mb-2">Медицина и здоровье</h2>
+                    <p class="text-gray-600 text-sm">После постановки на учет необходимо оформить медицинскую страховку.</p>
+                </div>
+                <div class="mt-6 md:mt-0 flex shrink-0">
+                    <a href="med-insurance.html" class="bg-brand-accent !text-brand-blue px-6 py-3 rounded font-bold hover:bg-yellow-500 transition-all shadow flex items-center gap-2">
+                        Оформить полис ДМС <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+
     </main>
 
     <div id="footer-placeholder"></div>
-    <script src="footer.js?v=3" charset="UTF-8"></script>
+    <script src="footer.js?v=3" charset="UTF-8"></script><div class="md:hidden fixed bottom-4 left-4 right-4 z-40">
+        <a href="contacts.html" class="block w-full bg-brand-accent !text-brand-blue text-center py-4 rounded font-bold shadow-[0_10px_25px_rgba(234,179,8,0.5)] border border-yellow-500">
+            <span>Связаться с отделом</span>
+        </a>
+    </div>
 
     <script>
-        
-
         document.addEventListener("DOMContentLoaded", () => {
             gsap.registerPlugin(ScrollTrigger);
             document.querySelectorAll('.gs-reveal').forEach((elem) => {
@@ -181,5 +373,6 @@
             });
         });
     </script>
+    <script src="theme.js" defer></script>
 </body>
 </html>

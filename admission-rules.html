@@ -23,7 +23,7 @@
                     },
                     colors: {
                         brand: {
-                            blue: '#003366', 
+                            blue: '#003366', cyan: '#0EA5E9', teal: '#14B8A6', violet: '#7C3AED', coral: '#FF6B5B', 
                             light: '#F8FAFC',
                             accent: '#EAB308', 
                             green: '#10B981', 
@@ -85,6 +85,7 @@
             .marquee-container { max-width: 100% !important; }
         }
         /* === END GLOBAL RESPONSIVE FIX === */    </style>
+    <link rel="stylesheet" href="theme.css">
 </head>
 <body class="font-sans text-gray-800 bg-gray-50 overflow-x-hidden">
 
@@ -118,7 +119,7 @@
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
                     <div class="date-card bg-gray-50 border border-gray-100 rounded-xl p-6 relative overflow-hidden gs-reveal">
                         <div class="absolute top-0 left-0 w-full h-1 bg-brand-accent"></div>
-                        <i class="fas fa-folder-open text-4xl text-brand-blue/20 absolute top-6 right-6"></i>
+                        <i class="fas fa-folder-open text-4xl text-brand-accent/30 absolute top-6 right-6"></i>
                         <p class="text-xs uppercase tracking-widest text-gray-500 font-bold mb-1">Начало</p>
                         <h3 class="text-3xl font-serif font-bold text-brand-blue mb-4">20 июня</h3>
                         <h4 class="font-bold text-gray-800 mb-2">Старт приема документов</h4>
@@ -127,7 +128,7 @@
 
                     <div class="date-card bg-gray-50 border border-gray-100 rounded-xl p-6 relative overflow-hidden gs-reveal" style="transition-delay: 100ms;">
                         <div class="absolute top-0 left-0 w-full h-1 bg-brand-blue"></div>
-                        <i class="fas fa-user-edit text-4xl text-brand-blue/20 absolute top-6 right-6"></i>
+                        <i class="fas fa-user-edit text-4xl text-brand-blue/30 absolute top-6 right-6"></i>
                         <p class="text-xs uppercase tracking-widest text-gray-500 font-bold mb-1">Экзамены</p>
                         <h3 class="text-3xl font-serif font-bold text-brand-blue mb-4">до 20 августа</h3>
                         <h4 class="font-bold text-gray-800 mb-2">Вступительные испытания</h4>
@@ -136,7 +137,7 @@
 
                     <div class="date-card bg-gray-50 border border-gray-100 rounded-xl p-6 relative overflow-hidden gs-reveal" style="transition-delay: 200ms;">
                         <div class="absolute top-0 left-0 w-full h-1 bg-brand-green"></div>
-                        <i class="fas fa-university text-4xl text-brand-blue/20 absolute top-6 right-6"></i>
+                        <i class="fas fa-university text-4xl text-brand-green/30 absolute top-6 right-6"></i>
                         <p class="text-xs uppercase tracking-widest text-gray-500 font-bold mb-1">Зачисление</p>
                         <h3 class="text-3xl font-serif font-bold text-brand-blue mb-4">25-30 августа</h3>
                         <h4 class="font-bold text-gray-800 mb-2">Приказы о зачислении</h4>
@@ -197,7 +198,7 @@
                                 </ul>
                             </div>
 
-                            <div class="bg-white border-l-4 border-gray-400 shadow-card p-6 rounded-r-xl md:col-span-2">
+                            <div class="bg-white border-l-4 border-brand-violet shadow-card p-6 rounded-r-xl md:col-span-2">
                                 <h4 class="font-bold text-lg mb-4 text-brand-blue">Поступление в Магистратуру</h4>
                                 <p class="text-sm text-gray-600 mb-4">Для поступления на программы магистратуры сдается <strong>один комплексный междисциплинарный экзамен</strong> по профилю выбранного направления подготовки.</p>
                                 <a href="programs.html" class="text-sm font-bold text-brand-accent hover:text-yellow-600 transition-colors">Уточнить профиль программы <i class="fas fa-arrow-right"></i></a>
@@ -219,7 +220,7 @@
 
                 <div class="flex flex-col md:flex-row gap-8 max-w-4xl mx-auto">
                     <div class="w-full md:w-1/2 rounded-2xl border border-gray-200 p-8 gs-reveal hover:shadow-premium transition-shadow">
-                        <div class="w-14 h-14 bg-gray-100 rounded-full flex items-center justify-center text-gray-600 mb-6 text-2xl">
+                        <div class="w-14 h-14 bg-brand-teal/15 rounded-full flex items-center justify-center text-brand-teal mb-6 text-2xl">
                             <i class="fas fa-file-signature"></i>
                         </div>
                         <h3 class="text-2xl font-bold text-brand-blue mb-3">По договору (Контракт)</h3>
@@ -228,7 +229,7 @@
                             <li><i class="fas fa-check text-brand-green mr-2"></i> Проще конкурс при поступлении</li>
                             <li><i class="fas fa-check text-brand-green mr-2"></i> Гарантированное общежитие</li>
                         </ul>
-                        <a href="tuition.html" class="block text-center w-full bg-gray-100 hover:bg-gray-200 text-brand-blue font-bold py-3 rounded transition-colors">Посмотреть цены</a>
+                        <a href="tuition.html" class="block text-center w-full bg-brand-cyan/10 hover:bg-brand-cyan/20 text-brand-blue font-bold py-3 rounded transition-colors">Посмотреть цены</a>
                     </div>
 
                     <div class="w-full md:w-1/2 rounded-2xl bg-brand-blue text-white p-8 gs-reveal hover:shadow-premium transition-shadow relative overflow-hidden" style="transition-delay: 100ms;">
@@ -323,5 +324,6 @@
             });
         });
     </script>
+    <script src="theme.js" defer></script>
 </body>
 </html>

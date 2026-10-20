@@ -23,7 +23,7 @@
                     },
                     colors: {
                         brand: {
-                            blue: '#003366', 
+                            blue: '#003366', cyan: '#0EA5E9', teal: '#14B8A6', violet: '#7C3AED', coral: '#FF6B5B', 
                             light: '#F8FAFC',
                             accent: '#EAB308', 
                             green: '#10B981', 
@@ -84,6 +84,7 @@
             .marquee-container { max-width: 100% !important; }
         }
         /* === END GLOBAL RESPONSIVE FIX === */    </style>
+    <link rel="stylesheet" href="theme.css">
 </head>
 <body class="font-sans text-gray-800 bg-gray-50 overflow-x-hidden">
 
@@ -146,52 +147,52 @@
                 <div class="grid md:grid-cols-3 gap-8">
                     
                     <div class="profile-card bg-white border border-gray-200 rounded-2xl p-8 hover:shadow-premium gs-reveal">
-                        <div class="w-14 h-14 bg-blue-50 rounded-xl flex items-center justify-center text-brand-blue text-2xl mb-6">
+                        <div class="w-14 h-14 bg-brand-cyan/10 rounded-xl flex items-center justify-center text-brand-cyan text-2xl mb-6">
                             <i class="fas fa-cogs"></i>
                         </div>
                         <h3 class="text-xl font-bold text-brand-blue mb-4">Инженерно-технический</h3>
                         <p class="text-sm text-gray-600 mb-6">Для будущих программистов, машиностроителей и энергетиков.</p>
-                        <div class="bg-gray-50 p-4 rounded-lg border border-gray-100">
-                            <h5 class="text-xs font-bold text-gray-400 uppercase tracking-wider mb-2">Изучаемые предметы:</h5>
+                        <div class="bg-brand-cyan/5 border border-brand-cyan/20 p-4 rounded-lg">
+                            <h5 class="text-xs font-bold text-brand-cyan uppercase tracking-wider mb-2">Изучаемые предметы:</h5>
                             <ul class="text-sm font-medium text-gray-700 space-y-1">
-                                <li>Русский язык</li>
-                                <li>Математика</li>
-                                <li>Физика</li>
-                                <li>Информатика</li>
+                                <li><i class="fas fa-check text-brand-cyan mr-2 text-xs"></i>Русский язык</li>
+                                <li><i class="fas fa-check text-brand-cyan mr-2 text-xs"></i>Математика</li>
+                                <li><i class="fas fa-check text-brand-cyan mr-2 text-xs"></i>Физика</li>
+                                <li><i class="fas fa-check text-brand-cyan mr-2 text-xs"></i>Информатика</li>
                             </ul>
                         </div>
                     </div>
 
                     <div class="profile-card bg-white border border-gray-200 rounded-2xl p-8 hover:shadow-premium gs-reveal" style="transition-delay: 100ms;">
-                        <div class="w-14 h-14 bg-yellow-50 rounded-xl flex items-center justify-center text-brand-accent text-2xl mb-6">
+                        <div class="w-14 h-14 bg-brand-accent/15 rounded-xl flex items-center justify-center text-brand-accent text-2xl mb-6">
                             <i class="fas fa-chart-line"></i>
                         </div>
                         <h3 class="text-xl font-bold text-brand-blue mb-4">Экономический</h3>
                         <p class="text-sm text-gray-600 mb-6">Для поступающих на направления экономики, менеджмента и бизнеса.</p>
-                        <div class="bg-gray-50 p-4 rounded-lg border border-gray-100">
-                            <h5 class="text-xs font-bold text-gray-400 uppercase tracking-wider mb-2">Изучаемые предметы:</h5>
+                        <div class="bg-brand-accent/5 border border-brand-accent/25 p-4 rounded-lg">
+                            <h5 class="text-xs font-bold text-brand-accent uppercase tracking-wider mb-2">Изучаемые предметы:</h5>
                             <ul class="text-sm font-medium text-gray-700 space-y-1">
-                                <li>Русский язык</li>
-                                <li>Математика</li>
-                                <li>Обществознание</li>
-                                <li>История</li>
+                                <li><i class="fas fa-check text-brand-accent mr-2 text-xs"></i>Русский язык</li>
+                                <li><i class="fas fa-check text-brand-accent mr-2 text-xs"></i>Математика</li>
+                                <li><i class="fas fa-check text-brand-accent mr-2 text-xs"></i>Обществознание</li>
+                                <li><i class="fas fa-check text-brand-accent mr-2 text-xs"></i>История</li>
                             </ul>
                         </div>
                     </div>
 
                     <div class="profile-card bg-white border border-gray-200 rounded-2xl p-8 hover:shadow-premium gs-reveal" style="transition-delay: 200ms;">
-                        <div class="w-14 h-14 bg-green-50 rounded-xl flex items-center justify-center text-brand-green text-2xl mb-6">
+                        <div class="w-14 h-14 bg-brand-green/10 rounded-xl flex items-center justify-center text-brand-green text-2xl mb-6">
                             <i class="fas fa-microscope"></i>
                         </div>
                         <h3 class="text-xl font-bold text-brand-blue mb-4">Естественно-научный</h3>
                         <p class="text-sm text-gray-600 mb-6">Для подготовки к поступлению на экологические или химические профили.</p>
-                        <div class="bg-gray-50 p-4 rounded-lg border border-gray-100">
-                            <h5 class="text-xs font-bold text-gray-400 uppercase tracking-wider mb-2">Изучаемые предметы:</h5>
+                        <div class="bg-brand-green/5 border border-brand-green/20 p-4 rounded-lg">
+                            <h5 class="text-xs font-bold text-brand-green uppercase tracking-wider mb-2">Изучаемые предметы:</h5>
                             <ul class="text-sm font-medium text-gray-700 space-y-1">
-                                <li>Русский язык</li>
-                                <li>Математика</li>
-                                <li>Химия</li>
-                                <li>Физика</li>
+                                <li><i class="fas fa-check text-brand-green mr-2 text-xs"></i>Русский язык</li>
+                                <li><i class="fas fa-check text-brand-green mr-2 text-xs"></i>Математика</li>
+                                <li><i class="fas fa-check text-brand-green mr-2 text-xs"></i>Химия</li>
+                                <li><i class="fas fa-check text-brand-green mr-2 text-xs"></i>Физика</li>
                             </ul>
                         </div>
                     </div>
@@ -266,5 +267,6 @@
             });
         });
     </script>
+    <script src="theme.js" defer></script>
 </body>
 </html>

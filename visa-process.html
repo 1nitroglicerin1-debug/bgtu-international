@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Получение учебной визы в Россию: пошаговая инструкция для студентов БГТУ">
-    <title>Общежития и Кампус | БГТУ Центр международного сотрудничества</title>
+    <title>Получение учебной визы | БГТУ Центр международного сотрудничества</title>
     <link rel="icon" href="favicon.svg" type="image/svg+xml">
     
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
@@ -23,51 +23,156 @@
                     },
                     colors: {
                         brand: {
-                            blue: '#003366', 
+                            blue: '#003366', cyan: '#0EA5E9', teal: '#14B8A6', violet: '#7C3AED', coral: '#FF6B5B', 
                             light: '#F8FAFC',
                             accent: '#EAB308', 
                             green: '#10B981', 
-                            red: '#EF4444'
                         }
                     },
                     boxShadow: {
                         'premium': '0 10px 40px -10px rgba(0, 51, 102, 0.1)',
-                        'card': '0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03)'
                     }
                 }
             }
         }
     </script>
-    
     <style>
         ::-webkit-scrollbar { width: 8px; }
         ::-webkit-scrollbar-track { background: #f1f1f1; }
         ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 4px; }
         ::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
         
-        .hero-campus {
-            background: linear-gradient(rgba(0, 30, 60, 0.8), rgba(0, 30, 60, 0.95)), url('https://images.unsplash.com/photo-1555854877-bab0e564b8d5?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') center/cover fixed;
+        .hero-pattern {
+            background: linear-gradient(rgba(0, 30, 60, 0.85), rgba(0, 30, 60, 0.95)), url('https://images.unsplash.com/photo-1436491865332-7a61a109cc05?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') center/cover fixed;
         }
 
-        .mega-menu-content { display: none; position: absolute; left: 0; top: 100%; width: 100vw; background: #fff; box-shadow: 0 10px 30px rgba(0,0,0,0.1); border-top: 2px solid #003366; z-index: 100; padding: 2rem 0; opacity: 0; transition: opacity 0.2s ease, transform 0.2s ease; transform: translateY(10px); }
-        .nav-item:hover .mega-menu-content { display: block; opacity: 1; transform: translateY(0); }
-        .mega-menu-inner { max-width: 80rem; margin: 0 auto; padding: 0 1rem; display: grid; grid-template-columns: repeat(4, 1fr); gap: 2rem; }
-        .mega-menu-column h4 { color: #003366; font-weight: 700; font-size: 1.1rem; margin-bottom: 1rem; padding-bottom: 0.5rem; border-bottom: 1px solid #e5e7eb; }
-        .mega-menu-column ul { list-style: none; padding: 0; margin: 0; }
-        .mega-menu-column li { margin-bottom: 0.5rem; }
-        .mega-menu-column a { color: #4b5563 !important; text-decoration: none !important; font-size: 0.9rem; transition: color 0.2s; display: flex; align-items: center; }
-        .mega-menu-column a:hover { color: #EAB308 !important; }
-        .mega-menu-column a i { font-size: 0.7rem; margin-right: 0.5rem; color: #9ca3af; }
-        a { color: inherit !important; text-decoration: none !important; }
+        /* --- Mega Menu Styles --- */
+        .mega-menu-content {
+            display: none;
+            position: absolute;
+            left: 0;
+            top: 100%;
+            width: 100vw;
+            background: #fff;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            border-top: 2px solid #003366;
+            z-index: 100;
+            padding: 2rem 0;
+            opacity: 0;
+            transition: opacity 0.2s ease, transform 0.2s ease;
+            transform: translateY(10px);
+        }
+
+        .nav-item:hover .mega-menu-content {
+            display: block;
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .mega-menu-inner {
+            max-width: 80rem; 
+            margin: 0 auto;
+            padding: 0 1rem;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+        }
+
+        .mega-menu-column h4 {
+            color: #003366;
+            font-weight: 700;
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid #e5e7eb;
+        }
+
+        .mega-menu-column ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .mega-menu-column li {
+            margin-bottom: 0.5rem;
+        }
+
+        .mega-menu-column a {
+            color: #4b5563 !important; 
+            text-decoration: none !important;
+            font-size: 0.9rem;
+            transition: color 0.2s;
+            display: flex;
+            align-items: center;
+        }
+
+        .mega-menu-column a:hover {
+            color: #EAB308 !important; 
+        }
         
+        .mega-menu-column a i {
+            font-size: 0.7rem;
+            margin-right: 0.5rem;
+            color: #9ca3af;
+        }
+
+        a {
+            color: inherit !important;
+            text-decoration: none !important;
+        }
+        
+        a.underline {
+            text-decoration: underline !important;
+        }
+
         body { padding-top: 140px; }
         @media (min-width: 768px) { body { padding-top: 170px; } }
-
-        .dorm-card { transition: all 0.4s ease; }
-        .dorm-card:hover { transform: translateY(-8px); box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15); }
         
-        .facility-list li { position: relative; padding-left: 1.5rem; margin-bottom: 0.5rem; }
-        .facility-list li::before { content: '\f00c'; font-family: 'Font Awesome 6 Free'; font-weight: 900; position: absolute; left: 0; top: 2px; color: #10B981; font-size: 0.875rem; }
+        .mobile-submenu {
+            display: none;
+            padding-left: 1rem;
+            margin-top: 0.5rem;
+            border-left: 2px solid #e5e7eb;
+        }
+        
+        .mobile-submenu.active {
+            display: block;
+        }
+        
+        /* Timeline styling */
+        .timeline-step {
+            position: relative;
+            padding-left: 3rem;
+            padding-bottom: 3rem;
+        }
+        .timeline-step::before {
+            content: '';
+            position: absolute;
+            left: 1.1rem;
+            top: 2.5rem;
+            bottom: 0;
+            width: 2px;
+            background-color: #e5e7eb;
+        }
+        .timeline-step:last-child::before {
+            display: none;
+        }
+        .timeline-icon {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 2.5rem;
+            height: 2.5rem;
+            border-radius: 50%;
+            background-color: #003366;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            z-index: 10;
+            box-shadow: 0 0 0 4px white;
+        }
             /* === GLOBAL RESPONSIVE FIX === */
         html, body {
             overflow-x: hidden !important;
@@ -87,195 +192,188 @@
             .marquee-container { max-width: 100% !important; }
         }
         /* === END GLOBAL RESPONSIVE FIX === */    </style>
+    <link rel="stylesheet" href="theme.css">
 </head>
 <body class="font-sans text-gray-800 bg-gray-50 overflow-x-hidden">
 
     <div id="header-placeholder"></div>
     <script src="header.js?v=3" charset="UTF-8" data-page="visa-process.html"></script><main>
-        <section class="hero-campus relative flex items-center min-h-[50vh] md:-mt-20">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full pt-20 pb-24 sm:pb-20">
-                <div class="max-w-3xl gs-reveal">
-                    <a href="index.html" class="inline-flex items-center gap-2 !text-brand-accent hover:!text-white transition-colors mb-4 text-sm font-bold bg-black/20 px-4 py-2 rounded-full backdrop-blur-sm border border-brand-accent/30 w-max">
-                        <i class="fas fa-arrow-left"></i> Назад на главную
-                    </a>
-                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-white leading-tight mb-4">
-                        Студенческий городок
-                    </h1>
-                    <p class="text-lg md:text-xl text-gray-200 max-w-2xl font-light">
-                        БГТУ предоставляет комфортабельные общежития для всех иностранных студентов. Твой новый дом в России находится в шаговой доступности от учебных корпусов.
-                    </p>
+        <!-- Hero Section -->
+        <section class="hero-pattern text-white pt-24 pb-16 relative border-b-4 border-brand-accent min-h-[45vh] flex flex-col justify-center">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full gs-reveal">
+                <div class="flex items-center gap-2 text-brand-accent mb-4 text-sm font-bold uppercase tracking-wider">
+                    <a href="index.html" class="hover:text-white transition-colors">Главная</a>
+                    <i class="fas fa-chevron-right text-[10px]"></i>
+                    <span>Виза и миграция</span>
+                </div>
+                <h1 class="text-4xl md:text-5xl lg:text-6xl font-serif font-bold mb-6 leading-tight">
+                    Получение <span class="text-brand-accent">учебной визы</span>
+                </h1>
+                <p class="text-lg md:text-xl text-blue-100 max-w-3xl font-light leading-relaxed mb-8">
+                    После оформления приглашения от МВД РФ, вы можете получить российскую учебную визу в консульстве вашей страны. Здесь описан подробный алгоритм действий.
+                </p>
+                <div class="inline-flex items-center gap-3 bg-red-500/20 border border-red-400 text-white px-6 py-3 rounded-lg backdrop-blur-sm">
+                    <i class="fas fa-exclamation-triangle text-red-400 text-xl"></i>
+                    <span class="text-sm md:text-base font-medium">Без официального приглашения получить учебную визу невозможно.</span>
                 </div>
             </div>
         </section>
 
-        <section class="py-12 bg-white relative z-20 -mt-10 rounded-t-3xl shadow-card border-b border-gray-100">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
-                    <div class="text-center gs-reveal">
-                        <i class="fas fa-building text-3xl text-brand-blue mb-3"></i>
-                        <h4 class="font-bold text-gray-800 text-lg">5 корпусов</h4>
-                        <p class="text-xs text-gray-500 uppercase tracking-wider mt-1">общежитий</p>
-                    </div>
-                    <div class="text-center gs-reveal" style="transition-delay: 100ms;">
-                        <i class="fas fa-walking text-3xl text-brand-accent mb-3"></i>
-                        <h4 class="font-bold text-gray-800 text-lg">Шаговая доступность</h4>
-                        <p class="text-xs text-gray-500 uppercase tracking-wider mt-1">до корпусов</p>
-                    </div>
-                    <div class="text-center gs-reveal" style="transition-delay: 200ms;">
-                        <i class="fas fa-shield-alt text-3xl text-brand-green mb-3"></i>
-                        <h4 class="font-bold text-gray-800 text-lg">Пропускная система</h4>
-                        <p class="text-xs text-gray-500 uppercase tracking-wider mt-1">и охрана на вахте</p>
-                    </div>
-                    <div class="text-center gs-reveal" style="transition-delay: 300ms;">
-                        <i class="fas fa-wifi text-3xl text-brand-blue mb-3"></i>
-                        <h4 class="font-bold text-gray-800 text-lg">Интернет</h4>
-                        <p class="text-xs text-gray-500 uppercase tracking-wider mt-1">подключение по договору</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="py-16 md:py-24 bg-gray-50">
+        <!-- Main Content -->
+        <section class="py-16 md:py-24 bg-white relative z-20">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 
-                <div class="text-center mb-16 gs-reveal">
-                    <h2 class="text-3xl font-serif font-bold text-brand-blue mb-4">Наши общежития</h2>
-                    <p class="text-gray-600 max-w-2xl mx-auto">Университет предоставляет места в общежитиях блочного и коридорного типа. Мы стараемся размещать иностранных студентов компактно для более быстрой адаптации. В комнатах проживают по 2-4 человека.</p>
-                </div>
-
-                <div class="grid md:grid-cols-2 gap-10">
+                <div class="grid lg:grid-cols-3 gap-12">
                     
-                    <div class="dorm-card bg-white rounded-2xl overflow-hidden border border-gray-200 gs-reveal">
-                        <div class="h-64 relative overflow-hidden">
-                            <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80" alt="Dorm Room" class="w-full h-full object-cover">
-                            <div class="absolute top-4 left-4 bg-brand-accent text-brand-blue text-xs font-bold px-3 py-1 rounded uppercase tracking-wider">Главный корпус</div>
-                        </div>
-                        <div class="p-8">
-                            <h3 class="text-2xl font-bold text-brand-blue mb-2">Общежитие №4</h3>
-                            <p class="text-sm text-gray-500 mb-6"><i class="fas fa-map-marker-alt text-brand-accent mr-1"></i> ул. Институтская, 16</p>
-                            
-                            <p class="text-gray-600 text-sm mb-6 leading-relaxed">
-                                Одно из основных общежитий для иностранных студентов. Представляет собой здание блочного типа: в каждом блоке расположены комнаты, санузел и умывальник.
-                            </p>
-                            
-                            <div class="bg-gray-50 p-4 rounded-xl border border-gray-100">
-                                <h5 class="text-xs font-bold text-gray-800 uppercase tracking-wider mb-3">Инфраструктура:</h5>
-                                <ul class="facility-list text-sm text-gray-600">
-                                    <li>Общая кухня на каждом этаже</li>
-                                    <li>Помещение для стирки</li>
-                                    <li>Читальный зал</li>
-                                    <li>Тренажерный зал</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="dorm-card bg-white rounded-2xl overflow-hidden border border-gray-200 gs-reveal" style="transition-delay: 100ms;">
-                        <div class="h-64 relative overflow-hidden">
-                            <img src="https://images.unsplash.com/photo-1595526114035-0d45ed16cfbf?auto=format&fit=crop&w=800&q=80" alt="Student Kitchen" class="w-full h-full object-cover">
-                        </div>
-                        <div class="p-8">
-                            <h3 class="text-2xl font-bold text-brand-blue mb-2">Общежитие №5</h3>
-                            <p class="text-sm text-gray-500 mb-6"><i class="fas fa-map-marker-alt text-brand-accent mr-1"></i> ул. Харьковская, 10</p>
-                            
-                            <p class="text-gray-600 text-sm mb-6 leading-relaxed">
-                                Общежитие коридорного типа. Места общего пользования (кухни, санузлы, душевые) расположены на этажах. Здесь проживают студенты разных факультетов.
-                            </p>
-                            
-                            <div class="bg-gray-50 p-4 rounded-xl border border-gray-100">
-                                <h5 class="text-xs font-bold text-gray-800 uppercase tracking-wider mb-3">Инфраструктура:</h5>
-                                <ul class="facility-list text-sm text-gray-600">
-                                    <li>Две кухни на этаж</li>
-                                    <li>Умывальные комнаты и санузлы на этажах</li>
-                                    <li>Душевые на первом этаже</li>
-                                    <li>Комната для самоподготовки</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-        </section>
-
-        <section class="py-16 md:py-24 bg-brand-blue text-white overflow-hidden relative">
-            <div class="absolute inset-0 opacity-5 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')]"></div>
-            
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-                <div class="flex flex-col md:flex-row items-center gap-12">
-                    
-                    <div class="md:w-1/2 gs-reveal">
-                        <div class="inline-flex items-center gap-2 px-3 py-1 rounded bg-brand-accent/20 text-brand-accent text-xs font-bold uppercase tracking-wider mb-4 border border-brand-accent/30">
-                            <i class="fas fa-wallet"></i> Стоимость
-                        </div>
-                        <h2 class="text-3xl md:text-4xl font-serif font-bold text-white mb-6">Сколько стоит проживание?</h2>
-                        <p class="text-gray-300 mb-6 leading-relaxed">
-                            Университет предоставляет места в общежитии по льготной цене, которая значительно ниже рыночной стоимости аренды квартиры в Брянске.
-                        </p>
+                    <!-- Left Column: Content -->
+                    <div class="lg:col-span-2">
                         
-                        <div class="bg-blue-900/50 p-6 rounded-xl border border-blue-800 mb-8">
-                            <div class="flex justify-between items-center border-b border-blue-800 pb-3 mb-3">
-                                <span class="text-gray-300">Стоимость за 1 месяц:</span>
-                                <span class="font-bold text-xl text-brand-accent">от ~ 800 до 1 500 руб.</span>
+                        <div class="mb-12 gs-reveal">
+                            <h2 class="text-3xl font-serif font-bold text-brand-blue mb-6">Алгоритм действий</h2>
+                            <p class="text-gray-600 mb-8 leading-relaxed">Процесс получения визы начинается только после того, как университет пришлет вам электронную версию вашего официального приглашения. Не записывайтесь в посольство заранее, так как сроки выдачи приглашения МВД могут варьироваться.</p>
+
+                            <!-- Timeline -->
+                            <div class="mt-8">
+                                <div class="timeline-step gs-reveal">
+                                    <div class="timeline-icon">1</div>
+                                    <h4 class="text-xl font-bold text-brand-blue mb-2">Получите электронное приглашение</h4>
+                                    <p class="text-sm text-gray-600">Мы отправим вам PDF-файл официального приглашения МВД РФ на ваш email. Распечатайте его в хорошем качестве.</p>
+                                </div>
+                                <div class="timeline-step gs-reveal">
+                                    <div class="timeline-icon">2</div>
+                                    <h4 class="text-xl font-bold text-brand-blue mb-2">Запишитесь в посольство России</h4>
+                                    <p class="text-sm text-gray-600">Найдите ближайшее Посольство или Генеральное консульство РФ в вашей стране. Запишитесь на прием для подачи документов на обыкновенную учебную визу (УЗ).</p>
+                                </div>
+                                <div class="timeline-step gs-reveal">
+                                    <div class="timeline-icon">3</div>
+                                    <h4 class="text-xl font-bold text-brand-blue mb-2">Заполните визовую анкету</h4>
+                                    <p class="text-sm text-gray-600">Заполните электронную анкету на сайте Консульского департамента МИД РФ (<a href="https://visa.kdmid.ru" target="_blank" class="text-brand-accent font-bold hover:underline">visa.kdmid.ru</a>). Распечатайте её и наклейте фотографию.</p>
+                                </div>
+                                <div class="timeline-step gs-reveal">
+                                    <div class="timeline-icon">4</div>
+                                    <h4 class="text-xl font-bold text-brand-blue mb-2">Оплатите сбор и сдайте документы</h4>
+                                    <p class="text-sm text-gray-600">Оплатите консульский сбор (размер зависит от вашей страны и скорости оформления) и передайте полный пакет документов консулу.</p>
+                                </div>
+                                <div class="timeline-step gs-reveal">
+                                    <div class="timeline-icon bg-brand-green border-none"><i class="fas fa-check text-white"></i></div>
+                                    <h4 class="text-xl font-bold text-brand-blue mb-2">Проверьте выданную визу!</h4>
+                                    <p class="text-sm text-gray-600">При получении паспорта с визой <strong class="text-red-600">обязательно прямо на месте проверьте</strong> правильность написания вашего имени, даты въезда и номера паспорта. Если есть ошибка, границу пересечь не получится.</p>
+                                </div>
                             </div>
-                            <div class="flex justify-between items-center text-sm">
-                                <span class="text-gray-400">Оплата производится:</span>
-                                <span class="text-white font-medium">Ежемесячно или за семестр/год</span>
-                            </div>
-                            <div class="text-xs text-gray-400 mt-2">* Стоимость зависит от типа общежития и формы обучения (бюджет/договор).</div>
                         </div>
-                        
-                        <a href="living-costs.html" class="inline-block text-center bg-brand-accent !text-brand-blue px-6 py-3 rounded font-bold text-sm hover:bg-yellow-500 transition-colors shadow-lg">Посмотреть все цены на жизнь</a>
-                    </div>
-                    
-                    <div class="md:w-1/2 gs-reveal" style="transition-delay: 200ms;">
-                        <div class="bg-white p-8 rounded-2xl shadow-2xl text-gray-800 relative">
-                            <div class="absolute -top-6 -right-6 w-24 h-24 bg-brand-green rounded-full opacity-10 blur-xl pointer-events-none"></div>
-                            
-                            <h3 class="text-xl font-bold text-brand-blue mb-6 border-b border-gray-100 pb-4">Как проходит заселение?</h3>
-                            <ul class="space-y-6">
-                                <li class="flex gap-4">
-                                    <div class="w-8 h-8 rounded-full bg-brand-blue text-white flex items-center justify-center shrink-0 font-bold text-sm">1</div>
+
+                        <div class="bg-gray-50 border border-gray-200 rounded-xl p-8 mb-12 gs-reveal">
+                            <h3 class="text-2xl font-bold text-brand-blue mb-6 border-b border-gray-200 pb-4">Какие документы нести в посольство?</h3>
+                            <ul class="space-y-4">
+                                <li class="flex items-start gap-3">
+                                    <i class="fas fa-passport text-brand-accent mt-1 text-lg"></i>
                                     <div>
-                                        <h4 class="font-bold text-gray-800 mb-1">Приезд и встреча</h4>
-                                        <p class="text-sm text-gray-500">Сотрудники отдела встретят вас и сразу отвезут в общежитие.</p>
+                                        <strong class="block text-gray-800">Заграничный паспорт</strong>
+                                        <span class="text-sm text-gray-600">Оригинал. Срок действия не менее 1,5 лет (18 месяцев) с даты начала действия визы. В паспорте должно быть минимум 2 чистые страницы.</span>
                                     </div>
                                 </li>
-                                <li class="flex gap-4">
-                                    <div class="w-8 h-8 rounded-full bg-brand-blue text-white flex items-center justify-center shrink-0 font-bold text-sm">2</div>
+                                <li class="flex items-start gap-3">
+                                    <i class="fas fa-file-pdf text-brand-accent mt-1 text-lg"></i>
                                     <div>
-                                        <h4 class="font-bold text-gray-800 mb-1">Медицинский осмотр</h4>
-                                        <p class="text-sm text-gray-500">Для заселения нужна справка от врача университета (проходится за 1 день).</p>
+                                        <strong class="block text-gray-800">Распечатанное приглашение</strong>
+                                        <span class="text-sm text-gray-600">Копия электронного приглашения МВД РФ со штрих-кодом (то самое, которое прислал университет).</span>
                                     </div>
                                 </li>
-                                <li class="flex gap-4">
-                                    <div class="w-8 h-8 rounded-full bg-brand-blue text-white flex items-center justify-center shrink-0 font-bold text-sm">3</div>
+                                <li class="flex items-start gap-3">
+                                    <i class="fas fa-file-signature text-brand-accent mt-1 text-lg"></i>
                                     <div>
-                                        <h4 class="font-bold text-gray-800 mb-1">Оформление договора</h4>
-                                        <p class="text-sm text-gray-500">Подписание договора найма и выдача магнитного пропуска.</p>
+                                        <strong class="block text-gray-800">Визовая анкета</strong>
+                                        <span class="text-sm text-gray-600">Распечатанная с сайта МИД РФ и лично подписанная заявителем.</span>
+                                    </div>
+                                </li>
+                                <li class="flex items-start gap-3">
+                                    <i class="fas fa-camera text-brand-accent mt-1 text-lg"></i>
+                                    <div>
+                                        <strong class="block text-gray-800">Фотографии</strong>
+                                        <span class="text-sm text-gray-600">1 или 2 цветные фотографии (обычно 3,5 х 4,5 см) на светлом фоне, сделанные недавно.</span>
+                                    </div>
+                                </li>
+                                <li class="flex items-start gap-3">
+                                    <i class="fas fa-notes-medical text-brand-accent mt-1 text-lg"></i>
+                                    <div>
+                                        <strong class="block text-gray-800">Справка об отсутствии ВИЧ-инфекции</strong>
+                                        <span class="text-sm text-gray-600">Оригинал сертификата на английском или русском языке (действителен 3 месяца с момента выдачи).</span>
                                     </div>
                                 </li>
                             </ul>
                         </div>
+
+                    </div>
+
+                    <!-- Right Column: Sidebar -->
+                    <div class="lg:col-span-1">
+                        <div class="sticky top-32">
+                            <!-- Important Info Box -->
+                            <div class="bg-blue-50 border-l-4 border-brand-blue p-6 rounded-r-lg shadow-sm mb-6 gs-reveal">
+                                <h4 class="font-bold text-brand-blue mb-3 text-lg flex items-center gap-2">
+                                    <i class="fas fa-info-circle text-xl"></i> Срок действия визы
+                                </h4>
+                                <p class="text-sm text-gray-700 leading-relaxed mb-4">
+                                    <strong>Внимание!</strong> Первичная учебная виза выдается консульством <strong>только на 90 дней</strong> (она однократная).
+                                </p>
+                                <p class="text-sm text-gray-700 leading-relaxed">
+                                    По приезде в Россию, университет продлит вашу визу на весь срок обучения (1 год) и сделает её многократной. Вам не придется выезжать из страны для её продления.
+                                </p>
+                            </div>
+
+                            <!-- Next Steps Box -->
+                            <div class="bg-white border border-gray-200 p-6 rounded-lg shadow-sm gs-reveal">
+                                <h4 class="font-bold text-gray-800 mb-4">Получили визу?</h4>
+                                <p class="text-sm text-gray-600 mb-6">Как только виза будет вклеена в паспорт, вы можете покупать билеты в Россию (до Москвы или Брянска).</p>
+                                <ul class="space-y-3 mb-6">
+                                    <li class="flex items-start gap-2 text-sm text-gray-600">
+                                        <i class="fas fa-plane-arrival text-brand-accent mt-1"></i>
+                                        <span>Обязательно сообщите нам дату и время прибытия за 5 дней до рейса.</span>
+                                    </li>
+                                    <li class="flex items-start gap-2 text-sm text-gray-600">
+                                        <i class="fas fa-subway text-brand-accent mt-1"></i>
+                                        <span>Мы встретим вас на ж/д вокзале в Брянске.</span>
+                                    </li>
+                                </ul>
+                                <a href="contacts.html" class="block w-full text-center bg-brand-accent !text-brand-blue px-4 py-3 rounded font-bold text-sm hover:bg-yellow-500 shadow-md transition-colors">
+                                    Сообщить о приезде
+                                </a>
+                            </div>
+                        </div>
                     </div>
 
                 </div>
             </div>
         </section>
+
+        <!-- CTA Section -->
+        <section class="py-12 bg-brand-accent relative overflow-hidden">
+            <div class="absolute right-0 bottom-0 opacity-10 pointer-events-none transform translate-x-1/4 translate-y-1/4">
+                <i class="fas fa-passport text-9xl"></i>
+            </div>
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 gs-reveal text-center md:text-left flex flex-col md:flex-row items-center justify-between">
+                <div>
+                    <h2 class="text-2xl md:text-3xl font-serif font-bold text-brand-blue mb-2">Следующий шаг: Приезд в Россию</h2>
+                    <p class="text-blue-900 font-medium">Узнайте, что делать в первые 3 дня после пересечения границы.</p>
+                </div>
+                <div class="mt-6 md:mt-0 flex shrink-0">
+                    <a href="migration-rules.html" class="bg-white !text-brand-blue px-8 py-4 rounded font-bold hover:bg-gray-50 transition-all shadow-lg flex items-center gap-2">
+                        Миграционный учет <i class="fas fa-arrow-right text-brand-accent"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+
     </main>
 
     <div id="footer-placeholder"></div>
-    <script src="footer.js?v=3" charset="UTF-8"></script>
-
-    <div class="md:hidden fixed bottom-4 left-4 right-4 z-40">
+    <script src="footer.js?v=3" charset="UTF-8"></script><div class="md:hidden fixed bottom-4 left-4 right-4 z-40">
         <a href="contacts.html" class="block w-full bg-brand-accent !text-brand-blue text-center py-4 rounded font-bold shadow-[0_10px_25px_rgba(234,179,8,0.5)] border border-yellow-500">
-            <span>Хочу учиться в БГТУ</span>
+            <span>Связаться с отделом</span>
         </a>
     </div>
 
     <script>
-        
-
         document.addEventListener("DOMContentLoaded", () => {
             gsap.registerPlugin(ScrollTrigger);
             document.querySelectorAll('.gs-reveal').forEach((elem) => {
@@ -286,5 +384,6 @@
             });
         });
     </script>
+    <script src="theme.js" defer></script>
 </body>
 </html>

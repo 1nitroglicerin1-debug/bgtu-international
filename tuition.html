@@ -23,7 +23,7 @@
                     },
                     colors: {
                         brand: {
-                            blue: '#003366', 
+                            blue: '#003366', cyan: '#0EA5E9', teal: '#14B8A6', violet: '#7C3AED', coral: '#FF6B5B', 
                             light: '#F8FAFC',
                             accent: '#EAB308', 
                             green: '#10B981', 
@@ -87,6 +87,7 @@
             .marquee-container { max-width: 100% !important; }
         }
         /* === END GLOBAL RESPONSIVE FIX === */    </style>
+    <link rel="stylesheet" href="theme.css">
 </head>
 <body class="font-sans text-gray-800 bg-gray-50 overflow-x-hidden">
 
@@ -119,7 +120,7 @@
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                     
                     <div class="pricing-card bg-white border border-gray-200 rounded-2xl p-8 flex flex-col gs-reveal">
-                        <div class="w-14 h-14 bg-gray-100 rounded-xl flex items-center justify-center text-gray-600 text-2xl mb-6">
+                        <div class="w-14 h-14 bg-brand-cyan/10 rounded-xl flex items-center justify-center text-brand-cyan text-2xl mb-6">
                             <i class="fas fa-user-graduate"></i>
                         </div>
                         <h3 class="text-xl font-bold text-brand-blue mb-2">Бакалавриат</h3>
@@ -140,9 +141,10 @@
                         <a href="programs.html" class="block w-full text-center bg-gray-50 border border-gray-200 !text-brand-blue px-6 py-3 rounded font-bold text-sm hover:border-brand-blue hover:bg-gray-100 transition-all">Выбрать программу</a>
                     </div>
 
-                    <div class="pricing-card bg-brand-blue text-white rounded-2xl p-8 flex flex-col shadow-premium transform md:-translate-y-4 gs-reveal" style="transition-delay: 100ms;">
-                        <div class="absolute top-0 right-0 bg-brand-accent text-brand-blue text-xs font-bold px-3 py-1 rounded-bl-lg rounded-tr-xl uppercase tracking-wider">Популярно</div>
-                        <div class="w-14 h-14 bg-blue-800 rounded-xl flex items-center justify-center text-brand-accent text-2xl mb-6">
+                    <div class="pricing-card bg-gradient-to-br from-brand-blue to-blue-900 text-white rounded-2xl p-8 flex flex-col shadow-premium transform md:-translate-y-4 relative overflow-hidden gs-reveal" style="transition-delay: 100ms;">
+                        <div class="absolute -right-8 -top-8 w-32 h-32 bg-brand-accent/10 rounded-full blur-2xl"></div>
+                        <div class="absolute top-0 right-0 bg-brand-accent text-brand-blue text-xs font-bold px-3 py-1 rounded-bl-lg rounded-tr-xl uppercase tracking-wider z-10">Популярно</div>
+                        <div class="w-14 h-14 bg-white/15 rounded-xl flex items-center justify-center text-brand-accent text-2xl mb-6 relative z-10">
                             <i class="fas fa-language"></i>
                         </div>
                         <h3 class="text-xl font-bold text-white mb-2">Курсы «Русский язык»</h3>
@@ -163,7 +165,7 @@
                     </div>
 
                     <div class="pricing-card bg-white border border-gray-200 rounded-2xl p-8 flex flex-col gs-reveal" style="transition-delay: 200ms;">
-                        <div class="w-14 h-14 bg-gray-100 rounded-xl flex items-center justify-center text-gray-600 text-2xl mb-6">
+                        <div class="w-14 h-14 bg-brand-violet/10 rounded-xl flex items-center justify-center text-brand-violet text-2xl mb-6">
                             <i class="fas fa-microscope"></i>
                         </div>
                         <h3 class="text-xl font-bold text-brand-blue mb-2">Магистратура</h3>
@@ -250,5 +252,6 @@
             });
         });
     </script>
+    <script src="theme.js" defer></script>
 </body>
 </html>

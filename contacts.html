@@ -23,7 +23,7 @@
                     },
                     colors: {
                         brand: {
-                            blue: '#003366', 
+                            blue: '#003366', cyan: '#0EA5E9', teal: '#14B8A6', violet: '#7C3AED', coral: '#FF6B5B', 
                             light: '#F8FAFC',
                             accent: '#EAB308', 
                             green: '#10B981', 
@@ -92,6 +92,7 @@
             .marquee-container { max-width: 100% !important; }
         }
         /* === END GLOBAL RESPONSIVE FIX === */    </style>
+    <link rel="stylesheet" href="theme.css">
 </head>
 <body class="font-sans text-gray-800 bg-gray-50 overflow-x-hidden">
 
@@ -301,16 +302,16 @@
                         <div class="bg-white border border-gray-200 rounded-2xl p-8">
                             <h3 class="font-serif font-bold text-2xl text-brand-blue mb-6">Мы в соцсетях</h3>
                             <div class="flex gap-4">
-                                <a href="https://vk.com/tubryansk" target="_blank" rel="noopener noreferrer" class="w-14 h-14 bg-gray-100 rounded-full flex items-center justify-center text-xl text-gray-600 hover:bg-brand-blue hover:!text-white transition-all duration-300">
+                                <a href="https://vk.com/tubryansk" target="_blank" rel="noopener noreferrer" class="w-14 h-14 rounded-full flex items-center justify-center text-xl text-[#0077FF] bg-[#0077FF]/15 hover:bg-[#0077FF] hover:text-white hover:-translate-y-1 transition-all duration-300" title="ВКонтакте" aria-label="ВКонтакте">
                                     <i class="fab fa-vk"></i>
                                 </a>
-                                <a href="https://t.me/tubryansk" target="_blank" rel="noopener noreferrer" class="w-14 h-14 bg-gray-100 rounded-full flex items-center justify-center text-xl text-gray-600 hover:bg-brand-blue hover:!text-white transition-all duration-300">
+                                <a href="https://t.me/tubryansk" target="_blank" rel="noopener noreferrer" class="w-14 h-14 rounded-full flex items-center justify-center text-xl text-[#229ED9] bg-[#229ED9]/15 hover:bg-[#229ED9] hover:text-white hover:-translate-y-1 transition-all duration-300" title="Telegram" aria-label="Telegram">
                                     <i class="fab fa-telegram"></i>
                                 </a>
-                                <a href="#" class="w-14 h-14 bg-gray-100 rounded-full flex items-center justify-center text-xl text-gray-600 hover:bg-brand-blue hover:!text-white transition-all duration-300">
+                                <a href="#" class="w-14 h-14 rounded-full flex items-center justify-center text-xl text-[#FF0000] bg-[#FF0000]/15 hover:bg-[#FF0000] hover:text-white hover:-translate-y-1 transition-all duration-300" title="YouTube" aria-label="YouTube">
                                     <i class="fab fa-youtube"></i>
                                 </a>
-                                <a href="#" class="w-14 h-14 bg-gray-100 rounded-full flex items-center justify-center text-xl text-gray-600 hover:bg-brand-blue hover:!text-white transition-all duration-300">
+                                <a href="#" class="w-14 h-14 rounded-full flex items-center justify-center text-xl text-[#E1306C] bg-[#E1306C]/15 hover:bg-[#E1306C] hover:text-white hover:-translate-y-1 transition-all duration-300" title="Instagram" aria-label="Instagram">
                                     <i class="fab fa-instagram"></i>
                                 </a>
                             </div>
@@ -367,5 +368,6 @@
             });
         });
     </script>
+    <script src="theme.js" defer></script>
 </body>
 </html>

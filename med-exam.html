@@ -1,10 +1,10 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="ru" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Медосмотр и дактилоскопия для иностранных граждан в РФ: процедура и требования">
-    <title>Получение учебной визы | БГТУ</title>
+    <title>Медосмотр и дактилоскопия | БГТУ</title>
     <link rel="icon" href="favicon.svg" type="image/svg+xml">
     
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
@@ -23,7 +23,7 @@
                     },
                     colors: {
                         brand: {
-                            blue: '#003366', 
+                            blue: '#003366', cyan: '#0EA5E9', teal: '#14B8A6', violet: '#7C3AED', coral: '#FF6B5B', 
                             light: '#F8FAFC',
                             accent: '#EAB308', 
                             green: '#10B981', 
@@ -139,41 +139,6 @@
         .mobile-submenu.active {
             display: block;
         }
-        
-        /* Timeline styling */
-        .timeline-step {
-            position: relative;
-            padding-left: 3rem;
-            padding-bottom: 3rem;
-        }
-        .timeline-step::before {
-            content: '';
-            position: absolute;
-            left: 1.1rem;
-            top: 2.5rem;
-            bottom: 0;
-            width: 2px;
-            background-color: #e5e7eb;
-        }
-        .timeline-step:last-child::before {
-            display: none;
-        }
-        .timeline-icon {
-            position: absolute;
-            left: 0;
-            top: 0;
-            width: 2.5rem;
-            height: 2.5rem;
-            border-radius: 50%;
-            background-color: #003366;
-            color: white;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: bold;
-            z-index: 10;
-            box-shadow: 0 0 0 4px white;
-        }
             /* === GLOBAL RESPONSIVE FIX === */
         html, body {
             overflow-x: hidden !important;
@@ -193,6 +158,7 @@
             .marquee-container { max-width: 100% !important; }
         }
         /* === END GLOBAL RESPONSIVE FIX === */    </style>
+    <link rel="stylesheet" href="theme.css">
 </head>
 <body class="font-sans text-gray-800 bg-gray-50 overflow-x-hidden">
 
@@ -207,14 +173,17 @@
                     <span>Виза и миграция</span>
                 </div>
                 <h1 class="text-4xl md:text-5xl lg:text-6xl font-serif font-bold mb-6 leading-tight">
-                    Получение <span class="text-brand-accent">учебной визы</span>
+                    Медосмотр и <br><span class="text-brand-accent">дактилоскопия</span>
                 </h1>
                 <p class="text-lg md:text-xl text-blue-100 max-w-3xl font-light leading-relaxed mb-8">
-                    После оформления приглашения от МВД РФ, вы можете получить российскую учебную визу в консульстве вашей страны. Здесь описан подробный алгоритм действий.
+                    Согласно Федеральному закону, все иностранные студенты, прибывшие в Россию на срок более 90 дней, обязаны пройти медицинское освидетельствование и сдать отпечатки пальцев.
                 </p>
-                <div class="inline-flex items-center gap-3 bg-red-500/20 border border-red-400 text-white px-6 py-3 rounded-lg backdrop-blur-sm">
-                    <i class="fas fa-exclamation-triangle text-red-400 text-xl"></i>
-                    <span class="text-sm md:text-base font-medium">Без официального приглашения получить учебную визу невозможно.</span>
+                <div class="inline-flex items-center gap-3 bg-red-600 border border-red-400 text-white px-6 py-4 rounded-lg shadow-lg">
+                    <i class="fas fa-clock text-white text-2xl animate-pulse"></i>
+                    <div>
+                        <strong class="block text-sm md:text-base font-bold">Строгий срок: 90 дней</strong>
+                        <span class="text-xs md:text-sm text-red-100">с момента въезда в Российскую Федерацию.</span>
+                    </div>
                 </div>
             </div>
         </section>
@@ -228,117 +197,124 @@
                     <!-- Left Column: Content -->
                     <div class="lg:col-span-2">
                         
+                        <!-- Intro -->
                         <div class="mb-12 gs-reveal">
-                            <h2 class="text-3xl font-serif font-bold text-brand-blue mb-6">Алгоритм действий</h2>
-                            <p class="text-gray-600 mb-8 leading-relaxed">Процесс получения визы начинается только после того, как университет пришлет вам электронную версию вашего официального приглашения. Не записывайтесь в посольство заранее, так как сроки выдачи приглашения МВД могут варьироваться.</p>
-
-                            <!-- Timeline -->
-                            <div class="mt-8">
-                                <div class="timeline-step gs-reveal">
-                                    <div class="timeline-icon">1</div>
-                                    <h4 class="text-xl font-bold text-brand-blue mb-2">Получите электронное приглашение</h4>
-                                    <p class="text-sm text-gray-600">Мы отправим вам PDF-файл официального приглашения МВД РФ на ваш email. Распечатайте его в хорошем качестве.</p>
-                                </div>
-                                <div class="timeline-step gs-reveal">
-                                    <div class="timeline-icon">2</div>
-                                    <h4 class="text-xl font-bold text-brand-blue mb-2">Запишитесь в посольство России</h4>
-                                    <p class="text-sm text-gray-600">Найдите ближайшее Посольство или Генеральное консульство РФ в вашей стране. Запишитесь на прием для подачи документов на обыкновенную учебную визу (УЗ).</p>
-                                </div>
-                                <div class="timeline-step gs-reveal">
-                                    <div class="timeline-icon">3</div>
-                                    <h4 class="text-xl font-bold text-brand-blue mb-2">Заполните визовую анкету</h4>
-                                    <p class="text-sm text-gray-600">Заполните электронную анкету на сайте Консульского департамента МИД РФ (<a href="https://visa.kdmid.ru" target="_blank" class="text-brand-accent font-bold hover:underline">visa.kdmid.ru</a>). Распечатайте её и наклейте фотографию.</p>
-                                </div>
-                                <div class="timeline-step gs-reveal">
-                                    <div class="timeline-icon">4</div>
-                                    <h4 class="text-xl font-bold text-brand-blue mb-2">Оплатите сбор и сдайте документы</h4>
-                                    <p class="text-sm text-gray-600">Оплатите консульский сбор (размер зависит от вашей страны и скорости оформления) и передайте полный пакет документов консулу.</p>
-                                </div>
-                                <div class="timeline-step gs-reveal">
-                                    <div class="timeline-icon bg-brand-green border-none"><i class="fas fa-check text-white"></i></div>
-                                    <h4 class="text-xl font-bold text-brand-blue mb-2">Проверьте выданную визу!</h4>
-                                    <p class="text-sm text-gray-600">При получении паспорта с визой <strong class="text-red-600">обязательно прямо на месте проверьте</strong> правильность написания вашего имени, даты въезда и номера паспорта. Если есть ошибка, границу пересечь не получится.</p>
-                                </div>
+                            <p class="text-gray-600 leading-relaxed text-lg mb-6">
+                                Эта процедура проходится <strong class="text-brand-blue">только один раз</strong> при первичном въезде в Россию. Результаты медосмотра необходимо обновлять раз в год, а дактилоскопическая карта (зеленая пластиковая карточка) выдается на 10 лет.
+                            </p>
+                            <div class="bg-blue-50 border-l-4 border-brand-blue p-6 rounded text-sm text-gray-700">
+                                <strong>Внимание:</strong> Эта процедура платная. Оплата производится студентом самостоятельно в медицинских центрах и структурах МВД. Общая стоимость составляет примерно <strong>6 000 – 7 000 ₽</strong>.
                             </div>
                         </div>
 
-                        <div class="bg-gray-50 border border-gray-200 rounded-xl p-8 mb-12 gs-reveal">
-                            <h3 class="text-2xl font-bold text-brand-blue mb-6 border-b border-gray-200 pb-4">Какие документы нести в посольство?</h3>
-                            <ul class="space-y-4">
-                                <li class="flex items-start gap-3">
-                                    <i class="fas fa-passport text-brand-accent mt-1 text-lg"></i>
-                                    <div>
-                                        <strong class="block text-gray-800">Заграничный паспорт</strong>
-                                        <span class="text-sm text-gray-600">Оригинал. Срок действия не менее 1,5 лет (18 месяцев) с даты начала действия визы. В паспорте должно быть минимум 2 чистые страницы.</span>
+                        <!-- Step 1: Medical Exam -->
+                        <div class="mb-12 gs-reveal">
+                            <h2 class="text-3xl font-serif font-bold text-brand-blue mb-6 border-b border-gray-100 pb-4">Этап 1: Медицинское освидетельствование</h2>
+                            <p class="text-gray-600 mb-6 leading-relaxed">
+                                В первую очередь необходимо сдать анализы и пройти врачей в специализированных государственных медицинских учреждениях Брянска.
+                            </p>
+                            
+                            <div class="bg-gray-50 p-6 rounded-lg border border-gray-200">
+                                <h4 class="font-bold text-gray-800 mb-4">Что проверяют врачи:</h4>
+                                <ul class="space-y-4">
+                                    <li class="flex items-start gap-3">
+                                        <div class="w-8 h-8 rounded-full bg-brand-blue/10 text-brand-blue flex items-center justify-center shrink-0 mt-1">
+                                            <i class="fas fa-virus"></i>
+                                        </div>
+                                        <div>
+                                            <strong class="block text-gray-800 text-sm">Опасные инфекции</strong>
+                                            <span class="text-sm text-gray-600">Анализ крови на ВИЧ, сифилис, гепатиты и другие инфекционные заболевания.</span>
+                                        </div>
+                                    </li>
+                                    <li class="flex items-start gap-3">
+                                        <div class="w-8 h-8 rounded-full bg-brand-blue/10 text-brand-blue flex items-center justify-center shrink-0 mt-1">
+                                            <i class="fas fa-lungs"></i>
+                                        </div>
+                                        <div>
+                                            <strong class="block text-gray-800 text-sm">Флюорография</strong>
+                                            <span class="text-sm text-gray-600">Рентген легких для исключения туберкулеза.</span>
+                                        </div>
+                                    </li>
+                                    <li class="flex items-start gap-3">
+                                        <div class="w-8 h-8 rounded-full bg-brand-blue/10 text-brand-blue flex items-center justify-center shrink-0 mt-1">
+                                            <i class="fas fa-pills"></i>
+                                        </div>
+                                        <div>
+                                            <strong class="block text-gray-800 text-sm">Нарколог и психиатр</strong>
+                                            <span class="text-sm text-gray-600">Проверка на отсутствие наркотической зависимости (анализ мочи).</span>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                            <p class="text-sm text-gray-500 mt-4 italic">
+                                * Результаты медосмотра (справки) готовятся в течение 5-7 рабочих дней.
+                            </p>
+                        </div>
+
+                        <!-- Step 2: Fingerprinting -->
+                        <div class="gs-reveal">
+                            <h2 class="text-3xl font-serif font-bold text-brand-blue mb-6 border-b border-gray-100 pb-4">Этап 2: Дактилоскопия и фото</h2>
+                            <div class="flex flex-col md:flex-row gap-6 items-start">
+                                <div class="md:w-1/3 shrink-0">
+                                    <img src="https://images.unsplash.com/photo-1555626906-fcf10d6851b4?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Fingerprint" class="rounded-lg shadow-sm w-full object-cover h-48">
+                                </div>
+                                <div class="md:w-2/3">
+                                    <p class="text-gray-600 mb-4 leading-relaxed">
+                                        Получив на руки справки от врачей, вы должны обратиться в <strong>отдел по вопросам миграции УМВД</strong>. Там у вас снимут отпечатки пальцев (дактилоскопия) и сделают цифровую фотографию.
+                                    </p>
+                                    <p class="text-gray-600 leading-relaxed mb-4">
+                                        После успешного прохождения вы получите зеленую пластиковую карту — подтверждение прохождения дактилоскопии.
+                                    </p>
+                                    <div class="bg-brand-accent/20 border border-brand-accent/50 p-4 rounded text-sm text-gray-800 font-medium">
+                                        <i class="fas fa-info-circle text-brand-blue mr-2"></i> Копию этой карты и справок от врачей нужно обязательно принести в Международный отдел БГТУ!
                                     </div>
-                                </li>
-                                <li class="flex items-start gap-3">
-                                    <i class="fas fa-file-pdf text-brand-accent mt-1 text-lg"></i>
-                                    <div>
-                                        <strong class="block text-gray-800">Распечатанное приглашение</strong>
-                                        <span class="text-sm text-gray-600">Копия электронного приглашения МВД РФ со штрих-кодом (то самое, которое прислал университет).</span>
-                                    </div>
-                                </li>
-                                <li class="flex items-start gap-3">
-                                    <i class="fas fa-file-signature text-brand-accent mt-1 text-lg"></i>
-                                    <div>
-                                        <strong class="block text-gray-800">Визовая анкета</strong>
-                                        <span class="text-sm text-gray-600">Распечатанная с сайта МИД РФ и лично подписанная заявителем.</span>
-                                    </div>
-                                </li>
-                                <li class="flex items-start gap-3">
-                                    <i class="fas fa-camera text-brand-accent mt-1 text-lg"></i>
-                                    <div>
-                                        <strong class="block text-gray-800">Фотографии</strong>
-                                        <span class="text-sm text-gray-600">1 или 2 цветные фотографии (обычно 3,5 х 4,5 см) на светлом фоне, сделанные недавно.</span>
-                                    </div>
-                                </li>
-                                <li class="flex items-start gap-3">
-                                    <i class="fas fa-notes-medical text-brand-accent mt-1 text-lg"></i>
-                                    <div>
-                                        <strong class="block text-gray-800">Справка об отсутствии ВИЧ-инфекции</strong>
-                                        <span class="text-sm text-gray-600">Оригинал сертификата на английском или русском языке (действителен 3 месяца с момента выдачи).</span>
-                                    </div>
-                                </li>
-                            </ul>
+                                </div>
+                            </div>
                         </div>
 
                     </div>
 
                     <!-- Right Column: Sidebar -->
                     <div class="lg:col-span-1">
-                        <div class="sticky top-32">
-                            <!-- Important Info Box -->
-                            <div class="bg-blue-50 border-l-4 border-brand-blue p-6 rounded-r-lg shadow-sm mb-6 gs-reveal">
-                                <h4 class="font-bold text-brand-blue mb-3 text-lg flex items-center gap-2">
-                                    <i class="fas fa-info-circle text-xl"></i> Срок действия визы
+                        <div class="sticky top-32 space-y-6">
+                            
+                            <!-- Danger Warning Box -->
+                            <div class="bg-red-50 border border-red-200 p-6 rounded-lg shadow-sm gs-reveal">
+                                <h4 class="font-bold text-red-700 mb-3 text-lg flex items-center gap-2">
+                                    <i class="fas fa-ban"></i> Что будет, если не пройти?
                                 </h4>
-                                <p class="text-sm text-gray-700 leading-relaxed mb-4">
-                                    <strong>Внимание!</strong> Первичная учебная виза выдается консульством <strong>только на 90 дней</strong> (она однократная).
+                                <p class="text-sm text-red-900 leading-relaxed mb-4">
+                                    Если иностранец не прошел дактилоскопию и медосмотр в течение 90 дней, применяются жесткие санкции:
                                 </p>
-                                <p class="text-sm text-gray-700 leading-relaxed">
-                                    По приезде в Россию, университет продлит вашу визу на весь срок обучения (1 год) и сделает её многократной. Вам не придется выезжать из страны для её продления.
-                                </p>
-                            </div>
-
-                            <!-- Next Steps Box -->
-                            <div class="bg-white border border-gray-200 p-6 rounded-lg shadow-sm gs-reveal">
-                                <h4 class="font-bold text-gray-800 mb-4">Получили визу?</h4>
-                                <p class="text-sm text-gray-600 mb-6">Как только виза будет вклеена в паспорт, вы можете покупать билеты в Россию (до Москвы или Брянска).</p>
-                                <ul class="space-y-3 mb-6">
-                                    <li class="flex items-start gap-2 text-sm text-gray-600">
-                                        <i class="fas fa-plane-arrival text-brand-accent mt-1"></i>
-                                        <span>Обязательно сообщите нам дату и время прибытия за 5 дней до рейса.</span>
+                                <ul class="space-y-3 mb-4 text-sm text-red-800">
+                                    <li class="flex items-start gap-2">
+                                        <i class="fas fa-times text-red-600 mt-1"></i>
+                                        <span>Срок пребывания в РФ сокращается до текущего дня.</span>
                                     </li>
-                                    <li class="flex items-start gap-2 text-sm text-gray-600">
-                                        <i class="fas fa-subway text-brand-accent mt-1"></i>
-                                        <span>Мы встретим вас на ж/д вокзале в Брянске.</span>
+                                    <li class="flex items-start gap-2">
+                                        <i class="fas fa-times text-red-600 mt-1"></i>
+                                        <span>Вы обязаны покинуть Россию в течение 3 дней.</span>
+                                    </li>
+                                    <li class="flex items-start gap-2">
+                                        <i class="fas fa-times text-red-600 mt-1"></i>
+                                        <span>Университет обязан вас отчислить.</span>
                                     </li>
                                 </ul>
+                            </div>
+
+                            <!-- Support Box -->
+                            <div class="bg-white border border-gray-200 p-6 rounded-lg shadow-sm gs-reveal">
+                                <h4 class="font-bold text-brand-blue mb-4 flex items-center gap-2">
+                                    <i class="fas fa-hands-helping text-brand-accent"></i> Нужна помощь?
+                                </h4>
+                                <p class="text-sm text-gray-600 mb-6">
+                                    Мы понимаем, что пройти эти процедуры в чужой стране сложно. Сотрудники Международного отдела дадут вам точные адреса больниц и направят в нужные кабинеты МВД.
+                                </p>
                                 <a href="contacts.html" class="block w-full text-center bg-brand-accent !text-brand-blue px-4 py-3 rounded font-bold text-sm hover:bg-yellow-500 shadow-md transition-colors">
-                                    Сообщить о приезде
+                                    Связаться с куратором
                                 </a>
                             </div>
+
                         </div>
                     </div>
 
@@ -347,18 +323,15 @@
         </section>
 
         <!-- CTA Section -->
-        <section class="py-12 bg-brand-accent relative overflow-hidden">
-            <div class="absolute right-0 bottom-0 opacity-10 pointer-events-none transform translate-x-1/4 translate-y-1/4">
-                <i class="fas fa-passport text-9xl"></i>
-            </div>
+        <section class="py-12 bg-gray-100 relative border-t border-gray-200">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 gs-reveal text-center md:text-left flex flex-col md:flex-row items-center justify-between">
                 <div>
-                    <h2 class="text-2xl md:text-3xl font-serif font-bold text-brand-blue mb-2">Следующий шаг: Приезд в Россию</h2>
-                    <p class="text-blue-900 font-medium">Узнайте, что делать в первые 3 дня после пересечения границы.</p>
+                    <h2 class="text-xl md:text-2xl font-serif font-bold text-brand-blue mb-2">Все документы готовы?</h2>
+                    <p class="text-gray-600 text-sm">Самое время узнать больше о студенческой жизни в БГТУ.</p>
                 </div>
                 <div class="mt-6 md:mt-0 flex shrink-0">
-                    <a href="migration-rules.html" class="bg-white !text-brand-blue px-8 py-4 rounded font-bold hover:bg-gray-50 transition-all shadow-lg flex items-center gap-2">
-                        Миграционный учет <i class="fas fa-arrow-right text-brand-accent"></i>
+                    <a href="campus.html" class="bg-brand-blue !text-white px-6 py-3 rounded font-bold hover:bg-blue-800 transition-all shadow flex items-center gap-2">
+                        Общежития и жизнь <i class="fas fa-arrow-right text-brand-accent"></i>
                     </a>
                 </div>
             </div>
@@ -384,5 +357,6 @@
             });
         });
     </script>
+    <script src="theme.js" defer></script>
 </body>
 </html>
