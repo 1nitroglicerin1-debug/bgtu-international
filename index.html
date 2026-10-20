@@ -23,14 +23,19 @@
                     },
                     colors: {
                         brand: {
-                            blue: '#003366', 
+                            blue: '#003366',
+                            deep: '#002347',
                             light: '#F8FAFC',
-                            accent: '#EAB308', 
-                            green: '#10B981', 
+                            'light-alt': '#F1F5F9',
+                            accent: '#EAB308',
+                            'accent-dark': '#CA8A04',
+                            green: '#10B981',
                         }
                     },
                     boxShadow: {
                         'premium': '0 10px 40px -10px rgba(0, 51, 102, 0.1)',
+                        'card': '0 1px 3px rgba(0,51,102,0.04), 0 8px 30px rgba(0,51,102,0.08)',
+                        'card-hover': '0 12px 40px -8px rgba(0,51,102,0.18)',
                     }
                 }
             }
@@ -43,7 +48,44 @@
         ::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
         
         .hero-gradient {
-            background: linear-gradient(rgba(0, 30, 60, 0.8), rgba(0, 30, 60, 0.9)), url('https://images.unsplash.com/photo-1541829070764-84a7d30dd3f3?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') center/cover fixed;
+            position: relative;
+            background:
+                linear-gradient(180deg, rgba(0,35,71,0.50) 0%, rgba(0,35,71,0.74) 50%, rgba(0,35,71,0.92) 100%),
+                url('https://images.unsplash.com/photo-1541829070764-84a7d30dd3f3?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') center/cover fixed;
+        }
+        .hero-gradient::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            pointer-events: none;
+            opacity: 0.05;
+            mix-blend-mode: overlay;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+        }
+        .text-balance { text-wrap: balance; }
+        .gs-reveal { will-change: transform, opacity; }
+        .card-elevate {
+            position: relative;
+            overflow: hidden;
+            transition: transform .35s cubic-bezier(.22,1,.36,1), box-shadow .35s cubic-bezier(.22,1,.36,1);
+        }
+        .card-elevate::before {
+            content: '';
+            position: absolute;
+            left: 0; right: 0; top: 0;
+            height: 3px;
+            background: linear-gradient(90deg, #EAB308, #CA8A04);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform .35s cubic-bezier(.22,1,.36,1);
+            z-index: 1;
+        }
+        .card-elevate:hover { transform: translateY(-6px); box-shadow: 0 12px 40px -8px rgba(0,51,102,0.18); }
+        .card-elevate:hover::before { transform: scaleX(1); }
+        @media (prefers-reduced-motion: reduce) {
+            .marquee-content { animation: none !important; }
+            .gs-reveal, .mobile-sticky-cta { opacity: 1 !important; transform: none !important; transition: none !important; }
+            .card-elevate, .card-elevate::before { transition: none !important; }
         }
 
         /* --- Mega Menu Styles --- */
@@ -222,7 +264,7 @@
                         <i class="fas fa-cogs text-brand-accent"></i>
                         <span>Инженерное образование в России</span>
                     </div>
-                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-white leading-tight mb-6">
+                    <h1 class="font-serif font-bold text-white leading-[1.1] tracking-tight mb-6 text-balance" style="font-size: clamp(2.5rem, 5.2vw, 4.5rem);">
                         Твое техническое будущее <br><span class="text-brand-accent">начинается в БГТУ</span>
                     </h1>
                     <p class="text-lg md:text-xl text-gray-200 mb-10 max-w-2xl leading-relaxed font-light">
@@ -261,7 +303,7 @@
         <section class="py-12 bg-white relative z-20 border-b border-gray-100">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
-                    <a href="russian-courses.html" class="gs-reveal cursor-pointer group p-6 border border-gray-200 rounded hover:shadow-lg transition-all bg-gray-50 hover:bg-white block">
+                    <a href="russian-courses.html" class="gs-reveal card-elevate cursor-pointer group p-6 border border-gray-200 rounded-xl bg-white block">
                         <div class="w-12 h-12 bg-brand-blue text-white rounded flex items-center justify-center mb-4 group-hover:bg-brand-accent transition-colors">
                             <i class="fas fa-language text-xl"></i>
                         </div>
@@ -270,7 +312,7 @@
                         <span class="text-brand-accent text-sm font-bold flex items-center gap-1 group-hover:gap-2 transition-all">Читать <i class="fas fa-angle-right"></i></span>
                     </a>
                     
-                    <a href="campus.html" class="gs-reveal cursor-pointer group p-6 border border-gray-200 rounded hover:shadow-lg transition-all bg-gray-50 hover:bg-white block" style="transition-delay: 100ms;">
+                    <a href="campus.html" class="gs-reveal card-elevate cursor-pointer group p-6 border border-gray-200 rounded-xl bg-white block" style="transition-delay: 100ms;">
                         <div class="w-12 h-12 bg-brand-blue text-white rounded flex items-center justify-center mb-4 group-hover:bg-brand-accent transition-colors">
                             <i class="fas fa-bed text-xl"></i>
                         </div>
@@ -279,7 +321,7 @@
                         <span class="text-brand-accent text-sm font-bold flex items-center gap-1 group-hover:gap-2 transition-all">Читать <i class="fas fa-angle-right"></i></span>
                     </a>
 
-                    <a href="visa-process.html" class="gs-reveal cursor-pointer group p-6 border border-gray-200 rounded hover:shadow-lg transition-all bg-gray-50 hover:bg-white block" style="transition-delay: 200ms;">
+                    <a href="visa-process.html" class="gs-reveal card-elevate cursor-pointer group p-6 border border-gray-200 rounded-xl bg-white block" style="transition-delay: 200ms;">
                         <div class="w-12 h-12 bg-brand-blue text-white rounded flex items-center justify-center mb-4 group-hover:bg-brand-accent transition-colors">
                             <i class="fas fa-passport text-xl"></i>
                         </div>
@@ -288,7 +330,7 @@
                         <span class="text-brand-accent text-sm font-bold flex items-center gap-1 group-hover:gap-2 transition-all">Узнать <i class="fas fa-angle-right"></i></span>
                     </a>
 
-                    <a href="history.html" class="gs-reveal cursor-pointer group p-6 border border-gray-200 rounded hover:shadow-lg transition-all bg-gray-50 hover:bg-white block" style="transition-delay: 300ms;">
+                    <a href="history.html" class="gs-reveal card-elevate cursor-pointer group p-6 border border-gray-200 rounded-xl bg-white block" style="transition-delay: 300ms;">
                         <div class="w-12 h-12 bg-brand-blue text-white rounded flex items-center justify-center mb-4 group-hover:bg-brand-accent transition-colors">
                             <i class="fas fa-landmark text-xl"></i>
                         </div>
@@ -303,30 +345,33 @@
         <section class="py-16 md:py-24 bg-gray-50">
              <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="text-center mb-16 gs-reveal">
-                    <h2 class="text-3xl md:text-4xl font-serif font-bold text-brand-blue mb-4">Почему выбирают БГТУ?</h2>
-                    <p class="text-gray-600 max-w-2xl mx-auto">Качественное фундаментальное образование по доступным ценам в самом центре Европейской части России.</p>
+                    <div class="inline-flex items-center gap-2 text-brand-accent font-bold tracking-wider uppercase text-xs md:text-sm mb-3">
+                        <span class="w-8 h-px bg-brand-accent"></span> Почему БГТУ <span class="w-8 h-px bg-brand-accent"></span>
+                    </div>
+                    <h2 class="text-3xl md:text-4xl font-serif font-bold text-brand-blue mb-4 text-balance">Почему выбирают БГТУ?</h2>
+                    <p class="text-gray-600 max-w-2xl mx-auto leading-relaxed">Качественное фундаментальное образование по доступным ценам в самом центре Европейской части России.</p>
                 </div>
 
                 <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-                    <div class="bg-white p-6 rounded shadow-sm border border-gray-100 gs-reveal">
+                    <div class="bg-white p-6 rounded-xl shadow-card border border-gray-100 card-elevate gs-reveal">
                         <i class="fas fa-microchip text-4xl text-brand-accent mb-4"></i>
-                        <h4 class="font-bold text-brand-blue mb-2">Сильная техническая база</h4>
-                        <p class="text-sm text-gray-600">Мы не учим всему подряд. Наш профиль — IT, машиностроение, энергетика. Наши дипломы ценятся на производстве.</p>
+                        <h4 class="font-bold text-brand-blue mb-2 text-lg">Сильная техническая база</h4>
+                        <p class="text-sm text-gray-600 leading-relaxed">Мы не учим всему подряд. Наш профиль — IT, машиностроение, энергетика. Наши дипломы ценятся на производстве.</p>
                     </div>
-                    <div class="bg-white p-6 rounded shadow-sm border border-gray-100 gs-reveal" style="transition-delay: 100ms;">
+                    <div class="bg-white p-6 rounded-xl shadow-card border border-gray-100 card-elevate gs-reveal" style="transition-delay: 100ms;">
                         <i class="fas fa-wallet text-4xl text-brand-accent mb-4"></i>
-                        <h4 class="font-bold text-brand-blue mb-2">Доступная стоимость</h4>
-                        <p class="text-sm text-gray-600">Стоимость обучения и жизни в Брянске в 2-3 раза ниже, чем в Москве, при этом качество знаний остается на высоте.</p>
+                        <h4 class="font-bold text-brand-blue mb-2 text-lg">Доступная стоимость</h4>
+                        <p class="text-sm text-gray-600 leading-relaxed">Стоимость обучения и жизни в Брянске в 2-3 раза ниже, чем в Москве, при этом качество знаний остается на высоте.</p>
                     </div>
-                    <div class="bg-white p-6 rounded shadow-sm border border-gray-100 gs-reveal" style="transition-delay: 200ms;">
+                    <div class="bg-white p-6 rounded-xl shadow-card border border-gray-100 card-elevate gs-reveal" style="transition-delay: 200ms;">
                         <i class="fas fa-hands-helping text-4xl text-brand-accent mb-4"></i>
-                        <h4 class="font-bold text-brand-blue mb-2">Поддержка 24/7</h4>
-                        <p class="text-sm text-gray-600">Международный отдел решает все вопросы: от встречи на вокзале до постановки на учет и заселения в общежитие.</p>
+                        <h4 class="font-bold text-brand-blue mb-2 text-lg">Поддержка 24/7</h4>
+                        <p class="text-sm text-gray-600 leading-relaxed">Международный отдел решает все вопросы: от встречи на вокзале до постановки на учет и заселения в общежитие.</p>
                     </div>
-                    <div class="bg-white p-6 rounded shadow-sm border border-gray-100 gs-reveal" style="transition-delay: 300ms;">
+                    <div class="bg-white p-6 rounded-xl shadow-card border border-gray-100 card-elevate gs-reveal" style="transition-delay: 300ms;">
                         <i class="fas fa-city text-4xl text-brand-accent mb-4"></i>
-                        <h4 class="font-bold text-brand-blue mb-2">Спокойный город</h4>
-                        <p class="text-sm text-gray-600">Брянск — зеленый и безопасный город, идеальный для тех, кто хочет сосредоточиться на учебе без стресса мегаполиса.</p>
+                        <h4 class="font-bold text-brand-blue mb-2 text-lg">Спокойный город</h4>
+                        <p class="text-sm text-gray-600 leading-relaxed">Брянск — зеленый и безопасный город, идеальный для тех, кто хочет сосредоточиться на учебе без стресса мегаполиса.</p>
                     </div>
                 </div>
              </div>
@@ -337,7 +382,7 @@
                 <div class="flex flex-col md:flex-row gap-12 items-center">
                     <div class="md:w-1/2 gs-reveal">
                         <div class="text-brand-accent font-bold tracking-wider uppercase text-sm mb-2">Легальность и безопасность</div>
-                        <h2 class="text-3xl md:text-4xl font-serif font-bold text-brand-blue mb-6">Бюрократия — наша забота</h2>
+                        <h2 class="text-3xl md:text-4xl font-serif font-bold text-brand-blue mb-6 text-balance">Бюрократия — наша забота</h2>
                         <p class="text-gray-600 mb-6 leading-relaxed">Российское законодательство строгое, но вам не о чем беспокоиться. БГТУ имеет многолетний опыт приема иностранных граждан.</p>
                         
                         <ul class="space-y-4 mb-8">
@@ -375,8 +420,8 @@
                 <div class="flex flex-col md:flex-row justify-between items-end gap-6 gs-reveal">
                     <div>
                         <div class="text-brand-accent font-bold tracking-wider uppercase text-sm mb-2">Отзывы студентов</div>
-                        <h2 class="text-3xl md:text-4xl font-serif font-bold text-brand-blue">Голоса нашего сообщества</h2>
-                        <p class="text-gray-600 max-w-2xl mt-4">Узнайте о реальном опыте учебы и жизни в БГТУ от студентов из более чем 40 стран мира.</p>
+                        <h2 class="text-3xl md:text-4xl font-serif font-bold text-brand-blue text-balance">Голоса нашего сообщества</h2>
+                        <p class="text-gray-600 max-w-2xl mt-4 leading-relaxed">Узнайте о реальном опыте учебы и жизни в БГТУ от студентов из более чем 40 стран мира.</p>
                     </div>
                     <a href="testimonials.html" class="shrink-0 group flex items-center gap-2 bg-gray-50 border border-gray-200 !text-brand-blue px-6 py-3 rounded-full font-bold text-sm hover:border-brand-accent hover:shadow-md transition-all">
                         <span>Читать все отзывы</span>
@@ -530,9 +575,10 @@
     <script>
         document.addEventListener("DOMContentLoaded", () => {
             gsap.registerPlugin(ScrollTrigger);
-            document.querySelectorAll('.gs-reveal').forEach((elem) => {
-                gsap.fromTo(elem, { y: 30, opacity: 0 }, {
-                    y: 0, opacity: 1, duration: 0.6, ease: "power2.out",
+            document.querySelectorAll('.gs-reveal').forEach((elem, i) => {
+                gsap.fromTo(elem, { y: 40, opacity: 0, scale: 0.98 }, {
+                    y: 0, opacity: 1, scale: 1, duration: 0.8, ease: "power3.out",
+                    delay: (i % 4) * 0.06,
                     scrollTrigger: { trigger: elem, start: "top 90%", once: true }
                 });
             });
