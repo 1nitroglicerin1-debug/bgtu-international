@@ -194,7 +194,22 @@
             section.hero-gradient { margin-top: 0 !important; }
             .marquee-container { max-width: 100% !important; }
         }
-        /* === END GLOBAL RESPONSIVE FIX === */    </style>
+        /* === END GLOBAL RESPONSIVE FIX === */
+
+        /* === Mobile sticky CTA (появляется после ухода Hero-кнопки с экрана) === */
+        .mobile-sticky-cta {
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(calc(100% + 1rem));
+            transition: all 0.3s ease;
+            will-change: transform, opacity;
+        }
+        .mobile-sticky-cta.visible {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+        /* === END Mobile sticky CTA === */    </style>
 </head>
 <body class="font-sans text-gray-800 bg-gray-50 overflow-x-hidden">
 
@@ -506,7 +521,7 @@
     <div id="footer-placeholder"></div>
     <script src="footer.js?v=3" charset="UTF-8"></script>
 
-    <div class="md:hidden fixed bottom-4 left-4 right-4 z-40">
+    <div class="md:hidden fixed bottom-4 left-4 right-4 z-40 mobile-sticky-cta" id="mobile-sticky-cta" aria-hidden="true">
         <a href="contacts.html" class="block w-full bg-brand-accent !text-brand-blue text-center py-4 rounded font-bold shadow-[0_10px_25px_rgba(234,179,8,0.5)] border border-yellow-500">
             <span>Узнать как поступить</span>
         </a>
@@ -521,6 +536,43 @@
                     scrollTrigger: { trigger: elem, start: "top 85%", toggleActions: "play none none reverse" }
                 });
             });
+
+            // Мобильная sticky-плашка: скрыта на первом экране, выезжает,
+            // когда основная кнопка Hero «Как поступить?» уходит из видимости.
+            var stickyCta = document.getElementById('mobile-sticky-cta');
+            var heroBtn = document.querySelector('section.hero-gradient a[href="contacts.html"]');
+            function setCtaVisible(visible) {
+                if (visible) {
+                    stickyCta.classList.add('visible');
+                    stickyCta.setAttribute('aria-hidden', 'false');
+                } else {
+                    stickyCta.classList.remove('visible');
+                    stickyCta.setAttribute('aria-hidden', 'true');
+                }
+            }
+            if (stickyCta && heroBtn && 'IntersectionObserver' in window) {
+                var observer = new IntersectionObserver(function (entries) {
+                    entries.forEach(function (entry) {
+                        setCtaVisible(!entry.isIntersecting);
+                    });
+                }, { threshold: 0 });
+                observer.observe(heroBtn);
+            } else if (stickyCta && heroBtn) {
+                // Fallback: скролл-листенер с rAF-throttle
+                var ticking = false;
+                function checkHeroVisibility() {
+                    ticking = false;
+                    var rect = heroBtn.getBoundingClientRect();
+                    setCtaVisible(rect.bottom < 0 || rect.top > window.innerHeight);
+                }
+                window.addEventListener('scroll', function () {
+                    if (!ticking) {
+                        window.requestAnimationFrame(checkHeroVisibility);
+                        ticking = true;
+                    }
+                }, { passive: true });
+                checkHeroVisibility();
+            }
         });
     </script>
 </body>
