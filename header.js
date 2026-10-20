@@ -1,4 +1,4 @@
-/**
+﻿/**
  * header.js — Сквозная шапка сайта БГТУ (Центр международного сотрудничества)
  * Единый компонент: навигация, mega-menu, мобильное меню, поиск с фильтрацией.
  * Использование в HTML:
@@ -16,7 +16,7 @@
     { url: 'documents.html',       title: 'Требования к документам',        desc: 'Список документов для поступления в БГТУ' },
     { url: 'programs.html',        title: 'Программы обучения',             desc: 'Направления подготовки: IT, машиностроение, энергетика, экономика' },
     { url: 'tuition.html',         title: 'Стоимость обучения',             desc: 'Цены и стоимость обучения в БГТУ для иностранных студентов' },
-    { url: 'prep.html',            title: 'Подготовительный факультет',     desc: 'Подготовительный факультет: изучение русского языка для иностранцев' },
+    { url: 'russian-courses.html', title: 'Курсы русского языка',          desc: 'Курсы дополнительного обучения «Русский язык» для иностранцев' },
     { url: 'invitation.html',      title: 'Оформление приглашения',         desc: 'Как получить официальное приглашение на учёбу в БГТУ' },
     { url: 'visa-process.html',    title: 'Получение учебной визы',         desc: 'Процедура получения учебной визы в Россию' },
     { url: 'migration-rules.html', title: 'Миграционный учёт',              desc: 'Постановка на миграционный учёт после прибытия в РФ' },
@@ -110,7 +110,7 @@
     h += '          </div></div>';
     h += '        </div>';
     h += '        <div class="nav-item h-full flex items-center hover:bg-blue-900 px-3 transition-colors border-b-4 border-transparent hover:border-brand-accent">';
-    h += '          <a href="prep.html" class="text-white hover:!text-white flex items-center w-full h-full">Подготовительный факультет</a>';
+    h += '          <a href="russian-courses.html" class="text-white hover:!text-white flex items-center w-full h-full">Курсы «Русский язык»</a>';
     h += '        </div>';
     h += '        <div class="nav-item h-full flex items-center cursor-pointer hover:bg-blue-900 px-3 transition-colors border-b-4 border-transparent hover:border-brand-accent">';
     h += '          <span>Виза и Миграция <i class="fas fa-chevron-down ml-1 text-[10px]"></i></span>';
@@ -172,7 +172,7 @@
     h += '          <a href="tuition.html" class="block py-2 text-sm text-gray-600">Стоимость обучения</a>';
     h += '        </div>';
     h += '      </div>';
-    h += '      <a href="prep.html" class="block px-3 py-3 text-base font-bold !text-brand-blue border-b border-gray-100">Подготовительный факультет</a>';
+    h += '      <a href="russian-courses.html" class="block px-3 py-3 text-base font-bold !text-brand-blue border-b border-gray-100">Курсы «Русский язык»</a>';
     h += '      <div><button type="button" class="mobile-dropdown-btn w-full flex justify-between items-center px-3 py-3 text-base !text-gray-800 border-b border-gray-100 focus:outline-none"><span>Виза и Миграция</span><i class="fas fa-chevron-down text-xs transition-transform duration-200"></i></button>';
     h += '        <div class="mobile-dropdown-content hidden bg-gray-50 px-4 py-2 space-y-2">';
     h += '          <a href="invitation.html" class="block py-2 text-sm text-gray-600">Оформление приглашения</a>';
