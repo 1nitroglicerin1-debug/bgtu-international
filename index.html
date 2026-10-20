@@ -30,6 +30,11 @@
                             accent: '#EAB308',
                             'accent-dark': '#CA8A04',
                             green: '#10B981',
+                            cyan: '#0EA5E9',
+                            teal: '#14B8A6',
+                            violet: '#7C3AED',
+                            coral: '#FF6B5B',
+                            'amber-soft': '#FDE68A',
                         }
                     },
                     boxShadow: {
@@ -50,7 +55,9 @@
         .hero-gradient {
             position: relative;
             background:
-                linear-gradient(180deg, rgba(0,35,71,0.50) 0%, rgba(0,35,71,0.74) 50%, rgba(0,35,71,0.92) 100%),
+                radial-gradient(circle at 82% 12%, rgba(124,58,237,0.38), transparent 55%),
+                radial-gradient(circle at 12% 88%, rgba(14,165,233,0.32), transparent 50%),
+                linear-gradient(160deg, rgba(0,35,71,0.90) 0%, rgba(0,51,102,0.93) 45%, rgba(30,58,138,0.95) 100%),
                 url('https://images.unsplash.com/photo-1541829070764-84a7d30dd3f3?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') center/cover fixed;
         }
         .hero-gradient::after {
@@ -84,9 +91,40 @@
         .card-elevate:hover::before { transform: scaleX(1); }
         @media (prefers-reduced-motion: reduce) {
             .marquee-content { animation: none !important; }
+            .animate-floaty, .animate-floaty-slow { animation: none !important; }
+            .btn-shimmer::after { animation: none !important; opacity: 0; }
             .gs-reveal, .mobile-sticky-cta { opacity: 1 !important; transform: none !important; transition: none !important; }
             .card-elevate, .card-elevate::before { transition: none !important; }
         }
+
+        /* === Плавающие цветные пятна (hero) === */
+        .blob { position: absolute; border-radius: 9999px; filter: blur(60px); pointer-events: none; z-index: 0; }
+        .animate-floaty { animation: floaty 9s ease-in-out infinite; }
+        .animate-floaty-slow { animation: floaty 14s ease-in-out infinite; }
+        @keyframes floaty {
+            0%, 100% { transform: translate(0,0) scale(1); }
+            50% { transform: translate(28px, -32px) scale(1.1); }
+        }
+
+        /* === Shimmer для главной CTA-кнопки === */
+        .btn-shimmer { position: relative; overflow: hidden; }
+        .btn-shimmer::after {
+            content: '';
+            position: absolute;
+            top: -20%; left: -150%;
+            width: 55%; height: 140%;
+            background: linear-gradient(120deg, transparent, rgba(255,255,255,.6), transparent);
+            transform: skewX(-20deg);
+            animation: shimmer 3.4s ease-in-out infinite;
+        }
+        @keyframes shimmer {
+            0% { left: -150%; }
+            60% { left: 150%; }
+            100% { left: 150%; }
+        }
+
+        /* === Цветные кавычки в отзывах === */
+        .testimonial-card .fa-quote-left { color: #FF6B5B !important; opacity: 0.4; }
 
         /* --- Mega Menu Styles --- */
         .mega-menu-content {
@@ -257,12 +295,15 @@
 
     <div id="header-placeholder"></div>
     <script src="header.js?v=3" charset="UTF-8" data-page="index.html"></script><main>
-        <section class="hero-gradient relative flex items-center min-h-[90vh] md:min-h-[85vh] md:mt-0">
+        <section class="hero-gradient relative flex items-center min-h-[90vh] md:min-h-[85vh] md:mt-0 overflow-hidden">
+            <div class="blob w-72 h-72 -top-10 right-10 bg-violet-500/40 animate-floaty"></div>
+            <div class="blob w-96 h-96 bottom-0 -left-24 bg-brand-cyan/30 animate-floaty-slow"></div>
+            <div class="blob w-56 h-56 top-1/3 left-1/3 bg-yellow-400/20 animate-floaty-slow"></div>
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full pt-10 md:pt-20">
                 <div class="max-w-3xl gs-reveal">
-                    <div class="inline-flex items-center gap-2 px-4 py-2 rounded bg-brand-blue/60 backdrop-blur-md border border-brand-blue/40 text-white text-sm font-medium mb-6">
-                        <i class="fas fa-cogs text-brand-accent"></i>
-                        <span>Инженерное образование в России</span>
+                    <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-white text-sm font-medium mb-6">
+                        <span class="w-2 h-2 rounded-full bg-brand-accent animate-pulse"></span>
+                        <span>Инженерное образование в России · <span class="text-brand-accent font-semibold">Набор открыт</span></span>
                     </div>
                     <h1 class="font-serif font-bold text-white leading-[1.1] tracking-tight mb-6 text-balance" style="font-size: clamp(2.5rem, 5.2vw, 4.5rem);">
                         Твое техническое будущее <br><span class="text-brand-accent">начинается в БГТУ</span>
@@ -271,11 +312,11 @@
                         Получи востребованную профессию в сфере IT, машиностроения или энергетики. Брянск — комфортный и недорогой город для учебы.
                     </p>
                     <div class="flex flex-col sm:flex-row gap-4">
-                        <a href="contacts.html" class="flex items-center justify-center gap-2 w-full sm:w-auto bg-brand-accent !text-brand-blue px-8 py-4 rounded font-bold text-lg hover:bg-yellow-500 transition-all shadow-lg">
+                        <a href="contacts.html" class="btn-shimmer flex items-center justify-center gap-2 w-full sm:w-auto bg-brand-accent !text-brand-blue px-8 py-4 rounded-xl font-bold text-lg hover:bg-yellow-400 transition-all shadow-[0_10px_30px_rgba(234,179,8,0.4)]">
                             <span>Как поступить?</span>
                             <i class="fas fa-arrow-right"></i>
                         </a>
-                        <a href="programs.html" class="flex items-center justify-center w-full sm:w-auto px-8 py-4 rounded font-bold text-lg !text-white bg-white/10 backdrop-blur-md border border-white/30 hover:bg-white/20 transition-all">
+                        <a href="programs.html" class="flex items-center justify-center w-full sm:w-auto px-8 py-4 rounded-xl font-bold text-lg !text-white bg-white/10 backdrop-blur-md border border-white/25 hover:bg-white/20 hover:border-brand-cyan/60 transition-all">
                             <span>Программы</span>
                         </a>
                     </div>
@@ -285,15 +326,15 @@
             <div class="absolute bottom-0 w-full bg-brand-blue/90 backdrop-blur border-t border-white/10 hidden md:block">
                 <div class="max-w-7xl mx-auto px-4 flex justify-between py-6">
                     <div class="text-white">
-                        <div class="font-bold text-2xl text-brand-accent">1929</div>
+                        <div class="font-bold text-2xl text-amber-300">1929</div>
                         <div class="text-xs uppercase tracking-wider text-gray-300">Год основания</div>
                     </div>
                     <div class="text-white">
-                        <div class="font-bold text-2xl text-brand-accent">~10,000</div>
+                        <div class="font-bold text-2xl text-brand-cyan">~10,000</div>
                         <div class="text-xs uppercase tracking-wider text-gray-300">Студентов</div>
                     </div>
                     <div class="text-white">
-                        <div class="font-bold text-2xl text-brand-accent">100%</div>
+                        <div class="font-bold text-2xl text-brand-green">100%</div>
                         <div class="text-xs uppercase tracking-wider text-gray-300">Помощь с визой</div>
                     </div>
                 </div>
@@ -304,49 +345,50 @@
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
                     <a href="russian-courses.html" class="gs-reveal card-elevate cursor-pointer group p-6 border border-gray-200 rounded-xl bg-white block">
-                        <div class="w-12 h-12 bg-brand-blue text-white rounded flex items-center justify-center mb-4 group-hover:bg-brand-accent transition-colors">
+                        <div class="w-12 h-12 bg-brand-cyan/10 !text-brand-cyan rounded-full flex items-center justify-center mb-4 group-hover:bg-brand-cyan group-hover:!text-white transition-colors">
                             <i class="fas fa-language text-xl"></i>
                         </div>
                         <h3 class="font-bold text-lg mb-2 text-brand-blue">Учить русский язык</h3>
                         <p class="text-sm text-gray-600 mb-4">Курсы дополнительного обучения «Русский язык» для иностранцев. 10 месяцев интенсива.</p>
-                        <span class="text-brand-accent text-sm font-bold flex items-center gap-1 group-hover:gap-2 transition-all">Читать <i class="fas fa-angle-right"></i></span>
+                        <span class="text-brand-cyan text-sm font-bold flex items-center gap-1 group-hover:gap-2 transition-all">Читать <i class="fas fa-angle-right"></i></span>
                     </a>
                     
                     <a href="campus.html" class="gs-reveal card-elevate cursor-pointer group p-6 border border-gray-200 rounded-xl bg-white block" style="transition-delay: 100ms;">
-                        <div class="w-12 h-12 bg-brand-blue text-white rounded flex items-center justify-center mb-4 group-hover:bg-brand-accent transition-colors">
+                        <div class="w-12 h-12 bg-brand-teal/10 !text-brand-teal rounded-full flex items-center justify-center mb-4 group-hover:bg-brand-teal group-hover:!text-white transition-colors">
                             <i class="fas fa-bed text-xl"></i>
                         </div>
                         <h3 class="font-bold text-lg mb-2 text-brand-blue">Жизнь в Брянске</h3>
                         <p class="text-sm text-gray-600 mb-4">Общежития, цены на еду, безопасность и инфраструктура кампуса.</p>
-                        <span class="text-brand-accent text-sm font-bold flex items-center gap-1 group-hover:gap-2 transition-all">Читать <i class="fas fa-angle-right"></i></span>
+                        <span class="text-brand-teal text-sm font-bold flex items-center gap-1 group-hover:gap-2 transition-all">Читать <i class="fas fa-angle-right"></i></span>
                     </a>
 
                     <a href="visa-process.html" class="gs-reveal card-elevate cursor-pointer group p-6 border border-gray-200 rounded-xl bg-white block" style="transition-delay: 200ms;">
-                        <div class="w-12 h-12 bg-brand-blue text-white rounded flex items-center justify-center mb-4 group-hover:bg-brand-accent transition-colors">
+                        <div class="w-12 h-12 bg-brand-accent/15 !text-brand-accent-dark rounded-full flex items-center justify-center mb-4 group-hover:bg-brand-accent group-hover:!text-brand-blue transition-colors">
                             <i class="fas fa-passport text-xl"></i>
                         </div>
                         <h3 class="font-bold text-lg mb-2 text-brand-blue">Виза и документы</h3>
                         <p class="text-sm text-gray-600 mb-4">Как получить приглашение, правила миграционного учета в РФ.</p>
-                        <span class="text-brand-accent text-sm font-bold flex items-center gap-1 group-hover:gap-2 transition-all">Узнать <i class="fas fa-angle-right"></i></span>
+                        <span class="text-brand-accent-dark text-sm font-bold flex items-center gap-1 group-hover:gap-2 transition-all">Узнать <i class="fas fa-angle-right"></i></span>
                     </a>
 
                     <a href="history.html" class="gs-reveal card-elevate cursor-pointer group p-6 border border-gray-200 rounded-xl bg-white block" style="transition-delay: 300ms;">
-                        <div class="w-12 h-12 bg-brand-blue text-white rounded flex items-center justify-center mb-4 group-hover:bg-brand-accent transition-colors">
+                        <div class="w-12 h-12 bg-brand-violet/10 !text-brand-violet rounded-full flex items-center justify-center mb-4 group-hover:bg-brand-violet group-hover:!text-white transition-colors">
                             <i class="fas fa-landmark text-xl"></i>
                         </div>
                         <h3 class="font-bold text-lg mb-2 text-brand-blue">История БГТУ</h3>
                         <p class="text-sm text-gray-600 mb-4">Узнайте о богатом инженерном наследии нашего университета с 1929 года.</p>
-                        <span class="text-brand-accent text-sm font-bold flex items-center gap-1 group-hover:gap-2 transition-all">Изучить <i class="fas fa-angle-right"></i></span>
+                        <span class="text-brand-violet text-sm font-bold flex items-center gap-1 group-hover:gap-2 transition-all">Изучить <i class="fas fa-angle-right"></i></span>
                     </a>
                 </div>
             </div>
         </section>
 
-        <section class="py-16 md:py-24 bg-gray-50">
-             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <section class="py-16 md:py-24 bg-gradient-to-br from-brand-light to-sky-50 relative overflow-hidden">
+            <div class="blob w-72 h-72 -top-16 -left-20 bg-brand-cyan/10 animate-floaty-slow"></div>
+             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
                 <div class="text-center mb-16 gs-reveal">
-                    <div class="inline-flex items-center gap-2 text-brand-accent font-bold tracking-wider uppercase text-xs md:text-sm mb-3">
-                        <span class="w-8 h-px bg-brand-accent"></span> Почему БГТУ <span class="w-8 h-px bg-brand-accent"></span>
+                    <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-brand-cyan/10 text-brand-cyan font-bold tracking-wider uppercase text-xs md:text-sm mb-4">
+                        <i class="fas fa-star text-[10px]"></i> Почему БГТУ <i class="fas fa-star text-[10px]"></i>
                     </div>
                     <h2 class="text-3xl md:text-4xl font-serif font-bold text-brand-blue mb-4 text-balance">Почему выбирают БГТУ?</h2>
                     <p class="text-gray-600 max-w-2xl mx-auto leading-relaxed">Качественное фундаментальное образование по доступным ценам в самом центре Европейской части России.</p>
@@ -354,22 +396,30 @@
 
                 <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
                     <div class="bg-white p-6 rounded-xl shadow-card border border-gray-100 card-elevate gs-reveal">
-                        <i class="fas fa-microchip text-4xl text-brand-accent mb-4"></i>
+                        <div class="w-14 h-14 bg-brand-cyan/10 !text-brand-cyan rounded-2xl flex items-center justify-center mb-4">
+                            <i class="fas fa-microchip text-2xl"></i>
+                        </div>
                         <h4 class="font-bold text-brand-blue mb-2 text-lg">Сильная техническая база</h4>
                         <p class="text-sm text-gray-600 leading-relaxed">Мы не учим всему подряд. Наш профиль — IT, машиностроение, энергетика. Наши дипломы ценятся на производстве.</p>
                     </div>
                     <div class="bg-white p-6 rounded-xl shadow-card border border-gray-100 card-elevate gs-reveal" style="transition-delay: 100ms;">
-                        <i class="fas fa-wallet text-4xl text-brand-accent mb-4"></i>
+                        <div class="w-14 h-14 bg-brand-green/10 !text-brand-green rounded-2xl flex items-center justify-center mb-4">
+                            <i class="fas fa-wallet text-2xl"></i>
+                        </div>
                         <h4 class="font-bold text-brand-blue mb-2 text-lg">Доступная стоимость</h4>
                         <p class="text-sm text-gray-600 leading-relaxed">Стоимость обучения и жизни в Брянске в 2-3 раза ниже, чем в Москве, при этом качество знаний остается на высоте.</p>
                     </div>
                     <div class="bg-white p-6 rounded-xl shadow-card border border-gray-100 card-elevate gs-reveal" style="transition-delay: 200ms;">
-                        <i class="fas fa-hands-helping text-4xl text-brand-accent mb-4"></i>
+                        <div class="w-14 h-14 bg-brand-coral/10 !text-brand-coral rounded-2xl flex items-center justify-center mb-4">
+                            <i class="fas fa-hands-helping text-2xl"></i>
+                        </div>
                         <h4 class="font-bold text-brand-blue mb-2 text-lg">Поддержка 24/7</h4>
                         <p class="text-sm text-gray-600 leading-relaxed">Международный отдел решает все вопросы: от встречи на вокзале до постановки на учет и заселения в общежитие.</p>
                     </div>
                     <div class="bg-white p-6 rounded-xl shadow-card border border-gray-100 card-elevate gs-reveal" style="transition-delay: 300ms;">
-                        <i class="fas fa-city text-4xl text-brand-accent mb-4"></i>
+                        <div class="w-14 h-14 bg-brand-violet/10 !text-brand-violet rounded-2xl flex items-center justify-center mb-4">
+                            <i class="fas fa-city text-2xl"></i>
+                        </div>
                         <h4 class="font-bold text-brand-blue mb-2 text-lg">Спокойный город</h4>
                         <p class="text-sm text-gray-600 leading-relaxed">Брянск — зеленый и безопасный город, идеальный для тех, кто хочет сосредоточиться на учебе без стресса мегаполиса.</p>
                     </div>
@@ -377,55 +427,60 @@
              </div>
         </section>
 
-        <section class="py-16 md:py-24 bg-brand-light">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <section class="py-16 md:py-24 bg-white relative overflow-hidden">
+            <div class="blob w-80 h-80 -right-24 top-10 bg-brand-teal/10 animate-floaty-slow"></div>
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
                 <div class="flex flex-col md:flex-row gap-12 items-center">
                     <div class="md:w-1/2 gs-reveal">
-                        <div class="text-brand-accent font-bold tracking-wider uppercase text-sm mb-2">Легальность и безопасность</div>
+                        <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-brand-teal/10 text-brand-teal font-bold tracking-wider uppercase text-xs md:text-sm mb-4">
+                            <i class="fas fa-shield-alt text-[10px]"></i> Легальность и безопасность
+                        </div>
                         <h2 class="text-3xl md:text-4xl font-serif font-bold text-brand-blue mb-6 text-balance">Бюрократия — наша забота</h2>
                         <p class="text-gray-600 mb-6 leading-relaxed">Российское законодательство строгое, но вам не о чем беспокоиться. БГТУ имеет многолетний опыт приема иностранных граждан.</p>
                         
                         <ul class="space-y-4 mb-8">
                             <li class="flex items-start gap-3">
-                                <i class="fas fa-check-circle text-brand-green mt-1"></i>
+                                <span class="w-8 h-8 shrink-0 bg-brand-teal/10 !text-brand-teal rounded-full flex items-center justify-center"><i class="fas fa-check text-sm"></i></span>
                                 <div>
                                     <strong class="block text-gray-800">Приглашение на учебу</strong>
                                     <span class="text-sm text-gray-600">Делаем официальный запрос в МВД РФ для учебной визы.</span>
                                 </div>
                             </li>
                             <li class="flex items-start gap-3">
-                                <i class="fas fa-check-circle text-brand-green mt-1"></i>
+                                <span class="w-8 h-8 shrink-0 bg-brand-teal/10 !text-brand-teal rounded-full flex items-center justify-center"><i class="fas fa-check text-sm"></i></span>
                                 <div>
                                     <strong class="block text-gray-800">Миграционный учет</strong>
                                     <span class="text-sm text-gray-600">В первые дни по приезде мы ставим вас на учет по адресу общежития.</span>
                                 </div>
                             </li>
                         </ul>
-                        <a href="visa-process.html" class="inline-block mt-4 !text-brand-blue font-bold border-b border-brand-accent pb-1 hover:!text-brand-accent transition-colors">Подробнее о правилах въезда <i class="fas fa-arrow-right text-sm ml-1"></i></a>
+                        <a href="visa-process.html" class="inline-block mt-4 !text-brand-blue font-bold border-b-2 border-brand-teal pb-1 hover:!text-brand-teal transition-colors">Подробнее о правилах въезда <i class="fas fa-arrow-right text-sm ml-1"></i></a>
                     </div>
                     <div class="md:w-1/2 relative gs-reveal">
-                        <div class="absolute -inset-4 bg-brand-blue/5 transform rotate-3 rounded-lg z-0"></div>
-                        <img src="https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&w=800&q=80" alt="Documents" class="w-full h-auto rounded shadow-lg relative z-10">
+                        <div class="absolute -inset-4 bg-gradient-to-br from-brand-teal/20 to-brand-cyan/20 transform rotate-3 rounded-2xl z-0"></div>
+                        <img src="https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&w=800&q=80" alt="Documents" class="w-full h-auto rounded-xl shadow-lg relative z-10">
                     </div>
                 </div>
             </div>
         </section>
 
         <section class="py-16 md:py-24 bg-white relative overflow-hidden flex flex-col">
-            <div class="absolute right-0 top-0 opacity-5 pointer-events-none">
+            <div class="absolute right-0 top-0 opacity-[0.06] pointer-events-none text-brand-coral">
                 <i class="fas fa-quote-right text-9xl"></i>
             </div>
             
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 mb-12 w-full">
                 <div class="flex flex-col md:flex-row justify-between items-end gap-6 gs-reveal">
                     <div>
-                        <div class="text-brand-accent font-bold tracking-wider uppercase text-sm mb-2">Отзывы студентов</div>
+                        <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-brand-coral/10 text-brand-coral font-bold tracking-wider uppercase text-xs md:text-sm mb-4">
+                            <i class="fas fa-heart text-[10px]"></i> Отзывы студентов
+                        </div>
                         <h2 class="text-3xl md:text-4xl font-serif font-bold text-brand-blue text-balance">Голоса нашего сообщества</h2>
                         <p class="text-gray-600 max-w-2xl mt-4 leading-relaxed">Узнайте о реальном опыте учебы и жизни в БГТУ от студентов из более чем 40 стран мира.</p>
                     </div>
-                    <a href="testimonials.html" class="shrink-0 group flex items-center gap-2 bg-gray-50 border border-gray-200 !text-brand-blue px-6 py-3 rounded-full font-bold text-sm hover:border-brand-accent hover:shadow-md transition-all">
+                    <a href="testimonials.html" class="shrink-0 group flex items-center gap-2 bg-brand-coral/10 border border-brand-coral/30 !text-brand-coral px-6 py-3 rounded-full font-bold text-sm hover:bg-brand-coral hover:!text-white hover:shadow-md transition-all">
                         <span>Читать все отзывы</span>
-                        <i class="fas fa-arrow-right group-hover:translate-x-1 transition-transform text-brand-accent"></i>
+                        <i class="fas fa-arrow-right group-hover:translate-x-1 transition-transform"></i>
                     </a>
                 </div>
             </div>
@@ -555,8 +610,8 @@
             </div>
             
             <div class="max-w-7xl mx-auto px-4 mt-8 flex justify-center md:hidden">
-                <a href="testimonials.html" class="w-full text-center bg-gray-50 border border-gray-200 !text-brand-blue px-6 py-3 rounded-full font-bold text-sm hover:border-brand-accent hover:shadow-md transition-all">
-                    Все отзывы <i class="fas fa-arrow-right ml-1 text-brand-accent"></i>
+                <a href="testimonials.html" class="w-full text-center bg-brand-coral/10 border border-brand-coral/30 !text-brand-coral px-6 py-3 rounded-full font-bold text-sm hover:bg-brand-coral hover:!text-white hover:shadow-md transition-all">
+                    Все отзывы <i class="fas fa-arrow-right ml-1"></i>
                 </a>
             </div>
         </section>
@@ -575,6 +630,25 @@
     <script>
         document.addEventListener("DOMContentLoaded", () => {
             gsap.registerPlugin(ScrollTrigger);
+
+            // Звёзды рейтинга + цветные аватар-кольца в карточках отзывов
+            document.querySelectorAll('.testimonial-card').forEach((card) => {
+                const stars = card.querySelector('.testimonial-stars');
+                if (!stars) {
+                    const rating = ['★','★','★','★','★'].join('');
+                    const bar = document.createElement('div');
+                    bar.className = 'testimonial-stars flex items-center gap-1 text-amber-400 text-sm mb-4';
+                    bar.innerHTML = '<span>' + rating + '</span><span class="text-gray-400 text-xs ml-2">5.0</span>';
+                    const img = card.querySelector('img');
+                    if (img && img.parentElement) img.parentElement.prepend(bar);
+                }
+                const img = card.querySelector('img');
+                if (img) {
+                    const ring = card.classList.contains('bg-brand-blue') ? 'ring-2 ring-amber-300/60' : 'ring-2 ring-brand-teal/40';
+                    img.classList.add(ring);
+                }
+            });
+
             document.querySelectorAll('.gs-reveal').forEach((elem, i) => {
                 gsap.fromTo(elem, { y: 40, opacity: 0, scale: 0.98 }, {
                     y: 0, opacity: 1, scale: 1, duration: 0.8, ease: "power3.out",
