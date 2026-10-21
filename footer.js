@@ -17,7 +17,7 @@
     +     '<div class="flex flex-col md:flex-row justify-between items-center gap-6 mb-8 border-b border-gray-800 pb-8">'
     +       '<div class="flex flex-col md:flex-row gap-6 items-center">'
     +         '<div class="flex items-center gap-2">'
-    +           '<img src="images/bgtu-logo.svg" alt="БГТУ" class="w-10 h-10 rounded-full object-contain">'
+    +           '<img src="images/bgtu-logo.png" alt="БГТУ" class="w-16 h-16 rounded-full object-contain">'
     +           '<span class="font-serif font-bold text-white tracking-tight">БГТУ</span>'
     +         '</div>'
     +         '<div class="text-sm text-center md:text-left leading-relaxed">Брянский государственный технический университет<br>Центр международного сотрудничества</div>'

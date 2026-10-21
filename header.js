@@ -63,7 +63,7 @@
     h += '    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">';
     h += '      <div class="flex justify-between items-center h-20 md:h-24">';
     h += '        <a href="index.html" class="flex-shrink-0 flex items-center gap-4 cursor-pointer">';
-    h += '          <img src="images/bgtu-logo.svg" alt="БГТУ" class="h-10 w-10 rounded-full object-contain">';
+    h += '          <img src="images/bgtu-logo.png" alt="БГТУ" class="h-16 w-16 rounded-full object-contain">';
     h += '          <div class="flex flex-col">';
     h += '            <span class="font-serif font-bold text-xl md:text-2xl leading-none text-brand-blue tracking-tight">БГТУ | International</span>';
     h += '            <span class="text-[11px] uppercase tracking-widest text-gray-500 font-medium mt-1">Центр международного<br>сотрудничества</span>';
