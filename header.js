@@ -63,16 +63,7 @@
     h += '    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">';
     h += '      <div class="flex justify-between items-center h-20 md:h-24">';
     h += '        <a href="index.html" class="flex-shrink-0 flex items-center gap-4 cursor-pointer">';
-    h += '          <svg class="h-12 w-12 flex-shrink-0" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">'
-    h += '            <path d="M32 3L58 14V32C58 46.5 47 56.5 32 61C17 56.5 6 46.5 6 32V14L32 3Z" fill="#003366"/>'
-    h += '            <path d="M32 3L58 14V32C58 46.5 47 56.5 32 61C17 56.5 6 46.5 6 32V14L32 3Z" stroke="#EAB308" stroke-width="2"/>'
-    h += '            <path d="M32 9L52 18V32C52 43.5 43.5 51.5 32 55.4C20.5 51.5 12 43.5 12 32V18L32 9Z" fill="none" stroke="#FFFFFF" stroke-width="1" opacity="0.5"/>'
-    h += '            <circle cx="32" cy="27" r="9.5" fill="none" stroke="#FFFFFF" stroke-width="1.6"/>'
-    h += '            <circle cx="32" cy="27" r="3.2" fill="#EAB308"/>'
-    h += '            <path d="M32 15.5V18.3M32 35.7V38.5M20.5 27H23.3M40.7 27H43.5M24.3 19.3L26.3 21.3M39.7 32.7L41.7 34.7M24.3 34.7L26.3 32.7M39.7 21.3L41.7 19.3" stroke="#FFFFFF" stroke-width="1.6" stroke-linecap="round"/>'
-    h += '            <path d="M19 42H45L42.5 49H21.5L19 42Z" fill="#EAB308"/>'
-    h += '            <text x="32" y="47.2" text-anchor="middle" font-family="Arial,sans-serif" font-size="6.5" font-weight="700" fill="#003366">БГТУ</text>'
-    h += '          </svg>';
+    h += '          <img src="images/bgtu-logo.png" alt="Логотип БГТУ" class="h-12 w-12 flex-shrink-0 object-contain">';
     h += '          <div class="flex flex-col">';
     h += '            <span class="font-serif font-bold text-xl md:text-2xl leading-none text-brand-blue tracking-tight">БГТУ | International</span>';
     h += '            <span class="text-[11px] uppercase tracking-widest text-gray-500 font-medium mt-1">Центр международного<br>сотрудничества</span>';
