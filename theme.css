@@ -80,3 +80,91 @@
   .animate-floaty, .animate-floaty-slow { animation: none !important; }
   .btn-shimmer::after { animation: none !important; opacity: 0; }
 }
+
+
+/* ============================================================
+   DESIGN SYSTEM v3 — Art Direction upgrade (anti-slop)
+   Строгая академическая геометрия + сохранение фирменных цветов.
+   ============================================================ */
+
+/* --- Архитектурная сетка поверх hero вместо пустого блюра --- */
+section.hero-gradient::before,
+section[class*="hero"]::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.07;
+  background-image:
+    linear-gradient(rgba(255,255,255,.9) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,.9) 1px, transparent 1px);
+  background-size: 48px 48px;
+}
+
+/* Смягчаем прежние decorative blobs — тоньше, без грязного блюра */
+.blob { filter: blur(40px); opacity: 0.55; }
+
+/* --- Эйбрау-лейбл hero без пульсирующей точки --- */
+.eyebrow-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: .55rem;
+  padding: .45rem 1rem;
+  border: 1px solid rgba(255,255,255,0.3);
+  background: rgba(255,255,255,0.08);
+  color: #fff;
+  font-size: .78rem;
+  font-weight: 600;
+  letter-spacing: .04em;
+  border-radius: 4px;
+}
+.eyebrow-tag i { color: var(--amber); font-size: .8rem; }
+
+/* --- Хлебные крошки (единые на всех внутренних страницах) --- */
+.breadcrumbs {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: .5rem;
+  font-size: .82rem;
+  color: rgba(255,255,255,0.72);
+  position: relative;
+  z-index: 10;
+}
+.breadcrumbs a { color: rgba(255,255,255,0.72); text-decoration: none; transition: color .2s; }
+.breadcrumbs a:hover { color: #fff; }
+.breadcrumbs .sep { color: rgba(255,255,255,0.4); font-size: .7rem; }
+.breadcrumbs .current { color: var(--amber); font-weight: 600; }
+
+/* --- Студийные карточки: журнальная верстка вместо "пузырей" --- */
+.studio-card {
+  position: relative;
+  background: #fff;
+  border: 1px solid #E2E8F0;
+  border-radius: 8px;
+  border-top: 3px solid var(--blue);
+  padding: 1.75rem;
+  text-align: left;
+  transition: border-color .25s, box-shadow .25s, transform .25s;
+}
+.studio-card:hover {
+  box-shadow: 0 10px 30px -8px rgba(0,51,102,0.16);
+  transform: translateY(-3px);
+}
+.studio-card .studio-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 6px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+}
+.studio-card.accent-cyan   { border-top-color: var(--cyan); }
+.studio-card.accent-teal   { border-top-color: var(--teal); }
+.studio-card.accent-amber  { border-top-color: var(--amber); }
+.studio-card.accent-green  { border-top-color: var(--green); }
+.studio-card.accent-coral  { border-top-color: var(--coral); }
+.studio-card.accent-violet { border-top-color: var(--violet); }

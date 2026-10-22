@@ -43,7 +43,7 @@
         ::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
         
         .hero-bg {
-            background: linear-gradient(to right, rgba(0, 51, 102, 0.8) 0%, rgba(0, 51, 102, 0.6) 100%), url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') center/cover fixed;
+            background: linear-gradient(to right, rgba(0, 35, 71, 0.94) 0%, rgba(0, 51, 102, 0.82) 55%, rgba(0, 51, 102, 0.65) 100%), url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') center/cover fixed;
         }
 
         /* --- Mega Menu Styles --- */
@@ -139,31 +139,35 @@
             display: block;
         }
         
-        /* Grid Gallery */
-        .photo-grid {
+        /* Bento Gallery — полноширинная раскладка без пустых колонок */
+        .bento-gallery {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
+            grid-auto-rows: 180px;
             gap: 1rem;
         }
         @media (min-width: 768px) {
-            .photo-grid {
-                grid-template-columns: repeat(3, 1fr);
+            .bento-gallery {
+                grid-template-columns: repeat(4, 1fr);
+                grid-auto-rows: 200px;
             }
+            .bento-wide { grid-column: span 2; }
+            .bento-tall { grid-row: span 2; }
         }
-        .photo-item {
+        .bento-item {
             position: relative;
             border-radius: 0.5rem;
             overflow: hidden;
-            aspect-ratio: 1 / 1;
+            border: 1px solid #E2E8F0;
         }
-        .photo-item img {
+        .bento-item img {
             width: 100%;
             height: 100%;
             object-fit: cover;
             transition: transform 0.5s ease;
         }
-        .photo-item:hover img {
-            transform: scale(1.1);
+        .bento-item:hover img {
+            transform: scale(1.06);
         }
             /* === GLOBAL RESPONSIVE FIX === */
         html, body {
@@ -274,31 +278,6 @@
                             </div>
                         </div>
 
-                        <!-- Gallery Grid -->
-                        <div class="gs-reveal">
-                            <h3 class="text-2xl font-bold text-gray-800 mb-6">Жизнь клуба в фото</h3>
-                            <div class="photo-grid">
-                                <div class="photo-item">
-                                    <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Students">
-                                </div>
-                                <div class="photo-item">
-                                    <img src="https://images.unsplash.com/photo-1543269865-cbf427effbad?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Group study">
-                                </div>
-                                <div class="photo-item">
-                                    <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Teamwork">
-                                </div>
-                                <div class="photo-item hidden md:block">
-                                    <img src="https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Friends">
-                                </div>
-                                <div class="photo-item hidden md:block">
-                                    <img src="https://images.unsplash.com/photo-1517486808906-6ca8b3f04846?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Working">
-                                </div>
-                                <div class="photo-item hidden md:block">
-                                    <img src="https://images.unsplash.com/photo-1491438590914-bc09fcaaf77a?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Laughing">
-                                </div>
-                            </div>
-                        </div>
-
                     </div>
 
                     <!-- Right Column: Sidebar -->
@@ -306,7 +285,7 @@
                         <div class="sticky top-32 space-y-6">
                             
                             <!-- Join Widget -->
-                            <div class="bg-brand-blue p-6 rounded-2xl shadow-lg text-white gs-reveal">
+                            <div class="bg-brand-blue p-6 rounded-lg shadow-lg text-white gs-reveal">
                                 <h4 class="font-bold mb-4 text-xl flex items-center gap-2">
                                     <i class="fas fa-user-plus text-brand-accent"></i> Как вступить?
                                 </h4>
@@ -352,6 +331,36 @@
                         </div>
                     </div>
 
+                </div>
+            </div>
+        </section>
+
+        <!-- Gallery Section -->
+        <section class="py-16 md:py-20 bg-brand-light relative z-20 border-t border-gray-100">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="mb-10 gs-reveal">
+                    <h3 class="text-2xl md:text-3xl font-serif font-bold text-brand-blue">Жизнь клуба в фото</h3>
+                    <p class="text-gray-600 mt-2">Турниры, встречи землячеств и поездки — одна команда из более чем 40 стран.</p>
+                </div>
+                <div class="bento-gallery gs-reveal">
+                    <div class="bento-item bento-wide">
+                        <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?ixlib=rb-4.0.3&auto=format&fit=crop&w=900&q=80" alt="Встреча студенческого клуба" loading="lazy">
+                    </div>
+                    <div class="bento-item">
+                        <img src="https://images.unsplash.com/photo-1543269865-cbf427effbad?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Совместные занятия студентов" loading="lazy">
+                    </div>
+                    <div class="bento-item">
+                        <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Командная работа клуба" loading="lazy">
+                    </div>
+                    <div class="bento-item">
+                        <img src="https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Студенты клуба на мероприятии" loading="lazy">
+                    </div>
+                    <div class="bento-item bento-tall">
+                        <img src="https://images.unsplash.com/photo-1517486808906-6ca8b3f04846?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Подготовка к турниру клуба" loading="lazy">
+                    </div>
+                    <div class="bento-item">
+                        <img src="https://images.unsplash.com/photo-1491438590914-bc09fcaaf77a?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Студенты общаются после занятий" loading="lazy">
+                    </div>
                 </div>
             </div>
         </section>
