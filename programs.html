@@ -114,9 +114,7 @@
             <section class="hero-programs relative flex items-center min-h-[50vh] md:-mt-20">
                 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full pt-20 pb-24 sm:pb-20">
                     <div class="max-w-3xl gs-reveal">
-                        <a href="index.html" class="inline-flex items-center gap-2 !text-brand-accent hover:!text-white transition-colors mb-4 text-sm font-bold bg-black/20 px-4 py-2 rounded-full backdrop-blur-sm border border-brand-accent/30 w-max">
-                            <i class="fas fa-arrow-left"></i> Назад на главную
-                        </a>
+                        <nav class="breadcrumbs mb-4" aria-label="Хлебные крошки"><a href="index.html">Главная</a><i class="fas fa-chevron-right sep"></i><span class="current">Программы обучения</span></nav>
                         <h1 class="text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-white leading-tight mb-4">
                             Доступные направления
                         </h1>
@@ -127,7 +125,7 @@
                 </div>
             </section>
 
-            <section class="py-8 bg-white relative z-20 -mt-10 rounded-t-3xl shadow-card border-b border-gray-100">
+            <section class="py-8 bg-white relative z-20 -mt-10 rounded-t-lg shadow-card border-b border-gray-100">
                 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 overflow-x-auto pb-4 md:pb-0">
                     <div class="flex items-center gap-2 md:gap-4 min-w-max">
                         <span class="text-sm font-bold text-gray-400 uppercase tracking-wider mr-4">Уровень:</span>
@@ -143,7 +141,7 @@
                 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div id="directions-container" class="space-y-16"></div>
 
-                    <div class="mt-16 bg-brand-blue rounded-2xl p-8 md:p-12 text-center text-white relative overflow-hidden gs-reveal shadow-premium">
+                    <div class="mt-16 bg-brand-blue rounded-lg p-8 md:p-12 text-center text-white relative overflow-hidden gs-reveal shadow-premium">
                         <div class="absolute -right-10 -top-10 opacity-10">
                             <i class="fas fa-globe text-9xl"></i>
                         </div>
@@ -159,7 +157,7 @@
             <!-- Блок курсов русского языка -->
             <section class="py-16 bg-white border-t border-gray-100">
                 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <div class="bg-gradient-to-br from-brand-blue to-blue-900 rounded-3xl p-8 md:p-12 text-white relative overflow-hidden gs-reveal shadow-premium">
+                    <div class="bg-gradient-to-br from-brand-blue to-blue-900 rounded-lg p-8 md:p-12 text-white relative overflow-hidden gs-reveal shadow-premium">
                         <div class="absolute -right-10 -bottom-10 opacity-10"><i class="fas fa-language text-9xl"></i></div>
                         <div class="relative z-10 grid md:grid-cols-2 gap-10 items-center">
                             <div>
@@ -241,7 +239,7 @@
                     html += '  </div>';
 
                     if (list.length === 0) {
-                        html += '  <div class="bg-white border border-dashed border-gray-300 rounded-2xl p-8 text-center text-gray-400 text-sm">По этому уровню образования специальностей нет</div>';
+                        html += '  <div class="bg-white border border-dashed border-gray-300 rounded-lg p-8 text-center text-gray-400 text-sm">По этому уровню образования специальностей нет</div>';
                     } else {
                         html += '  <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">';
                         list.forEach(function (s) {
@@ -263,7 +261,7 @@
                 else badge = '<span class="' + lvl.cls + ' text-white text-[11px] font-bold px-3 py-1 rounded-full whitespace-nowrap">Бакалавриат (4 года)</span>';
 
                 return ''
-                    + '<article class="program-card bg-white border border-gray-200 rounded-2xl overflow-hidden flex flex-col cursor-pointer gs-reveal" data-slug="' + s.slug + '" onclick="window.BGTU_OPEN(\'' + s.slug + '\')">'
+                    + '<article class="program-card bg-white border border-gray-200 rounded-lg overflow-hidden flex flex-col cursor-pointer gs-reveal" data-slug="' + s.slug + '" onclick="window.BGTU_OPEN(\'' + s.slug + '\')">'
                     + '  <div class="h-40 relative overflow-hidden">'
                     + '    <div class="ph-wrap" style="background:linear-gradient(135deg,' + s.directionColor + ',' + shadeColor(s.directionColor, -35) + ')">'
                     + '      <img class="ph-img" src="' + s.image + '" alt="' + esc(s.name) + '" loading="lazy" data-fallback="1">'
@@ -350,14 +348,14 @@
                     + '    </div>'
                     + '  </div>'
                     + '</section>'
-                    + '<section class="py-12 bg-white relative z-20 -mt-10 rounded-t-3xl shadow-card">'
+                    + '<section class="py-12 bg-white relative z-20 -mt-10 rounded-t-lg shadow-card">'
                     + '  <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">'
                     + '    <div class="flex flex-col md:flex-row gap-8 mb-10">'
                     + '      <div class="md:w-2/3">'
                     + '        <p class="text-lg md:text-xl text-gray-700 leading-relaxed font-light">Специальность «' + esc(s.name) + '» (' + esc(s.profile) + ') — это ваш путь в одну из самых востребованных профессиональных областей. Программа сочетает фундаментальную подготовку, современные цифровые инструменты и практику на реальных задачах индустрии.</p>'
                     + '      </div>'
                     + '      <div class="md:w-1/3">'
-                    + '        <div class="rounded-2xl overflow-hidden shadow-card border border-gray-200 aspect-[4/3]">'
+                    + '        <div class="rounded-lg overflow-hidden shadow-card border border-gray-200 aspect-[4/3]">'
                     + '          <div class="ph-wrap" style="background:linear-gradient(135deg,' + s.directionColor + ',' + shadeColor(s.directionColor, -35) + ')">'
                     + '            <img class="ph-img" src="' + s.image + '" alt="' + esc(s.name) + '" data-fallback="1">'
                      + '            <div class="ph-fallback text-white"><i class="fas ' + s.directionIcon + ' text-7xl drop-shadow-[0_2px_8px_rgba(0,0,0,0.35)]"></i><span class="text-sm font-bold tracking-widest uppercase bg-white/15 px-4 py-1.5 rounded-full">' + s.directionShort + '</span></div>'
@@ -379,8 +377,8 @@
                     + '        <div class="acc-content hidden px-6 pb-5"><ul class="text-gray-600 space-y-3 pt-4 grid md:grid-cols-2 gap-x-8">' + modules + '</ul></div>'
                     + '      </div>'
                     + '    </div>'
-                    + '    <div class="bg-brand-blue rounded-2xl p-8 text-center text-white shadow-premium relative overflow-hidden">'
-                    + '      <div class="absolute -right-6 -top-6 opacity-10"><i class="fas fa-paper-plane text-8xl"></i></div>'
+                    + '    <div class="bg-brand-blue rounded-lg p-8 text-center text-white shadow-premium relative overflow-hidden">'
+                    + '      <div class="absolute -right-6 -top-6 opacity-10"><i class="fas fa-graduation-cap text-8xl"></i></div>'
                     + '      <h3 class="text-2xl font-serif font-bold mb-3 relative z-10">Готовы начать обучение?</h3>'
                     + '      <p class="text-gray-300 mb-6 max-w-xl mx-auto relative z-10">Подайте заявку или узнайте, как поступить на эту специальность.</p>'
                     + '      <div class="flex flex-col sm:flex-row gap-4 justify-center relative z-10">'
